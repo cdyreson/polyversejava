@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="targets" default="all" basedir=".">
+    <target name="compile polyverse.java" description="compile polyverse.java">
+        <java classname="edu.usu.polyverse.main.SequencedJava">
+            <classpath>
+                <pathelement location="dist/PolyverseJava.jar"/>
+                <pathelement location="lib/antlrworks-1.4.3.jar"/>
+            </classpath>
+            <arg value="testPrograms/Test1.java"/>
+        </java>
+    </target>
+</project>

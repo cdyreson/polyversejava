@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="targets" default="all" basedir=".">
+
+    <target name="compile SequencedJava.java" description="compile SequencedJava.java">
+        <java classname="sequencedjava.SequencedJava">
+            <classpath>
+                <pathelement location="dist/SequencedJava.jar"/>
+                <pathelement location="lib/antlrworks-1.4.3.jar"/>
+            </classpath>
+            <arg value="testPrograms/SequencedJava.java"/>
+        </java>
+    </target>
+
+</project>

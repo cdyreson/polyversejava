@@ -1,0 +1,28 @@
+group JavaTreeParser;
+
+methodCall(methodCallText) ::= <<
+$methodCallText$;
+log("Called $methodCallText$")
+>>
+
+packageDeclaration(value) ::= <<
+package $value$;
+>>
+
+importDeclarationTemplate(value) ::= <<
+import $value$;
+>>
+
+packageTemplate(value) ::= <<
+packge $value$;
+>>
+
+javaSourceTemplate(package,import) ::= <<
+$package$
+$import$
+>>
+
+tryTemplate(value) ::= <<
+"tryTemplate"
+$value$
+>>

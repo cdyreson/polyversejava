@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="targets" default="all" basedir="src/edu/usu/polyverse/grammar">
+     <target name="generate Java.g" description="generate Java.g">
+        <java jar="../../../../../lib/antlr-complete-3.5.2.jar">
+            <arg value="Java.g"/>
+        </java>
+    </target>
+
+</project>
