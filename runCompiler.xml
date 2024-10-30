@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="targets" default="all" basedir=".">
-    <target name="compile polyverse.java" description="compile polyverse.java">
+    <target name="compile test program" description="compile test program">
         <java classname="edu.usu.polyverse.main.SequencedJava">
             <classpath>
                 <pathelement location="dist/PolyverseJava.jar"/>
