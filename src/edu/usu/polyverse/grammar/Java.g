@@ -467,12 +467,12 @@ packageDeclaration
             ;
             
 polyverseDeclaration 
-            :   MVENTER
+            :   POLYVERSEENTER
   {/*-----*/ // Enters a polyverse scope
     PolyverseScope.enterPolyverseScope();
   /*-----*/}
                 typeDeclaration*  
-                MVEXIT
+                POLYVERSEEXIT
   {/*-----*/ // Exit a polyverse scope
     PolyverseScope.exitPolyverseScope();
   /*-----*/}
@@ -1383,13 +1383,14 @@ assignmentExpression
         )?
   {/*-----*/ // Now we see assignment operator, so fix up LHS of assignment
     if (PolyverseScope.isPolyverse()) {
-      String opText = "";
+      int opType = 0;
       if ($op != null) {
+        opType = $op.type;
         String xText = tokens.toString($x.start.getTokenIndex(), $x.stop.getTokenIndex());
         String cText = tokens.toString($c.start.getTokenIndex(), $c.stop.getTokenIndex());
-        System.out.println("Assignment op " + $x.text + " :: " + opText + " " + $c.text);
-        System.out.println("Assignment op " + xText + " :: " + opText + " " + cText);
-        tokens.replace($c.start.getTokenIndex(), $c.stop.getTokenIndex(), cText + ".binaryOperation(" + vtop() + ", JavaLexer." + opText + "," + xText + ")");
+        System.out.println("Assignment op " + $x.text + " :: " + opType + " " + $c.text);
+        System.out.println("Assignment op " + xText + " :: " + opType + " " + cText);
+        tokens.replace($c.start.getTokenIndex(), $c.stop.getTokenIndex(), cText + ".binaryOperationSelf(" + vtop() + /*", JavaLexer." + opText */ opType + "," + xText + ")");
         tokens.delete($op);
         tokens.delete($x.start, $x.stop);
 /*
@@ -1952,12 +1953,12 @@ POLYVERSE
             : '/*Polyverse*/' {System.out.println("asdfjklsdfajklsdfa");} 
             ;
 
-MVENTER
-            : '/*mv enter*/' {System.out.println("asdfjklsdfajklsdfa");} 
+POLYVERSEENTER
+            : '/*polyverse enter*/' {System.out.println("asdfjklsdfajklsdfa");} 
             ;
                     
-MVEXIT
-            : '/*mv exit*/' {System.out.println("asdfjklsdfajklsdfa");} 
+POLYVERSEEXIT
+            : '/*polyverse exit*/' {System.out.println("asdfjklsdfajklsdfa");} 
             ;
                     
 fragment
@@ -2022,12 +2023,6 @@ fragment COMMENTSTART
 fragment COMMENTEND 
         : '*/';
         
-//MVENTER
-//        :        COMMENTSTART 'mv enter' COMMENTEND {/*System.out.println("asdfjkasdf"); */}  ;
-//        
-//MVEXIT
-//        :        COMMENTSTART 'mv exit' COMMENTEND {/*System.out.println("asdfjkasdf"); */}  ;  
-
 COMMENT
             :   
              COMMENTSTART ( options {greedy=false;} : . )* COMMENTEND
@@ -2036,15 +2031,15 @@ COMMENT
                 s = s.trim();
                 //System.out.println("jjj"+s);
         
-                if (s.contentEquals("/*mv enter*/")) {
+                if (s.contentEquals("/*polyverse enter*/")) {
                   //Horrible Hack, setting the token type explicitly
-                  _type = MVENTER;
+                  _type = POLYVERSEENTER;
                   //PolyverseScope.enterPolyverseScope();
                 }
-                else if (s.contentEquals("/*mv exit*/")) {
+                else if (s.contentEquals("/*polyverse exit*/")) {
                   //Horrible Hack, setting the token type explicitly
                   //System.out.println("mv exited");
-                  _type = MVEXIT;
+                  _type = POLYVERSEEXIT;
                   //PolyverseScope.exitPolyverseScope();
                 }
                 

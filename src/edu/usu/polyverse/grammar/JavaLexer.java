@@ -1,4 +1,4 @@
-// $ANTLR 3.5.2 Java.g 2024-10-23 15:44:03
+// $ANTLR 3.5.2 Java.g 2024-10-28 16:28:06
 
         package edu.usu.polyverse.grammar;
         
@@ -127,22 +127,22 @@ public class JavaLexer extends Lexer {
 	public static final int MOD=117;
 	public static final int MODIFIER_LIST=118;
 	public static final int MOD_ASSIGN=119;
-	public static final int MVENTER=120;
-	public static final int MVEXIT=121;
-	public static final int NATIVE=122;
-	public static final int NEW=123;
-	public static final int NOT=124;
-	public static final int NOT_EQUAL=125;
-	public static final int NULL=126;
-	public static final int OCTAL_ESCAPE=127;
-	public static final int OCTAL_LITERAL=128;
-	public static final int OR=129;
-	public static final int OR_ASSIGN=130;
-	public static final int PACKAGE=131;
-	public static final int PARENTESIZED_EXPR=132;
-	public static final int PLUS=133;
-	public static final int PLUS_ASSIGN=134;
-	public static final int POLYVERSE=135;
+	public static final int NATIVE=120;
+	public static final int NEW=121;
+	public static final int NOT=122;
+	public static final int NOT_EQUAL=123;
+	public static final int NULL=124;
+	public static final int OCTAL_ESCAPE=125;
+	public static final int OCTAL_LITERAL=126;
+	public static final int OR=127;
+	public static final int OR_ASSIGN=128;
+	public static final int PACKAGE=129;
+	public static final int PARENTESIZED_EXPR=130;
+	public static final int PLUS=131;
+	public static final int PLUS_ASSIGN=132;
+	public static final int POLYVERSE=133;
+	public static final int POLYVERSEENTER=134;
+	public static final int POLYVERSEEXIT=135;
 	public static final int POST_DEC=136;
 	public static final int POST_INC=137;
 	public static final int PRE_DEC=138;
@@ -2303,8 +2303,8 @@ public class JavaLexer extends Lexer {
 		try {
 			int _type = HEX_LITERAL;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// Java.g:1915:13: ( '0' ( 'x' | 'X' ) ( HEX_DIGIT )+ ( INTEGER_TYPE_SUFFIX )? )
-			// Java.g:1915:15: '0' ( 'x' | 'X' ) ( HEX_DIGIT )+ ( INTEGER_TYPE_SUFFIX )?
+			// Java.g:1916:13: ( '0' ( 'x' | 'X' ) ( HEX_DIGIT )+ ( INTEGER_TYPE_SUFFIX )? )
+			// Java.g:1916:15: '0' ( 'x' | 'X' ) ( HEX_DIGIT )+ ( INTEGER_TYPE_SUFFIX )?
 			{
 			match('0'); 
 			if ( input.LA(1)=='X'||input.LA(1)=='x' ) {
@@ -2315,7 +2315,7 @@ public class JavaLexer extends Lexer {
 				recover(mse);
 				throw mse;
 			}
-			// Java.g:1915:29: ( HEX_DIGIT )+
+			// Java.g:1916:29: ( HEX_DIGIT )+
 			int cnt1=0;
 			loop1:
 			while (true) {
@@ -2348,7 +2348,7 @@ public class JavaLexer extends Lexer {
 				cnt1++;
 			}
 
-			// Java.g:1915:40: ( INTEGER_TYPE_SUFFIX )?
+			// Java.g:1916:40: ( INTEGER_TYPE_SUFFIX )?
 			int alt2=2;
 			int LA2_0 = input.LA(1);
 			if ( (LA2_0=='L'||LA2_0=='l') ) {
@@ -2387,10 +2387,10 @@ public class JavaLexer extends Lexer {
 		try {
 			int _type = DECIMAL_LITERAL;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// Java.g:1917:17: ( ( '0' | '1' .. '9' ( '0' .. '9' )* ) ( INTEGER_TYPE_SUFFIX )? )
-			// Java.g:1917:19: ( '0' | '1' .. '9' ( '0' .. '9' )* ) ( INTEGER_TYPE_SUFFIX )?
+			// Java.g:1918:17: ( ( '0' | '1' .. '9' ( '0' .. '9' )* ) ( INTEGER_TYPE_SUFFIX )? )
+			// Java.g:1918:19: ( '0' | '1' .. '9' ( '0' .. '9' )* ) ( INTEGER_TYPE_SUFFIX )?
 			{
-			// Java.g:1917:19: ( '0' | '1' .. '9' ( '0' .. '9' )* )
+			// Java.g:1918:19: ( '0' | '1' .. '9' ( '0' .. '9' )* )
 			int alt4=2;
 			int LA4_0 = input.LA(1);
 			if ( (LA4_0=='0') ) {
@@ -2408,16 +2408,16 @@ public class JavaLexer extends Lexer {
 
 			switch (alt4) {
 				case 1 :
-					// Java.g:1917:20: '0'
+					// Java.g:1918:20: '0'
 					{
 					match('0'); 
 					}
 					break;
 				case 2 :
-					// Java.g:1917:26: '1' .. '9' ( '0' .. '9' )*
+					// Java.g:1918:26: '1' .. '9' ( '0' .. '9' )*
 					{
 					matchRange('1','9'); 
-					// Java.g:1917:35: ( '0' .. '9' )*
+					// Java.g:1918:35: ( '0' .. '9' )*
 					loop3:
 					while (true) {
 						int alt3=2;
@@ -2451,7 +2451,7 @@ public class JavaLexer extends Lexer {
 
 			}
 
-			// Java.g:1917:46: ( INTEGER_TYPE_SUFFIX )?
+			// Java.g:1918:46: ( INTEGER_TYPE_SUFFIX )?
 			int alt5=2;
 			int LA5_0 = input.LA(1);
 			if ( (LA5_0=='L'||LA5_0=='l') ) {
@@ -2490,11 +2490,11 @@ public class JavaLexer extends Lexer {
 		try {
 			int _type = OCTAL_LITERAL;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// Java.g:1919:15: ( '0' ( '0' .. '7' )+ ( INTEGER_TYPE_SUFFIX )? )
-			// Java.g:1919:17: '0' ( '0' .. '7' )+ ( INTEGER_TYPE_SUFFIX )?
+			// Java.g:1920:15: ( '0' ( '0' .. '7' )+ ( INTEGER_TYPE_SUFFIX )? )
+			// Java.g:1920:17: '0' ( '0' .. '7' )+ ( INTEGER_TYPE_SUFFIX )?
 			{
 			match('0'); 
-			// Java.g:1919:21: ( '0' .. '7' )+
+			// Java.g:1920:21: ( '0' .. '7' )+
 			int cnt6=0;
 			loop6:
 			while (true) {
@@ -2527,7 +2527,7 @@ public class JavaLexer extends Lexer {
 				cnt6++;
 			}
 
-			// Java.g:1919:33: ( INTEGER_TYPE_SUFFIX )?
+			// Java.g:1920:33: ( INTEGER_TYPE_SUFFIX )?
 			int alt7=2;
 			int LA7_0 = input.LA(1);
 			if ( (LA7_0=='L'||LA7_0=='l') ) {
@@ -2564,7 +2564,7 @@ public class JavaLexer extends Lexer {
 	// $ANTLR start "HEX_DIGIT"
 	public final void mHEX_DIGIT() throws RecognitionException {
 		try {
-			// Java.g:1923:19: ( ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) )
+			// Java.g:1924:19: ( ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) )
 			// Java.g:
 			{
 			if ( (input.LA(1) >= '0' && input.LA(1) <= '9')||(input.LA(1) >= 'A' && input.LA(1) <= 'F')||(input.LA(1) >= 'a' && input.LA(1) <= 'f') ) {
@@ -2587,7 +2587,7 @@ public class JavaLexer extends Lexer {
 	// $ANTLR start "INTEGER_TYPE_SUFFIX"
 	public final void mINTEGER_TYPE_SUFFIX() throws RecognitionException {
 		try {
-			// Java.g:1926:29: ( ( 'l' | 'L' ) )
+			// Java.g:1927:29: ( ( 'l' | 'L' ) )
 			// Java.g:
 			{
 			if ( input.LA(1)=='L'||input.LA(1)=='l' ) {
@@ -2612,7 +2612,7 @@ public class JavaLexer extends Lexer {
 		try {
 			int _type = FLOATING_POINT_LITERAL;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// Java.g:1928:13: ( ( '0' .. '9' )+ ( DOT ( '0' .. '9' )* ( EXPONENT )? ( FLOAT_TYPE_SUFFIX )? | EXPONENT ( FLOAT_TYPE_SUFFIX )? | FLOAT_TYPE_SUFFIX ) | DOT ( '0' .. '9' )+ ( EXPONENT )? ( FLOAT_TYPE_SUFFIX )? )
+			// Java.g:1929:13: ( ( '0' .. '9' )+ ( DOT ( '0' .. '9' )* ( EXPONENT )? ( FLOAT_TYPE_SUFFIX )? | EXPONENT ( FLOAT_TYPE_SUFFIX )? | FLOAT_TYPE_SUFFIX ) | DOT ( '0' .. '9' )+ ( EXPONENT )? ( FLOAT_TYPE_SUFFIX )? )
 			int alt17=2;
 			int LA17_0 = input.LA(1);
 			if ( ((LA17_0 >= '0' && LA17_0 <= '9')) ) {
@@ -2630,9 +2630,9 @@ public class JavaLexer extends Lexer {
 
 			switch (alt17) {
 				case 1 :
-					// Java.g:1928:17: ( '0' .. '9' )+ ( DOT ( '0' .. '9' )* ( EXPONENT )? ( FLOAT_TYPE_SUFFIX )? | EXPONENT ( FLOAT_TYPE_SUFFIX )? | FLOAT_TYPE_SUFFIX )
+					// Java.g:1929:17: ( '0' .. '9' )+ ( DOT ( '0' .. '9' )* ( EXPONENT )? ( FLOAT_TYPE_SUFFIX )? | EXPONENT ( FLOAT_TYPE_SUFFIX )? | FLOAT_TYPE_SUFFIX )
 					{
-					// Java.g:1928:17: ( '0' .. '9' )+
+					// Java.g:1929:17: ( '0' .. '9' )+
 					int cnt8=0;
 					loop8:
 					while (true) {
@@ -2665,7 +2665,7 @@ public class JavaLexer extends Lexer {
 						cnt8++;
 					}
 
-					// Java.g:1929:17: ( DOT ( '0' .. '9' )* ( EXPONENT )? ( FLOAT_TYPE_SUFFIX )? | EXPONENT ( FLOAT_TYPE_SUFFIX )? | FLOAT_TYPE_SUFFIX )
+					// Java.g:1930:17: ( DOT ( '0' .. '9' )* ( EXPONENT )? ( FLOAT_TYPE_SUFFIX )? | EXPONENT ( FLOAT_TYPE_SUFFIX )? | FLOAT_TYPE_SUFFIX )
 					int alt13=3;
 					switch ( input.LA(1) ) {
 					case '.':
@@ -2694,11 +2694,11 @@ public class JavaLexer extends Lexer {
 					}
 					switch (alt13) {
 						case 1 :
-							// Java.g:1930:21: DOT ( '0' .. '9' )* ( EXPONENT )? ( FLOAT_TYPE_SUFFIX )?
+							// Java.g:1931:21: DOT ( '0' .. '9' )* ( EXPONENT )? ( FLOAT_TYPE_SUFFIX )?
 							{
 							mDOT(); 
 
-							// Java.g:1930:25: ( '0' .. '9' )*
+							// Java.g:1931:25: ( '0' .. '9' )*
 							loop9:
 							while (true) {
 								int alt9=2;
@@ -2727,7 +2727,7 @@ public class JavaLexer extends Lexer {
 								}
 							}
 
-							// Java.g:1930:37: ( EXPONENT )?
+							// Java.g:1931:37: ( EXPONENT )?
 							int alt10=2;
 							int LA10_0 = input.LA(1);
 							if ( (LA10_0=='E'||LA10_0=='e') ) {
@@ -2735,7 +2735,7 @@ public class JavaLexer extends Lexer {
 							}
 							switch (alt10) {
 								case 1 :
-									// Java.g:1930:37: EXPONENT
+									// Java.g:1931:37: EXPONENT
 									{
 									mEXPONENT(); 
 
@@ -2744,7 +2744,7 @@ public class JavaLexer extends Lexer {
 
 							}
 
-							// Java.g:1930:47: ( FLOAT_TYPE_SUFFIX )?
+							// Java.g:1931:47: ( FLOAT_TYPE_SUFFIX )?
 							int alt11=2;
 							int LA11_0 = input.LA(1);
 							if ( (LA11_0=='D'||LA11_0=='F'||LA11_0=='d'||LA11_0=='f') ) {
@@ -2770,11 +2770,11 @@ public class JavaLexer extends Lexer {
 							}
 							break;
 						case 2 :
-							// Java.g:1931:21: EXPONENT ( FLOAT_TYPE_SUFFIX )?
+							// Java.g:1932:21: EXPONENT ( FLOAT_TYPE_SUFFIX )?
 							{
 							mEXPONENT(); 
 
-							// Java.g:1931:30: ( FLOAT_TYPE_SUFFIX )?
+							// Java.g:1932:30: ( FLOAT_TYPE_SUFFIX )?
 							int alt12=2;
 							int LA12_0 = input.LA(1);
 							if ( (LA12_0=='D'||LA12_0=='F'||LA12_0=='d'||LA12_0=='f') ) {
@@ -2800,7 +2800,7 @@ public class JavaLexer extends Lexer {
 							}
 							break;
 						case 3 :
-							// Java.g:1932:21: FLOAT_TYPE_SUFFIX
+							// Java.g:1933:21: FLOAT_TYPE_SUFFIX
 							{
 							mFLOAT_TYPE_SUFFIX(); 
 
@@ -2812,11 +2812,11 @@ public class JavaLexer extends Lexer {
 					}
 					break;
 				case 2 :
-					// Java.g:1934:17: DOT ( '0' .. '9' )+ ( EXPONENT )? ( FLOAT_TYPE_SUFFIX )?
+					// Java.g:1935:17: DOT ( '0' .. '9' )+ ( EXPONENT )? ( FLOAT_TYPE_SUFFIX )?
 					{
 					mDOT(); 
 
-					// Java.g:1934:21: ( '0' .. '9' )+
+					// Java.g:1935:21: ( '0' .. '9' )+
 					int cnt14=0;
 					loop14:
 					while (true) {
@@ -2849,7 +2849,7 @@ public class JavaLexer extends Lexer {
 						cnt14++;
 					}
 
-					// Java.g:1934:33: ( EXPONENT )?
+					// Java.g:1935:33: ( EXPONENT )?
 					int alt15=2;
 					int LA15_0 = input.LA(1);
 					if ( (LA15_0=='E'||LA15_0=='e') ) {
@@ -2857,7 +2857,7 @@ public class JavaLexer extends Lexer {
 					}
 					switch (alt15) {
 						case 1 :
-							// Java.g:1934:33: EXPONENT
+							// Java.g:1935:33: EXPONENT
 							{
 							mEXPONENT(); 
 
@@ -2866,7 +2866,7 @@ public class JavaLexer extends Lexer {
 
 					}
 
-					// Java.g:1934:43: ( FLOAT_TYPE_SUFFIX )?
+					// Java.g:1935:43: ( FLOAT_TYPE_SUFFIX )?
 					int alt16=2;
 					int LA16_0 = input.LA(1);
 					if ( (LA16_0=='D'||LA16_0=='F'||LA16_0=='d'||LA16_0=='f') ) {
@@ -2905,8 +2905,8 @@ public class JavaLexer extends Lexer {
 	// $ANTLR start "EXPONENT"
 	public final void mEXPONENT() throws RecognitionException {
 		try {
-			// Java.g:1939:18: ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )
-			// Java.g:1939:20: ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+
+			// Java.g:1940:18: ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )
+			// Java.g:1940:20: ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+
 			{
 			if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
 				input.consume();
@@ -2916,7 +2916,7 @@ public class JavaLexer extends Lexer {
 				recover(mse);
 				throw mse;
 			}
-			// Java.g:1939:30: ( '+' | '-' )?
+			// Java.g:1940:30: ( '+' | '-' )?
 			int alt18=2;
 			int LA18_0 = input.LA(1);
 			if ( (LA18_0=='+'||LA18_0=='-') ) {
@@ -2939,7 +2939,7 @@ public class JavaLexer extends Lexer {
 
 			}
 
-			// Java.g:1939:41: ( '0' .. '9' )+
+			// Java.g:1940:41: ( '0' .. '9' )+
 			int cnt19=0;
 			loop19:
 			while (true) {
@@ -2984,7 +2984,7 @@ public class JavaLexer extends Lexer {
 	// $ANTLR start "FLOAT_TYPE_SUFFIX"
 	public final void mFLOAT_TYPE_SUFFIX() throws RecognitionException {
 		try {
-			// Java.g:1942:27: ( ( 'f' | 'F' | 'd' | 'D' ) )
+			// Java.g:1943:27: ( ( 'f' | 'F' | 'd' | 'D' ) )
 			// Java.g:
 			{
 			if ( input.LA(1)=='D'||input.LA(1)=='F'||input.LA(1)=='d'||input.LA(1)=='f' ) {
@@ -3009,11 +3009,11 @@ public class JavaLexer extends Lexer {
 		try {
 			int _type = CHARACTER_LITERAL;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// Java.g:1944:13: ( '\\'' ( ESCAPE_SEQUENCE |~ ( '\\'' | '\\\\' ) ) '\\'' )
-			// Java.g:1944:17: '\\'' ( ESCAPE_SEQUENCE |~ ( '\\'' | '\\\\' ) ) '\\''
+			// Java.g:1945:13: ( '\\'' ( ESCAPE_SEQUENCE |~ ( '\\'' | '\\\\' ) ) '\\'' )
+			// Java.g:1945:17: '\\'' ( ESCAPE_SEQUENCE |~ ( '\\'' | '\\\\' ) ) '\\''
 			{
 			match('\''); 
-			// Java.g:1944:22: ( ESCAPE_SEQUENCE |~ ( '\\'' | '\\\\' ) )
+			// Java.g:1945:22: ( ESCAPE_SEQUENCE |~ ( '\\'' | '\\\\' ) )
 			int alt20=2;
 			int LA20_0 = input.LA(1);
 			if ( (LA20_0=='\\') ) {
@@ -3031,14 +3031,14 @@ public class JavaLexer extends Lexer {
 
 			switch (alt20) {
 				case 1 :
-					// Java.g:1944:24: ESCAPE_SEQUENCE
+					// Java.g:1945:24: ESCAPE_SEQUENCE
 					{
 					mESCAPE_SEQUENCE(); 
 
 					}
 					break;
 				case 2 :
-					// Java.g:1944:42: ~ ( '\\'' | '\\\\' )
+					// Java.g:1945:42: ~ ( '\\'' | '\\\\' )
 					{
 					if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '&')||(input.LA(1) >= '(' && input.LA(1) <= '[')||(input.LA(1) >= ']' && input.LA(1) <= '\uFFFF') ) {
 						input.consume();
@@ -3070,11 +3070,11 @@ public class JavaLexer extends Lexer {
 		try {
 			int _type = STRING_LITERAL;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// Java.g:1948:13: ( '\"' ( ESCAPE_SEQUENCE |~ ( '\\\\' | '\"' ) )* '\"' )
-			// Java.g:1948:16: '\"' ( ESCAPE_SEQUENCE |~ ( '\\\\' | '\"' ) )* '\"'
+			// Java.g:1949:13: ( '\"' ( ESCAPE_SEQUENCE |~ ( '\\\\' | '\"' ) )* '\"' )
+			// Java.g:1949:16: '\"' ( ESCAPE_SEQUENCE |~ ( '\\\\' | '\"' ) )* '\"'
 			{
 			match('\"'); 
-			// Java.g:1948:20: ( ESCAPE_SEQUENCE |~ ( '\\\\' | '\"' ) )*
+			// Java.g:1949:20: ( ESCAPE_SEQUENCE |~ ( '\\\\' | '\"' ) )*
 			loop21:
 			while (true) {
 				int alt21=3;
@@ -3088,14 +3088,14 @@ public class JavaLexer extends Lexer {
 
 				switch (alt21) {
 				case 1 :
-					// Java.g:1948:22: ESCAPE_SEQUENCE
+					// Java.g:1949:22: ESCAPE_SEQUENCE
 					{
 					mESCAPE_SEQUENCE(); 
 
 					}
 					break;
 				case 2 :
-					// Java.g:1948:40: ~ ( '\\\\' | '\"' )
+					// Java.g:1949:40: ~ ( '\\\\' | '\"' )
 					{
 					if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '!')||(input.LA(1) >= '#' && input.LA(1) <= '[')||(input.LA(1) >= ']' && input.LA(1) <= '\uFFFF') ) {
 						input.consume();
@@ -3130,8 +3130,8 @@ public class JavaLexer extends Lexer {
 		try {
 			int _type = POLYVERSE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// Java.g:1952:13: ( '/*Polyverse*/' )
-			// Java.g:1952:15: '/*Polyverse*/'
+			// Java.g:1953:13: ( '/*Polyverse*/' )
+			// Java.g:1953:15: '/*Polyverse*/'
 			{
 			match("/*Polyverse*/"); 
 
@@ -3147,15 +3147,15 @@ public class JavaLexer extends Lexer {
 	}
 	// $ANTLR end "POLYVERSE"
 
-	// $ANTLR start "MVENTER"
-	public final void mMVENTER() throws RecognitionException {
+	// $ANTLR start "POLYVERSEENTER"
+	public final void mPOLYVERSEENTER() throws RecognitionException {
 		try {
-			int _type = MVENTER;
+			int _type = POLYVERSEENTER;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// Java.g:1956:13: ( '/*mv enter*/' )
-			// Java.g:1956:15: '/*mv enter*/'
+			// Java.g:1957:13: ( '/*polyverse enter*/' )
+			// Java.g:1957:15: '/*polyverse enter*/'
 			{
-			match("/*mv enter*/"); 
+			match("/*polyverse enter*/"); 
 
 			System.out.println("asdfjklsdfajklsdfa");
 			}
@@ -3167,17 +3167,17 @@ public class JavaLexer extends Lexer {
 			// do for sure before leaving
 		}
 	}
-	// $ANTLR end "MVENTER"
+	// $ANTLR end "POLYVERSEENTER"
 
-	// $ANTLR start "MVEXIT"
-	public final void mMVEXIT() throws RecognitionException {
+	// $ANTLR start "POLYVERSEEXIT"
+	public final void mPOLYVERSEEXIT() throws RecognitionException {
 		try {
-			int _type = MVEXIT;
+			int _type = POLYVERSEEXIT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// Java.g:1960:13: ( '/*mv exit*/' )
-			// Java.g:1960:15: '/*mv exit*/'
+			// Java.g:1961:13: ( '/*polyverse exit*/' )
+			// Java.g:1961:15: '/*polyverse exit*/'
 			{
-			match("/*mv exit*/"); 
+			match("/*polyverse exit*/"); 
 
 			System.out.println("asdfjklsdfajklsdfa");
 			}
@@ -3189,12 +3189,12 @@ public class JavaLexer extends Lexer {
 			// do for sure before leaving
 		}
 	}
-	// $ANTLR end "MVEXIT"
+	// $ANTLR end "POLYVERSEEXIT"
 
 	// $ANTLR start "ESCAPE_SEQUENCE"
 	public final void mESCAPE_SEQUENCE() throws RecognitionException {
 		try {
-			// Java.g:1966:13: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' | '\\'' | '\\\\' ) | UNICODE_ESCAPE | OCTAL_ESCAPE )
+			// Java.g:1967:13: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' | '\\'' | '\\\\' ) | UNICODE_ESCAPE | OCTAL_ESCAPE )
 			int alt22=3;
 			int LA22_0 = input.LA(1);
 			if ( (LA22_0=='\\') ) {
@@ -3249,7 +3249,7 @@ public class JavaLexer extends Lexer {
 
 			switch (alt22) {
 				case 1 :
-					// Java.g:1966:17: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' | '\\'' | '\\\\' )
+					// Java.g:1967:17: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' | '\\'' | '\\\\' )
 					{
 					match('\\'); 
 					if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||input.LA(1)=='t' ) {
@@ -3263,14 +3263,14 @@ public class JavaLexer extends Lexer {
 					}
 					break;
 				case 2 :
-					// Java.g:1967:17: UNICODE_ESCAPE
+					// Java.g:1968:17: UNICODE_ESCAPE
 					{
 					mUNICODE_ESCAPE(); 
 
 					}
 					break;
 				case 3 :
-					// Java.g:1968:17: OCTAL_ESCAPE
+					// Java.g:1969:17: OCTAL_ESCAPE
 					{
 					mOCTAL_ESCAPE(); 
 
@@ -3288,7 +3288,7 @@ public class JavaLexer extends Lexer {
 	// $ANTLR start "OCTAL_ESCAPE"
 	public final void mOCTAL_ESCAPE() throws RecognitionException {
 		try {
-			// Java.g:1973:13: ( '\\\\' ( '0' .. '3' ) ( '0' .. '7' ) ( '0' .. '7' ) | '\\\\' ( '0' .. '7' ) ( '0' .. '7' ) | '\\\\' ( '0' .. '7' ) )
+			// Java.g:1974:13: ( '\\\\' ( '0' .. '3' ) ( '0' .. '7' ) ( '0' .. '7' ) | '\\\\' ( '0' .. '7' ) ( '0' .. '7' ) | '\\\\' ( '0' .. '7' ) )
 			int alt23=3;
 			int LA23_0 = input.LA(1);
 			if ( (LA23_0=='\\') ) {
@@ -3346,7 +3346,7 @@ public class JavaLexer extends Lexer {
 
 			switch (alt23) {
 				case 1 :
-					// Java.g:1973:17: '\\\\' ( '0' .. '3' ) ( '0' .. '7' ) ( '0' .. '7' )
+					// Java.g:1974:17: '\\\\' ( '0' .. '3' ) ( '0' .. '7' ) ( '0' .. '7' )
 					{
 					match('\\'); 
 					if ( (input.LA(1) >= '0' && input.LA(1) <= '3') ) {
@@ -3376,7 +3376,7 @@ public class JavaLexer extends Lexer {
 					}
 					break;
 				case 2 :
-					// Java.g:1974:17: '\\\\' ( '0' .. '7' ) ( '0' .. '7' )
+					// Java.g:1975:17: '\\\\' ( '0' .. '7' ) ( '0' .. '7' )
 					{
 					match('\\'); 
 					if ( (input.LA(1) >= '0' && input.LA(1) <= '7') ) {
@@ -3398,7 +3398,7 @@ public class JavaLexer extends Lexer {
 					}
 					break;
 				case 3 :
-					// Java.g:1975:17: '\\\\' ( '0' .. '7' )
+					// Java.g:1976:17: '\\\\' ( '0' .. '7' )
 					{
 					match('\\'); 
 					if ( (input.LA(1) >= '0' && input.LA(1) <= '7') ) {
@@ -3423,8 +3423,8 @@ public class JavaLexer extends Lexer {
 	// $ANTLR start "UNICODE_ESCAPE"
 	public final void mUNICODE_ESCAPE() throws RecognitionException {
 		try {
-			// Java.g:1980:13: ( '\\\\' 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT )
-			// Java.g:1980:17: '\\\\' 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT
+			// Java.g:1981:13: ( '\\\\' 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT )
+			// Java.g:1981:17: '\\\\' 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT
 			{
 			match('\\'); 
 			match('u'); 
@@ -3450,12 +3450,12 @@ public class JavaLexer extends Lexer {
 		try {
 			int _type = IDENT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// Java.g:1983:13: ( JAVA_ID_START ( JAVA_ID_PART )* )
-			// Java.g:1983:17: JAVA_ID_START ( JAVA_ID_PART )*
+			// Java.g:1984:13: ( JAVA_ID_START ( JAVA_ID_PART )* )
+			// Java.g:1984:17: JAVA_ID_START ( JAVA_ID_PART )*
 			{
 			mJAVA_ID_START(); 
 
-			// Java.g:1983:31: ( JAVA_ID_PART )*
+			// Java.g:1984:31: ( JAVA_ID_PART )*
 			loop24:
 			while (true) {
 				int alt24=2;
@@ -3498,7 +3498,7 @@ public class JavaLexer extends Lexer {
 	// $ANTLR start "JAVA_ID_START"
 	public final void mJAVA_ID_START() throws RecognitionException {
 		try {
-			// Java.g:1989:13: ( '\\u0024' | '\\u0041' .. '\\u005a' | '\\u005f' | '\\u0061' .. '\\u007a' | '\\u00c0' .. '\\u00d6' | '\\u00d8' .. '\\u00f6' | '\\u00f8' .. '\\u00ff' | '\\u0100' .. '\\u1fff' | '\\u3040' .. '\\u318f' | '\\u3300' .. '\\u337f' | '\\u3400' .. '\\u3d2d' | '\\u4e00' .. '\\u9fff' | '\\uf900' .. '\\ufaff' )
+			// Java.g:1990:13: ( '\\u0024' | '\\u0041' .. '\\u005a' | '\\u005f' | '\\u0061' .. '\\u007a' | '\\u00c0' .. '\\u00d6' | '\\u00d8' .. '\\u00f6' | '\\u00f8' .. '\\u00ff' | '\\u0100' .. '\\u1fff' | '\\u3040' .. '\\u318f' | '\\u3300' .. '\\u337f' | '\\u3400' .. '\\u3d2d' | '\\u4e00' .. '\\u9fff' | '\\uf900' .. '\\ufaff' )
 			// Java.g:
 			{
 			if ( input.LA(1)=='$'||(input.LA(1) >= 'A' && input.LA(1) <= 'Z')||input.LA(1)=='_'||(input.LA(1) >= 'a' && input.LA(1) <= 'z')||(input.LA(1) >= '\u00C0' && input.LA(1) <= '\u00D6')||(input.LA(1) >= '\u00D8' && input.LA(1) <= '\u00F6')||(input.LA(1) >= '\u00F8' && input.LA(1) <= '\u1FFF')||(input.LA(1) >= '\u3040' && input.LA(1) <= '\u318F')||(input.LA(1) >= '\u3300' && input.LA(1) <= '\u337F')||(input.LA(1) >= '\u3400' && input.LA(1) <= '\u3D2D')||(input.LA(1) >= '\u4E00' && input.LA(1) <= '\u9FFF')||(input.LA(1) >= '\uF900' && input.LA(1) <= '\uFAFF') ) {
@@ -3521,7 +3521,7 @@ public class JavaLexer extends Lexer {
 	// $ANTLR start "JAVA_ID_PART"
 	public final void mJAVA_ID_PART() throws RecognitionException {
 		try {
-			// Java.g:2006:13: ( JAVA_ID_START | '\\u0030' .. '\\u0039' )
+			// Java.g:2007:13: ( JAVA_ID_START | '\\u0030' .. '\\u0039' )
 			// Java.g:
 			{
 			if ( input.LA(1)=='$'||(input.LA(1) >= '0' && input.LA(1) <= '9')||(input.LA(1) >= 'A' && input.LA(1) <= 'Z')||input.LA(1)=='_'||(input.LA(1) >= 'a' && input.LA(1) <= 'z')||(input.LA(1) >= '\u00C0' && input.LA(1) <= '\u00D6')||(input.LA(1) >= '\u00D8' && input.LA(1) <= '\u00F6')||(input.LA(1) >= '\u00F8' && input.LA(1) <= '\u1FFF')||(input.LA(1) >= '\u3040' && input.LA(1) <= '\u318F')||(input.LA(1) >= '\u3300' && input.LA(1) <= '\u337F')||(input.LA(1) >= '\u3400' && input.LA(1) <= '\u3D2D')||(input.LA(1) >= '\u4E00' && input.LA(1) <= '\u9FFF')||(input.LA(1) >= '\uF900' && input.LA(1) <= '\uFAFF') ) {
@@ -3546,8 +3546,8 @@ public class JavaLexer extends Lexer {
 		try {
 			int _type = WS;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// Java.g:2009:5: ( ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' ) )
-			// Java.g:2009:8: ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' )
+			// Java.g:2010:5: ( ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' ) )
+			// Java.g:2010:8: ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' )
 			{
 			if ( (input.LA(1) >= '\t' && input.LA(1) <= '\n')||(input.LA(1) >= '\f' && input.LA(1) <= '\r')||input.LA(1)==' ' ) {
 				input.consume();
@@ -3578,8 +3578,8 @@ public class JavaLexer extends Lexer {
 	// $ANTLR start "COMMENTSTART"
 	public final void mCOMMENTSTART() throws RecognitionException {
 		try {
-			// Java.g:2020:9: ( '/*' )
-			// Java.g:2020:19: '/*'
+			// Java.g:2021:9: ( '/*' )
+			// Java.g:2021:19: '/*'
 			{
 			match("/*"); 
 
@@ -3595,8 +3595,8 @@ public class JavaLexer extends Lexer {
 	// $ANTLR start "COMMENTEND"
 	public final void mCOMMENTEND() throws RecognitionException {
 		try {
-			// Java.g:2023:9: ( '*/' )
-			// Java.g:2023:11: '*/'
+			// Java.g:2024:9: ( '*/' )
+			// Java.g:2024:11: '*/'
 			{
 			match("*/"); 
 
@@ -3614,12 +3614,12 @@ public class JavaLexer extends Lexer {
 		try {
 			int _type = COMMENT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// Java.g:2032:13: ( COMMENTSTART ( options {greedy=false; } : . )* COMMENTEND )
-			// Java.g:2033:14: COMMENTSTART ( options {greedy=false; } : . )* COMMENTEND
+			// Java.g:2027:13: ( COMMENTSTART ( options {greedy=false; } : . )* COMMENTEND )
+			// Java.g:2028:14: COMMENTSTART ( options {greedy=false; } : . )* COMMENTEND
 			{
 			mCOMMENTSTART(); 
 
-			// Java.g:2033:27: ( options {greedy=false; } : . )*
+			// Java.g:2028:27: ( options {greedy=false; } : . )*
 			loop25:
 			while (true) {
 				int alt25=2;
@@ -3640,7 +3640,7 @@ public class JavaLexer extends Lexer {
 
 				switch (alt25) {
 				case 1 :
-					// Java.g:2033:55: .
+					// Java.g:2028:55: .
 					{
 					matchAny(); 
 					}
@@ -3658,15 +3658,15 @@ public class JavaLexer extends Lexer {
 			                s = s.trim();
 			                //System.out.println("jjj"+s);
 			        
-			                if (s.contentEquals("/*mv enter*/")) {
+			                if (s.contentEquals("/*polyverse enter*/")) {
 			                  //Horrible Hack, setting the token type explicitly
-			                  _type = MVENTER;
+			                  _type = POLYVERSEENTER;
 			                  //PolyverseScope.enterPolyverseScope();
 			                }
-			                else if (s.contentEquals("/*mv exit*/")) {
+			                else if (s.contentEquals("/*polyverse exit*/")) {
 			                  //Horrible Hack, setting the token type explicitly
 			                  //System.out.println("mv exited");
-			                  _type = MVEXIT;
+			                  _type = POLYVERSEEXIT;
 			                  //PolyverseScope.exitPolyverseScope();
 			                }
 			                
@@ -3692,12 +3692,12 @@ public class JavaLexer extends Lexer {
 		try {
 			int _type = LINE_COMMENT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// Java.g:2060:13: ( '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n' )
-			// Java.g:2060:15: '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n'
+			// Java.g:2055:13: ( '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n' )
+			// Java.g:2055:15: '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n'
 			{
 			match("//"); 
 
-			// Java.g:2060:20: (~ ( '\\n' | '\\r' ) )*
+			// Java.g:2055:20: (~ ( '\\n' | '\\r' ) )*
 			loop26:
 			while (true) {
 				int alt26=2;
@@ -3726,7 +3726,7 @@ public class JavaLexer extends Lexer {
 				}
 			}
 
-			// Java.g:2060:34: ( '\\r' )?
+			// Java.g:2055:34: ( '\\r' )?
 			int alt27=2;
 			int LA27_0 = input.LA(1);
 			if ( (LA27_0=='\r') ) {
@@ -3734,7 +3734,7 @@ public class JavaLexer extends Lexer {
 			}
 			switch (alt27) {
 				case 1 :
-					// Java.g:2060:34: '\\r'
+					// Java.g:2055:34: '\\r'
 					{
 					match('\r'); 
 					}
@@ -3763,7 +3763,7 @@ public class JavaLexer extends Lexer {
 
 	@Override
 	public void mTokens() throws RecognitionException {
-		// Java.g:1:8: ( ABSTRACT | AND | AND_ASSIGN | ASSERT | ASSIGN | AT | BIT_SHIFT_RIGHT | BIT_SHIFT_RIGHT_ASSIGN | BOOLEAN | BREAK | BYTE | CASE | CATCH | CHAR | CLASS | COLON | COMMA | CONTINUE | DEC | DEFAULT | DIV | DIV_ASSIGN | DO | DOT | DOTSTAR | DOUBLE | ELLIPSIS | ELSE | ENUM | EQUAL | EXTENDS | FALSE | FINAL | FINALLY | FLOAT | FOR | GREATER_OR_EQUAL | GREATER_THAN | IF | IMPLEMENTS | IMPORT | INC | INSTANCEOF | INT | INTERFACE | LBRACK | LCURLY | LESS_OR_EQUAL | LESS_THAN | LOGICAL_AND | LOGICAL_NOT | LOGICAL_OR | LONG | LPAREN | MINUS | MINUS_ASSIGN | MOD | MOD_ASSIGN | NATIVE | NEW | NOT | NOT_EQUAL | NULL | OR | OR_ASSIGN | PACKAGE | PLUS | PLUS_ASSIGN | PRIVATE | PROTECTED | PUBLIC | QUESTION | RBRACK | RCURLY | RETURN | RPAREN | SEMI | SHIFT_LEFT | SHIFT_LEFT_ASSIGN | SHIFT_RIGHT | SHIFT_RIGHT_ASSIGN | SHORT | STAR | STAR_ASSIGN | STATIC | STRICTFP | SUPER | SWITCH | SYNCHRONIZED | THIS | THROW | THROWS | TRANSIENT | TRUE | TRY | VOID | VOLATILE | WHILE | XOR | XOR_ASSIGN | HEX_LITERAL | DECIMAL_LITERAL | OCTAL_LITERAL | FLOATING_POINT_LITERAL | CHARACTER_LITERAL | STRING_LITERAL | POLYVERSE | MVENTER | MVEXIT | IDENT | WS | COMMENT | LINE_COMMENT )
+		// Java.g:1:8: ( ABSTRACT | AND | AND_ASSIGN | ASSERT | ASSIGN | AT | BIT_SHIFT_RIGHT | BIT_SHIFT_RIGHT_ASSIGN | BOOLEAN | BREAK | BYTE | CASE | CATCH | CHAR | CLASS | COLON | COMMA | CONTINUE | DEC | DEFAULT | DIV | DIV_ASSIGN | DO | DOT | DOTSTAR | DOUBLE | ELLIPSIS | ELSE | ENUM | EQUAL | EXTENDS | FALSE | FINAL | FINALLY | FLOAT | FOR | GREATER_OR_EQUAL | GREATER_THAN | IF | IMPLEMENTS | IMPORT | INC | INSTANCEOF | INT | INTERFACE | LBRACK | LCURLY | LESS_OR_EQUAL | LESS_THAN | LOGICAL_AND | LOGICAL_NOT | LOGICAL_OR | LONG | LPAREN | MINUS | MINUS_ASSIGN | MOD | MOD_ASSIGN | NATIVE | NEW | NOT | NOT_EQUAL | NULL | OR | OR_ASSIGN | PACKAGE | PLUS | PLUS_ASSIGN | PRIVATE | PROTECTED | PUBLIC | QUESTION | RBRACK | RCURLY | RETURN | RPAREN | SEMI | SHIFT_LEFT | SHIFT_LEFT_ASSIGN | SHIFT_RIGHT | SHIFT_RIGHT_ASSIGN | SHORT | STAR | STAR_ASSIGN | STATIC | STRICTFP | SUPER | SWITCH | SYNCHRONIZED | THIS | THROW | THROWS | TRANSIENT | TRUE | TRY | VOID | VOLATILE | WHILE | XOR | XOR_ASSIGN | HEX_LITERAL | DECIMAL_LITERAL | OCTAL_LITERAL | FLOATING_POINT_LITERAL | CHARACTER_LITERAL | STRING_LITERAL | POLYVERSE | POLYVERSEENTER | POLYVERSEEXIT | IDENT | WS | COMMENT | LINE_COMMENT )
 		int alt28=113;
 		alt28 = dfa28.predict(input);
 		switch (alt28) {
@@ -4517,42 +4517,42 @@ public class JavaLexer extends Lexer {
 				}
 				break;
 			case 108 :
-				// Java.g:1:903: MVENTER
+				// Java.g:1:903: POLYVERSEENTER
 				{
-				mMVENTER(); 
+				mPOLYVERSEENTER(); 
 
 				}
 				break;
 			case 109 :
-				// Java.g:1:911: MVEXIT
+				// Java.g:1:918: POLYVERSEEXIT
 				{
-				mMVEXIT(); 
+				mPOLYVERSEEXIT(); 
 
 				}
 				break;
 			case 110 :
-				// Java.g:1:918: IDENT
+				// Java.g:1:932: IDENT
 				{
 				mIDENT(); 
 
 				}
 				break;
 			case 111 :
-				// Java.g:1:924: WS
+				// Java.g:1:938: WS
 				{
 				mWS(); 
 
 				}
 				break;
 			case 112 :
-				// Java.g:1:927: COMMENT
+				// Java.g:1:941: COMMENT
 				{
 				mCOMMENT(); 
 
 				}
 				break;
 			case 113 :
-				// Java.g:1:935: LINE_COMMENT
+				// Java.g:1:949: LINE_COMMENT
 				{
 				mLINE_COMMENT(); 
 
@@ -4578,15 +4578,15 @@ public class JavaLexer extends Lexer {
 		"\55\4\uffff\1\55\1\u0121\1\u0123\1\u0124\4\55\1\uffff\1\55\1\uffff\5\55"+
 		"\1\u012f\2\55\1\u0132\2\55\1\uffff\1\u0136\1\55\2\uffff\1\55\1\u0139\1"+
 		"\55\1\u013b\1\55\3\uffff\2\55\1\u013f\2\uffff\1\55\1\uffff\1\55\2\uffff"+
-		"\1\55\1\u0146\2\55\1\u0149\3\55\1\u014d\1\u014e\1\uffff\1\u014f\1\55\1"+
-		"\uffff\1\u0151\1\55\1\u0153\1\uffff\2\55\1\uffff\1\55\1\uffff\1\u0157"+
-		"\1\55\1\u0159\4\uffff\1\u015d\1\u015e\1\55\1\uffff\2\55\1\uffff\1\u0162"+
-		"\1\u0163\1\55\3\uffff\1\55\1\uffff\1\55\1\uffff\2\55\1\u0169\1\uffff\1"+
-		"\u016a\6\uffff\3\55\2\uffff\1\55\1\u0172\2\55\1\u0175\5\uffff\2\55\1\u017b"+
-		"\1\u017c\1\uffff\1\55\1\u017e\4\uffff\1\u0182\1\u0183\2\uffff\1\55\3\uffff"+
-		"\1\u0187\2\uffff\1\55\1\uffff\1\u018a\1\uffff\1\u018b\1\u018c\3\uffff";
+		"\1\55\1\u0145\2\55\1\u0148\3\55\1\u014c\1\u014d\1\uffff\1\u014e\1\55\1"+
+		"\uffff\1\u0150\1\55\1\u0152\1\uffff\2\55\1\uffff\1\55\1\uffff\1\u0156"+
+		"\1\55\1\u0158\3\uffff\1\u015b\1\u015c\1\55\1\uffff\2\55\1\uffff\1\u0160"+
+		"\1\u0161\1\55\3\uffff\1\55\1\uffff\1\55\1\uffff\2\55\1\u0167\1\uffff\1"+
+		"\u0168\5\uffff\3\55\2\uffff\1\55\1\u016f\2\55\1\u0172\4\uffff\2\55\1\u0177"+
+		"\1\u0178\1\uffff\1\55\1\u017a\3\uffff\1\u017d\1\u017e\2\uffff\1\55\5\uffff"+
+		"\1\55\2\uffff\1\u0185\1\u0186\14\uffff\1\u0192\1\u0193\2\uffff";
 	static final String DFA28_eofS =
-		"\u018d\uffff";
+		"\u0194\uffff";
 	static final String DFA28_minS =
 		"\1\11\1\142\1\46\1\75\1\uffff\1\75\1\157\1\141\2\uffff\1\55\1\145\2\52"+
 		"\1\154\1\141\1\146\1\53\2\uffff\1\74\2\75\1\157\1\uffff\1\75\1\141\1\uffff"+
@@ -4610,11 +4610,11 @@ public class JavaLexer extends Lexer {
 		"\1\44\1\143\1\44\1\156\3\uffff\1\165\1\164\1\44\2\0\1\163\1\uffff\1\171"+
 		"\2\uffff\1\145\1\44\1\143\1\141\1\44\2\145\1\164\2\44\1\uffff\1\44\1\146"+
 		"\1\uffff\1\44\1\157\1\44\1\uffff\1\145\1\154\1\uffff\1\164\1\uffff\1\44"+
-		"\1\145\1\44\1\uffff\3\0\2\44\1\156\1\uffff\1\145\1\143\1\uffff\2\44\1"+
+		"\1\145\1\44\1\uffff\2\0\2\44\1\156\1\uffff\1\145\1\143\1\uffff\2\44\1"+
 		"\145\3\uffff\1\160\1\uffff\1\156\1\uffff\1\156\1\145\1\44\1\uffff\1\44"+
-		"\1\uffff\3\0\2\uffff\1\164\1\157\1\145\2\uffff\1\144\1\44\1\151\1\164"+
-		"\1\44\2\uffff\3\0\1\163\1\146\2\44\1\uffff\1\172\1\44\1\uffff\3\0\2\44"+
-		"\2\uffff\1\145\1\uffff\3\0\2\uffff\1\144\2\0\1\uffff\1\44\1\0\3\uffff";
+		"\1\uffff\2\0\2\uffff\1\164\1\157\1\145\2\uffff\1\144\1\44\1\151\1\164"+
+		"\1\44\2\uffff\2\0\1\163\1\146\2\44\1\uffff\1\172\1\44\1\uffff\2\0\2\44"+
+		"\2\uffff\1\145\1\uffff\2\0\2\uffff\1\144\2\0\1\44\2\0\2\uffff\13\0\2\uffff";
 	static final String DFA28_maxS =
 		"\1\ufaff\1\163\2\75\1\uffff\1\76\1\171\1\157\2\uffff\1\75\1\157\1\75\1"+
 		"\71\1\170\1\157\1\156\1\75\2\uffff\2\75\1\174\1\157\1\uffff\1\75\1\165"+
@@ -4639,13 +4639,13 @@ public class JavaLexer extends Lexer {
 		"\1\151\1\ufaff\1\143\1\ufaff\1\156\3\uffff\1\165\1\164\1\ufaff\2\uffff"+
 		"\1\163\1\uffff\1\171\2\uffff\1\145\1\ufaff\1\143\1\141\1\ufaff\2\145\1"+
 		"\164\2\ufaff\1\uffff\1\ufaff\1\146\1\uffff\1\ufaff\1\157\1\ufaff\1\uffff"+
-		"\1\145\1\154\1\uffff\1\164\1\uffff\1\ufaff\1\145\1\ufaff\1\uffff\3\uffff"+
+		"\1\145\1\154\1\uffff\1\164\1\uffff\1\ufaff\1\145\1\ufaff\1\uffff\2\uffff"+
 		"\2\ufaff\1\156\1\uffff\1\145\1\143\1\uffff\2\ufaff\1\145\3\uffff\1\160"+
-		"\1\uffff\1\156\1\uffff\1\156\1\145\1\ufaff\1\uffff\1\ufaff\1\uffff\3\uffff"+
+		"\1\uffff\1\156\1\uffff\1\156\1\145\1\ufaff\1\uffff\1\ufaff\1\uffff\2\uffff"+
 		"\2\uffff\1\164\1\157\1\145\2\uffff\1\144\1\ufaff\1\151\1\164\1\ufaff\2"+
-		"\uffff\3\uffff\1\163\1\146\2\ufaff\1\uffff\1\172\1\ufaff\1\uffff\3\uffff"+
-		"\2\ufaff\2\uffff\1\145\1\uffff\3\uffff\2\uffff\1\144\2\uffff\1\uffff\1"+
-		"\ufaff\1\uffff\3\uffff";
+		"\uffff\2\uffff\1\163\1\146\2\ufaff\1\uffff\1\172\1\ufaff\1\uffff\2\uffff"+
+		"\2\ufaff\2\uffff\1\145\1\uffff\2\uffff\2\uffff\1\144\2\uffff\1\ufaff\2"+
+		"\uffff\2\uffff\13\uffff\2\uffff";
 	static final String DFA28_acceptS =
 		"\4\uffff\1\6\3\uffff\1\20\1\21\10\uffff\1\56\1\57\4\uffff\1\66\2\uffff"+
 		"\1\75\1\uffff\1\110\1\111\1\112\1\uffff\1\114\1\115\10\uffff\1\151\1\152"+
@@ -4658,16 +4658,17 @@ public class JavaLexer extends Lexer {
 		"\2\uffff\1\74\20\uffff\1\137\7\uffff\1\13\1\14\1\uffff\1\16\6\uffff\1"+
 		"\34\1\35\10\uffff\1\65\1\uffff\1\77\13\uffff\1\132\2\uffff\1\136\1\140"+
 		"\5\uffff\1\12\1\15\1\17\6\uffff\1\40\1\uffff\1\41\1\43\12\uffff\1\122"+
-		"\2\uffff\1\127\3\uffff\1\133\2\uffff\1\142\1\uffff\1\4\3\uffff\1\32\6"+
+		"\2\uffff\1\127\3\uffff\1\133\2\uffff\1\142\1\uffff\1\4\3\uffff\1\32\5"+
 		"\uffff\1\51\2\uffff\1\73\3\uffff\1\107\1\113\1\125\1\uffff\1\130\1\uffff"+
-		"\1\134\3\uffff\1\11\1\uffff\1\24\3\uffff\1\37\1\42\3\uffff\1\102\1\105"+
-		"\5\uffff\1\1\1\22\7\uffff\1\126\2\uffff\1\141\5\uffff\1\55\1\106\1\uffff"+
-		"\1\135\3\uffff\1\50\1\53\3\uffff\1\155\2\uffff\1\154\1\131\1\153";
+		"\1\134\3\uffff\1\11\1\uffff\1\24\2\uffff\1\37\1\42\3\uffff\1\102\1\105"+
+		"\5\uffff\1\1\1\22\6\uffff\1\126\2\uffff\1\141\4\uffff\1\55\1\106\1\uffff"+
+		"\1\135\2\uffff\1\50\1\53\6\uffff\1\131\1\153\13\uffff\1\155\1\154";
 	static final String DFA28_specialS =
-		"\106\uffff\1\24\106\uffff\1\0\1\20\64\uffff\1\1\1\21\57\uffff\1\2\1\22"+
-		"\50\uffff\1\3\1\23\40\uffff\1\4\1\11\1\15\27\uffff\1\5\1\12\1\16\16\uffff"+
-		"\1\6\1\13\1\17\10\uffff\1\7\1\14\1\27\6\uffff\1\10\1\26\1\32\3\uffff\1"+
-		"\25\1\31\2\uffff\1\30\3\uffff}>";
+		"\106\uffff\1\37\106\uffff\1\4\1\24\64\uffff\1\5\1\25\57\uffff\1\6\1\26"+
+		"\50\uffff\1\7\1\27\40\uffff\1\10\1\30\27\uffff\1\11\1\31\16\uffff\1\12"+
+		"\1\32\10\uffff\1\13\1\33\6\uffff\1\14\1\34\3\uffff\1\40\1\35\1\uffff\1"+
+		"\1\1\36\2\uffff\1\15\1\21\1\16\1\22\1\17\1\23\1\20\1\0\1\41\1\3\1\2\2"+
+		"\uffff}>";
 	static final String[] DFA28_transitionS = {
 			"\2\56\1\uffff\2\56\22\uffff\1\56\1\25\1\54\1\uffff\1\55\1\31\1\2\1\53"+
 			"\1\30\1\41\1\44\1\21\1\11\1\12\1\15\1\14\1\51\11\52\1\10\1\42\1\24\1"+
@@ -4749,7 +4750,7 @@ public class JavaLexer extends Lexer {
 			"\55\u0170\uffff\u0080\55\u0080\uffff\u092e\55\u10d2\uffff\u5200\55\u5900"+
 			"\uffff\u0200\55",
 			"",
-			"\120\u008f\1\u008d\34\u008f\1\u008e\uff92\u008f",
+			"\120\u008f\1\u008d\37\u008f\1\u008e\uff8f\u008f",
 			"",
 			"",
 			"",
@@ -4824,7 +4825,7 @@ public class JavaLexer extends Lexer {
 			"\1\u00c2",
 			"",
 			"\157\u008f\1\u00c3\uff90\u008f",
-			"\166\u008f\1\u00c4\uff89\u008f",
+			"\157\u008f\1\u00c4\uff90\u008f",
 			"",
 			"\1\u00c5",
 			"\1\u00c6",
@@ -4899,7 +4900,7 @@ public class JavaLexer extends Lexer {
 			"\1\u00f2",
 			"\1\u00f3",
 			"\154\u008f\1\u00f4\uff93\u008f",
-			"\40\u008f\1\u00f5\uffdf\u008f",
+			"\154\u008f\1\u00f5\uff93\u008f",
 			"\1\55\13\uffff\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55\105\uffff"+
 			"\27\55\1\uffff\37\55\1\uffff\u1f08\55\u1040\uffff\u0150\55\u0170\uffff"+
 			"\u0080\55\u0080\uffff\u092e\55\u10d2\uffff\u5200\55\u5900\uffff\u0200"+
@@ -4978,7 +4979,7 @@ public class JavaLexer extends Lexer {
 			"\1\u011c",
 			"\1\u011d",
 			"\171\u008f\1\u011e\uff86\u008f",
-			"\145\u008f\1\u011f\uff9a\u008f",
+			"\171\u008f\1\u011f\uff86\u008f",
 			"",
 			"",
 			"\1\u0120",
@@ -5047,26 +5048,26 @@ public class JavaLexer extends Lexer {
 			"\u0080\55\u0080\uffff\u092e\55\u10d2\uffff\u5200\55\u5900\uffff\u0200"+
 			"\55",
 			"\166\u008f\1\u0140\uff89\u008f",
-			"\156\u008f\1\u0141\11\u008f\1\u0142\uff87\u008f",
+			"\166\u008f\1\u0141\uff89\u008f",
+			"\1\u0142",
+			"",
 			"\1\u0143",
 			"",
+			"",
 			"\1\u0144",
-			"",
-			"",
-			"\1\u0145",
 			"\1\55\13\uffff\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55\105\uffff"+
 			"\27\55\1\uffff\37\55\1\uffff\u1f08\55\u1040\uffff\u0150\55\u0170\uffff"+
 			"\u0080\55\u0080\uffff\u092e\55\u10d2\uffff\u5200\55\u5900\uffff\u0200"+
 			"\55",
+			"\1\u0146",
 			"\1\u0147",
-			"\1\u0148",
 			"\1\55\13\uffff\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55\105\uffff"+
 			"\27\55\1\uffff\37\55\1\uffff\u1f08\55\u1040\uffff\u0150\55\u0170\uffff"+
 			"\u0080\55\u0080\uffff\u092e\55\u10d2\uffff\u5200\55\u5900\uffff\u0200"+
 			"\55",
+			"\1\u0149",
 			"\1\u014a",
 			"\1\u014b",
-			"\1\u014c",
 			"\1\55\13\uffff\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55\105\uffff"+
 			"\27\55\1\uffff\37\55\1\uffff\u1f08\55\u1040\uffff\u0150\55\u0170\uffff"+
 			"\u0080\55\u0080\uffff\u092e\55\u10d2\uffff\u5200\55\u5900\uffff\u0200"+
@@ -5080,36 +5081,35 @@ public class JavaLexer extends Lexer {
 			"\27\55\1\uffff\37\55\1\uffff\u1f08\55\u1040\uffff\u0150\55\u0170\uffff"+
 			"\u0080\55\u0080\uffff\u092e\55\u10d2\uffff\u5200\55\u5900\uffff\u0200"+
 			"\55",
-			"\1\u0150",
+			"\1\u014f",
 			"",
 			"\1\55\13\uffff\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55\105\uffff"+
 			"\27\55\1\uffff\37\55\1\uffff\u1f08\55\u1040\uffff\u0150\55\u0170\uffff"+
 			"\u0080\55\u0080\uffff\u092e\55\u10d2\uffff\u5200\55\u5900\uffff\u0200"+
 			"\55",
-			"\1\u0152",
+			"\1\u0151",
 			"\1\55\13\uffff\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55\105\uffff"+
 			"\27\55\1\uffff\37\55\1\uffff\u1f08\55\u1040\uffff\u0150\55\u0170\uffff"+
 			"\u0080\55\u0080\uffff\u092e\55\u10d2\uffff\u5200\55\u5900\uffff\u0200"+
 			"\55",
 			"",
+			"\1\u0153",
 			"\1\u0154",
+			"",
 			"\1\u0155",
 			"",
-			"\1\u0156",
-			"",
 			"\1\55\13\uffff\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55\105\uffff"+
 			"\27\55\1\uffff\37\55\1\uffff\u1f08\55\u1040\uffff\u0150\55\u0170\uffff"+
 			"\u0080\55\u0080\uffff\u092e\55\u10d2\uffff\u5200\55\u5900\uffff\u0200"+
 			"\55",
-			"\1\u0158",
+			"\1\u0157",
 			"\1\55\13\uffff\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55\105\uffff"+
 			"\27\55\1\uffff\37\55\1\uffff\u1f08\55\u1040\uffff\u0150\55\u0170\uffff"+
 			"\u0080\55\u0080\uffff\u092e\55\u10d2\uffff\u5200\55\u5900\uffff\u0200"+
 			"\55",
 			"",
+			"\145\u008f\1\u0159\uff9a\u008f",
 			"\145\u008f\1\u015a\uff9a\u008f",
-			"\164\u008f\1\u015b\uff8b\u008f",
-			"\151\u008f\1\u015c\uff96\u008f",
 			"\1\55\13\uffff\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55\105\uffff"+
 			"\27\55\1\uffff\37\55\1\uffff\u1f08\55\u1040\uffff\u0150\55\u0170\uffff"+
 			"\u0080\55\u0080\uffff\u092e\55\u10d2\uffff\u5200\55\u5900\uffff\u0200"+
@@ -5118,29 +5118,29 @@ public class JavaLexer extends Lexer {
 			"\27\55\1\uffff\37\55\1\uffff\u1f08\55\u1040\uffff\u0150\55\u0170\uffff"+
 			"\u0080\55\u0080\uffff\u092e\55\u10d2\uffff\u5200\55\u5900\uffff\u0200"+
 			"\55",
+			"\1\u015d",
+			"",
+			"\1\u015e",
 			"\1\u015f",
 			"",
-			"\1\u0160",
-			"\1\u0161",
+			"\1\55\13\uffff\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55\105\uffff"+
+			"\27\55\1\uffff\37\55\1\uffff\u1f08\55\u1040\uffff\u0150\55\u0170\uffff"+
+			"\u0080\55\u0080\uffff\u092e\55\u10d2\uffff\u5200\55\u5900\uffff\u0200"+
+			"\55",
+			"\1\55\13\uffff\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55\105\uffff"+
+			"\27\55\1\uffff\37\55\1\uffff\u1f08\55\u1040\uffff\u0150\55\u0170\uffff"+
+			"\u0080\55\u0080\uffff\u092e\55\u10d2\uffff\u5200\55\u5900\uffff\u0200"+
+			"\55",
+			"\1\u0162",
 			"",
-			"\1\55\13\uffff\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55\105\uffff"+
-			"\27\55\1\uffff\37\55\1\uffff\u1f08\55\u1040\uffff\u0150\55\u0170\uffff"+
-			"\u0080\55\u0080\uffff\u092e\55\u10d2\uffff\u5200\55\u5900\uffff\u0200"+
-			"\55",
-			"\1\55\13\uffff\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55\105\uffff"+
-			"\27\55\1\uffff\37\55\1\uffff\u1f08\55\u1040\uffff\u0150\55\u0170\uffff"+
-			"\u0080\55\u0080\uffff\u092e\55\u10d2\uffff\u5200\55\u5900\uffff\u0200"+
-			"\55",
+			"",
+			"",
+			"\1\u0163",
+			"",
 			"\1\u0164",
 			"",
-			"",
-			"",
 			"\1\u0165",
-			"",
 			"\1\u0166",
-			"",
-			"\1\u0167",
-			"\1\u0168",
 			"\1\55\13\uffff\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55\105\uffff"+
 			"\27\55\1\uffff\37\55\1\uffff\u1f08\55\u1040\uffff\u0150\55\u0170\uffff"+
 			"\u0080\55\u0080\uffff\u092e\55\u10d2\uffff\u5200\55\u5900\uffff\u0200"+
@@ -5151,34 +5151,49 @@ public class JavaLexer extends Lexer {
 			"\u0080\55\u0080\uffff\u092e\55\u10d2\uffff\u5200\55\u5900\uffff\u0200"+
 			"\55",
 			"",
-			"\162\u008f\1\u016b\uff8d\u008f",
-			"\145\u008f\1\u016c\uff9a\u008f",
-			"\164\u008f\1\u016d\uff8b\u008f",
+			"\162\u008f\1\u0169\uff8d\u008f",
+			"\162\u008f\1\u016a\uff8d\u008f",
+			"",
+			"",
+			"\1\u016b",
+			"\1\u016c",
+			"\1\u016d",
 			"",
 			"",
 			"\1\u016e",
-			"\1\u016f",
+			"\1\55\13\uffff\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55\105\uffff"+
+			"\27\55\1\uffff\37\55\1\uffff\u1f08\55\u1040\uffff\u0150\55\u0170\uffff"+
+			"\u0080\55\u0080\uffff\u092e\55\u10d2\uffff\u5200\55\u5900\uffff\u0200"+
+			"\55",
 			"\1\u0170",
-			"",
-			"",
 			"\1\u0171",
 			"\1\55\13\uffff\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55\105\uffff"+
 			"\27\55\1\uffff\37\55\1\uffff\u1f08\55\u1040\uffff\u0150\55\u0170\uffff"+
 			"\u0080\55\u0080\uffff\u092e\55\u10d2\uffff\u5200\55\u5900\uffff\u0200"+
 			"\55",
-			"\1\u0173",
-			"\1\u0174",
+			"",
+			"",
+			"\163\u008f\1\u0173\uff8c\u008f",
+			"\163\u008f\1\u0174\uff8c\u008f",
+			"\1\u0175",
+			"\1\u0176",
+			"\1\55\13\uffff\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55\105\uffff"+
+			"\27\55\1\uffff\37\55\1\uffff\u1f08\55\u1040\uffff\u0150\55\u0170\uffff"+
+			"\u0080\55\u0080\uffff\u092e\55\u10d2\uffff\u5200\55\u5900\uffff\u0200"+
+			"\55",
 			"\1\55\13\uffff\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55\105\uffff"+
 			"\27\55\1\uffff\37\55\1\uffff\u1f08\55\u1040\uffff\u0150\55\u0170\uffff"+
 			"\u0080\55\u0080\uffff\u092e\55\u10d2\uffff\u5200\55\u5900\uffff\u0200"+
 			"\55",
 			"",
-			"",
-			"\163\u008f\1\u0176\uff8c\u008f",
-			"\162\u008f\1\u0177\uff8d\u008f",
-			"\52\u008f\1\u0178\uffd5\u008f",
 			"\1\u0179",
-			"\1\u017a",
+			"\1\55\13\uffff\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55\105\uffff"+
+			"\27\55\1\uffff\37\55\1\uffff\u1f08\55\u1040\uffff\u0150\55\u0170\uffff"+
+			"\u0080\55\u0080\uffff\u092e\55\u10d2\uffff\u5200\55\u5900\uffff\u0200"+
+			"\55",
+			"",
+			"\145\u008f\1\u017b\uff9a\u008f",
+			"\145\u008f\1\u017c\uff9a\u008f",
 			"\1\55\13\uffff\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55\105\uffff"+
 			"\27\55\1\uffff\37\55\1\uffff\u1f08\55\u1040\uffff\u0150\55\u0170\uffff"+
 			"\u0080\55\u0080\uffff\u092e\55\u10d2\uffff\u5200\55\u5900\uffff\u0200"+
@@ -5188,42 +5203,35 @@ public class JavaLexer extends Lexer {
 			"\u0080\55\u0080\uffff\u092e\55\u10d2\uffff\u5200\55\u5900\uffff\u0200"+
 			"\55",
 			"",
-			"\1\u017d",
-			"\1\55\13\uffff\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55\105\uffff"+
-			"\27\55\1\uffff\37\55\1\uffff\u1f08\55\u1040\uffff\u0150\55\u0170\uffff"+
-			"\u0080\55\u0080\uffff\u092e\55\u10d2\uffff\u5200\55\u5900\uffff\u0200"+
-			"\55",
 			"",
-			"\145\u008f\1\u017f\uff9a\u008f",
+			"\1\u017f",
+			"",
 			"\52\u008f\1\u0180\uffd5\u008f",
-			"\57\u008f\1\u0181\uffd0\u008f",
-			"\1\55\13\uffff\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55\105\uffff"+
-			"\27\55\1\uffff\37\55\1\uffff\u1f08\55\u1040\uffff\u0150\55\u0170\uffff"+
-			"\u0080\55\u0080\uffff\u092e\55\u10d2\uffff\u5200\55\u5900\uffff\u0200"+
-			"\55",
-			"\1\55\13\uffff\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55\105\uffff"+
-			"\27\55\1\uffff\37\55\1\uffff\u1f08\55\u1040\uffff\u0150\55\u0170\uffff"+
-			"\u0080\55\u0080\uffff\u092e\55\u10d2\uffff\u5200\55\u5900\uffff\u0200"+
-			"\55",
+			"\40\u008f\1\u0181\uffdf\u008f",
 			"",
 			"",
-			"\1\u0184",
-			"",
-			"\52\u008f\1\u0185\uffd5\u008f",
-			"\57\u008f\1\u0186\uffd0\u008f",
-			"\0\u008f",
-			"",
-			"",
-			"\1\u0188",
-			"\57\u008f\1\u0189\uffd0\u008f",
-			"\0\u008f",
-			"",
+			"\1\u0182",
+			"\57\u008f\1\u0183\uffd0\u008f",
+			"\145\u008f\1\u0184\uff9a\u008f",
 			"\1\55\13\uffff\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55\105\uffff"+
 			"\27\55\1\uffff\37\55\1\uffff\u1f08\55\u1040\uffff\u0150\55\u0170\uffff"+
 			"\u0080\55\u0080\uffff\u092e\55\u10d2\uffff\u5200\55\u5900\uffff\u0200"+
 			"\55",
 			"\0\u008f",
+			"\156\u008f\1\u0187\11\u008f\1\u0188\uff87\u008f",
 			"",
+			"",
+			"\164\u008f\1\u0189\uff8b\u008f",
+			"\151\u008f\1\u018a\uff96\u008f",
+			"\145\u008f\1\u018b\uff9a\u008f",
+			"\164\u008f\1\u018c\uff8b\u008f",
+			"\162\u008f\1\u018d\uff8d\u008f",
+			"\52\u008f\1\u018e\uffd5\u008f",
+			"\52\u008f\1\u018f\uffd5\u008f",
+			"\57\u008f\1\u0190\uffd0\u008f",
+			"\57\u008f\1\u0191\uffd0\u008f",
+			"\0\u008f",
+			"\0\u008f",
 			"",
 			""
 	};
@@ -5259,7 +5267,7 @@ public class JavaLexer extends Lexer {
 		}
 		@Override
 		public String getDescription() {
-			return "1:1: Tokens : ( ABSTRACT | AND | AND_ASSIGN | ASSERT | ASSIGN | AT | BIT_SHIFT_RIGHT | BIT_SHIFT_RIGHT_ASSIGN | BOOLEAN | BREAK | BYTE | CASE | CATCH | CHAR | CLASS | COLON | COMMA | CONTINUE | DEC | DEFAULT | DIV | DIV_ASSIGN | DO | DOT | DOTSTAR | DOUBLE | ELLIPSIS | ELSE | ENUM | EQUAL | EXTENDS | FALSE | FINAL | FINALLY | FLOAT | FOR | GREATER_OR_EQUAL | GREATER_THAN | IF | IMPLEMENTS | IMPORT | INC | INSTANCEOF | INT | INTERFACE | LBRACK | LCURLY | LESS_OR_EQUAL | LESS_THAN | LOGICAL_AND | LOGICAL_NOT | LOGICAL_OR | LONG | LPAREN | MINUS | MINUS_ASSIGN | MOD | MOD_ASSIGN | NATIVE | NEW | NOT | NOT_EQUAL | NULL | OR | OR_ASSIGN | PACKAGE | PLUS | PLUS_ASSIGN | PRIVATE | PROTECTED | PUBLIC | QUESTION | RBRACK | RCURLY | RETURN | RPAREN | SEMI | SHIFT_LEFT | SHIFT_LEFT_ASSIGN | SHIFT_RIGHT | SHIFT_RIGHT_ASSIGN | SHORT | STAR | STAR_ASSIGN | STATIC | STRICTFP | SUPER | SWITCH | SYNCHRONIZED | THIS | THROW | THROWS | TRANSIENT | TRUE | TRY | VOID | VOLATILE | WHILE | XOR | XOR_ASSIGN | HEX_LITERAL | DECIMAL_LITERAL | OCTAL_LITERAL | FLOATING_POINT_LITERAL | CHARACTER_LITERAL | STRING_LITERAL | POLYVERSE | MVENTER | MVEXIT | IDENT | WS | COMMENT | LINE_COMMENT );";
+			return "1:1: Tokens : ( ABSTRACT | AND | AND_ASSIGN | ASSERT | ASSIGN | AT | BIT_SHIFT_RIGHT | BIT_SHIFT_RIGHT_ASSIGN | BOOLEAN | BREAK | BYTE | CASE | CATCH | CHAR | CLASS | COLON | COMMA | CONTINUE | DEC | DEFAULT | DIV | DIV_ASSIGN | DO | DOT | DOTSTAR | DOUBLE | ELLIPSIS | ELSE | ENUM | EQUAL | EXTENDS | FALSE | FINAL | FINALLY | FLOAT | FOR | GREATER_OR_EQUAL | GREATER_THAN | IF | IMPLEMENTS | IMPORT | INC | INSTANCEOF | INT | INTERFACE | LBRACK | LCURLY | LESS_OR_EQUAL | LESS_THAN | LOGICAL_AND | LOGICAL_NOT | LOGICAL_OR | LONG | LPAREN | MINUS | MINUS_ASSIGN | MOD | MOD_ASSIGN | NATIVE | NEW | NOT | NOT_EQUAL | NULL | OR | OR_ASSIGN | PACKAGE | PLUS | PLUS_ASSIGN | PRIVATE | PROTECTED | PUBLIC | QUESTION | RBRACK | RCURLY | RETURN | RPAREN | SEMI | SHIFT_LEFT | SHIFT_LEFT_ASSIGN | SHIFT_RIGHT | SHIFT_RIGHT_ASSIGN | SHORT | STAR | STAR_ASSIGN | STATIC | STRICTFP | SUPER | SWITCH | SYNCHRONIZED | THIS | THROW | THROWS | TRANSIENT | TRUE | TRY | VOID | VOLATILE | WHILE | XOR | XOR_ASSIGN | HEX_LITERAL | DECIMAL_LITERAL | OCTAL_LITERAL | FLOATING_POINT_LITERAL | CHARACTER_LITERAL | STRING_LITERAL | POLYVERSE | POLYVERSEENTER | POLYVERSEEXIT | IDENT | WS | COMMENT | LINE_COMMENT );";
 		}
 		@Override
 		public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
@@ -5267,6 +5275,38 @@ public class JavaLexer extends Lexer {
 			int _s = s;
 			switch ( s ) {
 					case 0 : 
+						int LA28_398 = input.LA(1);
+						s = -1;
+						if ( (LA28_398=='/') ) {s = 400;}
+						else if ( ((LA28_398 >= '\u0000' && LA28_398 <= '.')||(LA28_398 >= '0' && LA28_398 <= '\uFFFF')) ) {s = 143;}
+						if ( s>=0 ) return s;
+						break;
+
+					case 1 : 
+						int LA28_387 = input.LA(1);
+						s = -1;
+						if ( ((LA28_387 >= '\u0000' && LA28_387 <= '\uFFFF')) ) {s = 143;}
+						else s = 390;
+						if ( s>=0 ) return s;
+						break;
+
+					case 2 : 
+						int LA28_401 = input.LA(1);
+						s = -1;
+						if ( ((LA28_401 >= '\u0000' && LA28_401 <= '\uFFFF')) ) {s = 143;}
+						else s = 403;
+						if ( s>=0 ) return s;
+						break;
+
+					case 3 : 
+						int LA28_400 = input.LA(1);
+						s = -1;
+						if ( ((LA28_400 >= '\u0000' && LA28_400 <= '\uFFFF')) ) {s = 143;}
+						else s = 402;
+						if ( s>=0 ) return s;
+						break;
+
+					case 4 : 
 						int LA28_141 = input.LA(1);
 						s = -1;
 						if ( (LA28_141=='o') ) {s = 195;}
@@ -5274,7 +5314,7 @@ public class JavaLexer extends Lexer {
 						if ( s>=0 ) return s;
 						break;
 
-					case 1 : 
+					case 5 : 
 						int LA28_195 = input.LA(1);
 						s = -1;
 						if ( (LA28_195=='l') ) {s = 244;}
@@ -5282,7 +5322,7 @@ public class JavaLexer extends Lexer {
 						if ( s>=0 ) return s;
 						break;
 
-					case 2 : 
+					case 6 : 
 						int LA28_244 = input.LA(1);
 						s = -1;
 						if ( (LA28_244=='y') ) {s = 286;}
@@ -5290,7 +5330,7 @@ public class JavaLexer extends Lexer {
 						if ( s>=0 ) return s;
 						break;
 
-					case 3 : 
+					case 7 : 
 						int LA28_286 = input.LA(1);
 						s = -1;
 						if ( (LA28_286=='v') ) {s = 320;}
@@ -5298,189 +5338,213 @@ public class JavaLexer extends Lexer {
 						if ( s>=0 ) return s;
 						break;
 
-					case 4 : 
+					case 8 : 
 						int LA28_320 = input.LA(1);
 						s = -1;
-						if ( (LA28_320=='e') ) {s = 346;}
+						if ( (LA28_320=='e') ) {s = 345;}
 						else if ( ((LA28_320 >= '\u0000' && LA28_320 <= 'd')||(LA28_320 >= 'f' && LA28_320 <= '\uFFFF')) ) {s = 143;}
 						if ( s>=0 ) return s;
 						break;
 
-					case 5 : 
-						int LA28_346 = input.LA(1);
-						s = -1;
-						if ( (LA28_346=='r') ) {s = 363;}
-						else if ( ((LA28_346 >= '\u0000' && LA28_346 <= 'q')||(LA28_346 >= 's' && LA28_346 <= '\uFFFF')) ) {s = 143;}
-						if ( s>=0 ) return s;
-						break;
-
-					case 6 : 
-						int LA28_363 = input.LA(1);
-						s = -1;
-						if ( (LA28_363=='s') ) {s = 374;}
-						else if ( ((LA28_363 >= '\u0000' && LA28_363 <= 'r')||(LA28_363 >= 't' && LA28_363 <= '\uFFFF')) ) {s = 143;}
-						if ( s>=0 ) return s;
-						break;
-
-					case 7 : 
-						int LA28_374 = input.LA(1);
-						s = -1;
-						if ( (LA28_374=='e') ) {s = 383;}
-						else if ( ((LA28_374 >= '\u0000' && LA28_374 <= 'd')||(LA28_374 >= 'f' && LA28_374 <= '\uFFFF')) ) {s = 143;}
-						if ( s>=0 ) return s;
-						break;
-
-					case 8 : 
-						int LA28_383 = input.LA(1);
-						s = -1;
-						if ( (LA28_383=='*') ) {s = 389;}
-						else if ( ((LA28_383 >= '\u0000' && LA28_383 <= ')')||(LA28_383 >= '+' && LA28_383 <= '\uFFFF')) ) {s = 143;}
-						if ( s>=0 ) return s;
-						break;
-
 					case 9 : 
-						int LA28_321 = input.LA(1);
+						int LA28_345 = input.LA(1);
 						s = -1;
-						if ( (LA28_321=='t') ) {s = 347;}
-						else if ( ((LA28_321 >= '\u0000' && LA28_321 <= 's')||(LA28_321 >= 'u' && LA28_321 <= '\uFFFF')) ) {s = 143;}
+						if ( (LA28_345=='r') ) {s = 361;}
+						else if ( ((LA28_345 >= '\u0000' && LA28_345 <= 'q')||(LA28_345 >= 's' && LA28_345 <= '\uFFFF')) ) {s = 143;}
 						if ( s>=0 ) return s;
 						break;
 
 					case 10 : 
-						int LA28_347 = input.LA(1);
+						int LA28_361 = input.LA(1);
 						s = -1;
-						if ( (LA28_347=='e') ) {s = 364;}
-						else if ( ((LA28_347 >= '\u0000' && LA28_347 <= 'd')||(LA28_347 >= 'f' && LA28_347 <= '\uFFFF')) ) {s = 143;}
+						if ( (LA28_361=='s') ) {s = 371;}
+						else if ( ((LA28_361 >= '\u0000' && LA28_361 <= 'r')||(LA28_361 >= 't' && LA28_361 <= '\uFFFF')) ) {s = 143;}
 						if ( s>=0 ) return s;
 						break;
 
 					case 11 : 
-						int LA28_364 = input.LA(1);
+						int LA28_371 = input.LA(1);
 						s = -1;
-						if ( (LA28_364=='r') ) {s = 375;}
-						else if ( ((LA28_364 >= '\u0000' && LA28_364 <= 'q')||(LA28_364 >= 's' && LA28_364 <= '\uFFFF')) ) {s = 143;}
+						if ( (LA28_371=='e') ) {s = 379;}
+						else if ( ((LA28_371 >= '\u0000' && LA28_371 <= 'd')||(LA28_371 >= 'f' && LA28_371 <= '\uFFFF')) ) {s = 143;}
 						if ( s>=0 ) return s;
 						break;
 
 					case 12 : 
-						int LA28_375 = input.LA(1);
+						int LA28_379 = input.LA(1);
 						s = -1;
-						if ( (LA28_375=='*') ) {s = 384;}
-						else if ( ((LA28_375 >= '\u0000' && LA28_375 <= ')')||(LA28_375 >= '+' && LA28_375 <= '\uFFFF')) ) {s = 143;}
+						if ( (LA28_379=='*') ) {s = 384;}
+						else if ( ((LA28_379 >= '\u0000' && LA28_379 <= ')')||(LA28_379 >= '+' && LA28_379 <= '\uFFFF')) ) {s = 143;}
 						if ( s>=0 ) return s;
 						break;
 
 					case 13 : 
-						int LA28_322 = input.LA(1);
+						int LA28_391 = input.LA(1);
 						s = -1;
-						if ( (LA28_322=='i') ) {s = 348;}
-						else if ( ((LA28_322 >= '\u0000' && LA28_322 <= 'h')||(LA28_322 >= 'j' && LA28_322 <= '\uFFFF')) ) {s = 143;}
+						if ( (LA28_391=='t') ) {s = 393;}
+						else if ( ((LA28_391 >= '\u0000' && LA28_391 <= 's')||(LA28_391 >= 'u' && LA28_391 <= '\uFFFF')) ) {s = 143;}
 						if ( s>=0 ) return s;
 						break;
 
 					case 14 : 
-						int LA28_348 = input.LA(1);
+						int LA28_393 = input.LA(1);
 						s = -1;
-						if ( (LA28_348=='t') ) {s = 365;}
-						else if ( ((LA28_348 >= '\u0000' && LA28_348 <= 's')||(LA28_348 >= 'u' && LA28_348 <= '\uFFFF')) ) {s = 143;}
+						if ( (LA28_393=='e') ) {s = 395;}
+						else if ( ((LA28_393 >= '\u0000' && LA28_393 <= 'd')||(LA28_393 >= 'f' && LA28_393 <= '\uFFFF')) ) {s = 143;}
 						if ( s>=0 ) return s;
 						break;
 
 					case 15 : 
-						int LA28_365 = input.LA(1);
+						int LA28_395 = input.LA(1);
 						s = -1;
-						if ( (LA28_365=='*') ) {s = 376;}
-						else if ( ((LA28_365 >= '\u0000' && LA28_365 <= ')')||(LA28_365 >= '+' && LA28_365 <= '\uFFFF')) ) {s = 143;}
+						if ( (LA28_395=='r') ) {s = 397;}
+						else if ( ((LA28_395 >= '\u0000' && LA28_395 <= 'q')||(LA28_395 >= 's' && LA28_395 <= '\uFFFF')) ) {s = 143;}
 						if ( s>=0 ) return s;
 						break;
 
 					case 16 : 
-						int LA28_142 = input.LA(1);
+						int LA28_397 = input.LA(1);
 						s = -1;
-						if ( (LA28_142=='v') ) {s = 196;}
-						else if ( ((LA28_142 >= '\u0000' && LA28_142 <= 'u')||(LA28_142 >= 'w' && LA28_142 <= '\uFFFF')) ) {s = 143;}
+						if ( (LA28_397=='*') ) {s = 399;}
+						else if ( ((LA28_397 >= '\u0000' && LA28_397 <= ')')||(LA28_397 >= '+' && LA28_397 <= '\uFFFF')) ) {s = 143;}
 						if ( s>=0 ) return s;
 						break;
 
 					case 17 : 
-						int LA28_196 = input.LA(1);
+						int LA28_392 = input.LA(1);
 						s = -1;
-						if ( (LA28_196==' ') ) {s = 245;}
-						else if ( ((LA28_196 >= '\u0000' && LA28_196 <= '\u001F')||(LA28_196 >= '!' && LA28_196 <= '\uFFFF')) ) {s = 143;}
+						if ( (LA28_392=='i') ) {s = 394;}
+						else if ( ((LA28_392 >= '\u0000' && LA28_392 <= 'h')||(LA28_392 >= 'j' && LA28_392 <= '\uFFFF')) ) {s = 143;}
 						if ( s>=0 ) return s;
 						break;
 
 					case 18 : 
-						int LA28_245 = input.LA(1);
+						int LA28_394 = input.LA(1);
 						s = -1;
-						if ( (LA28_245=='e') ) {s = 287;}
-						else if ( ((LA28_245 >= '\u0000' && LA28_245 <= 'd')||(LA28_245 >= 'f' && LA28_245 <= '\uFFFF')) ) {s = 143;}
+						if ( (LA28_394=='t') ) {s = 396;}
+						else if ( ((LA28_394 >= '\u0000' && LA28_394 <= 's')||(LA28_394 >= 'u' && LA28_394 <= '\uFFFF')) ) {s = 143;}
 						if ( s>=0 ) return s;
 						break;
 
 					case 19 : 
-						int LA28_287 = input.LA(1);
+						int LA28_396 = input.LA(1);
 						s = -1;
-						if ( (LA28_287=='n') ) {s = 321;}
-						else if ( (LA28_287=='x') ) {s = 322;}
-						else if ( ((LA28_287 >= '\u0000' && LA28_287 <= 'm')||(LA28_287 >= 'o' && LA28_287 <= 'w')||(LA28_287 >= 'y' && LA28_287 <= '\uFFFF')) ) {s = 143;}
+						if ( (LA28_396=='*') ) {s = 398;}
+						else if ( ((LA28_396 >= '\u0000' && LA28_396 <= ')')||(LA28_396 >= '+' && LA28_396 <= '\uFFFF')) ) {s = 143;}
 						if ( s>=0 ) return s;
 						break;
 
 					case 20 : 
-						int LA28_70 = input.LA(1);
+						int LA28_142 = input.LA(1);
 						s = -1;
-						if ( (LA28_70=='P') ) {s = 141;}
-						else if ( (LA28_70=='m') ) {s = 142;}
-						else if ( ((LA28_70 >= '\u0000' && LA28_70 <= 'O')||(LA28_70 >= 'Q' && LA28_70 <= 'l')||(LA28_70 >= 'n' && LA28_70 <= '\uFFFF')) ) {s = 143;}
+						if ( (LA28_142=='o') ) {s = 196;}
+						else if ( ((LA28_142 >= '\u0000' && LA28_142 <= 'n')||(LA28_142 >= 'p' && LA28_142 <= '\uFFFF')) ) {s = 143;}
 						if ( s>=0 ) return s;
 						break;
 
 					case 21 : 
-						int LA28_389 = input.LA(1);
+						int LA28_196 = input.LA(1);
 						s = -1;
-						if ( (LA28_389=='/') ) {s = 393;}
-						else if ( ((LA28_389 >= '\u0000' && LA28_389 <= '.')||(LA28_389 >= '0' && LA28_389 <= '\uFFFF')) ) {s = 143;}
+						if ( (LA28_196=='l') ) {s = 245;}
+						else if ( ((LA28_196 >= '\u0000' && LA28_196 <= 'k')||(LA28_196 >= 'm' && LA28_196 <= '\uFFFF')) ) {s = 143;}
 						if ( s>=0 ) return s;
 						break;
 
 					case 22 : 
-						int LA28_384 = input.LA(1);
+						int LA28_245 = input.LA(1);
 						s = -1;
-						if ( (LA28_384=='/') ) {s = 390;}
-						else if ( ((LA28_384 >= '\u0000' && LA28_384 <= '.')||(LA28_384 >= '0' && LA28_384 <= '\uFFFF')) ) {s = 143;}
+						if ( (LA28_245=='y') ) {s = 287;}
+						else if ( ((LA28_245 >= '\u0000' && LA28_245 <= 'x')||(LA28_245 >= 'z' && LA28_245 <= '\uFFFF')) ) {s = 143;}
 						if ( s>=0 ) return s;
 						break;
 
 					case 23 : 
-						int LA28_376 = input.LA(1);
+						int LA28_287 = input.LA(1);
 						s = -1;
-						if ( (LA28_376=='/') ) {s = 385;}
-						else if ( ((LA28_376 >= '\u0000' && LA28_376 <= '.')||(LA28_376 >= '0' && LA28_376 <= '\uFFFF')) ) {s = 143;}
+						if ( (LA28_287=='v') ) {s = 321;}
+						else if ( ((LA28_287 >= '\u0000' && LA28_287 <= 'u')||(LA28_287 >= 'w' && LA28_287 <= '\uFFFF')) ) {s = 143;}
 						if ( s>=0 ) return s;
 						break;
 
 					case 24 : 
-						int LA28_393 = input.LA(1);
+						int LA28_321 = input.LA(1);
 						s = -1;
-						if ( ((LA28_393 >= '\u0000' && LA28_393 <= '\uFFFF')) ) {s = 143;}
-						else s = 396;
+						if ( (LA28_321=='e') ) {s = 346;}
+						else if ( ((LA28_321 >= '\u0000' && LA28_321 <= 'd')||(LA28_321 >= 'f' && LA28_321 <= '\uFFFF')) ) {s = 143;}
 						if ( s>=0 ) return s;
 						break;
 
 					case 25 : 
-						int LA28_390 = input.LA(1);
+						int LA28_346 = input.LA(1);
 						s = -1;
-						if ( ((LA28_390 >= '\u0000' && LA28_390 <= '\uFFFF')) ) {s = 143;}
-						else s = 394;
+						if ( (LA28_346=='r') ) {s = 362;}
+						else if ( ((LA28_346 >= '\u0000' && LA28_346 <= 'q')||(LA28_346 >= 's' && LA28_346 <= '\uFFFF')) ) {s = 143;}
 						if ( s>=0 ) return s;
 						break;
 
 					case 26 : 
+						int LA28_362 = input.LA(1);
+						s = -1;
+						if ( (LA28_362=='s') ) {s = 372;}
+						else if ( ((LA28_362 >= '\u0000' && LA28_362 <= 'r')||(LA28_362 >= 't' && LA28_362 <= '\uFFFF')) ) {s = 143;}
+						if ( s>=0 ) return s;
+						break;
+
+					case 27 : 
+						int LA28_372 = input.LA(1);
+						s = -1;
+						if ( (LA28_372=='e') ) {s = 380;}
+						else if ( ((LA28_372 >= '\u0000' && LA28_372 <= 'd')||(LA28_372 >= 'f' && LA28_372 <= '\uFFFF')) ) {s = 143;}
+						if ( s>=0 ) return s;
+						break;
+
+					case 28 : 
+						int LA28_380 = input.LA(1);
+						s = -1;
+						if ( (LA28_380==' ') ) {s = 385;}
+						else if ( ((LA28_380 >= '\u0000' && LA28_380 <= '\u001F')||(LA28_380 >= '!' && LA28_380 <= '\uFFFF')) ) {s = 143;}
+						if ( s>=0 ) return s;
+						break;
+
+					case 29 : 
 						int LA28_385 = input.LA(1);
 						s = -1;
-						if ( ((LA28_385 >= '\u0000' && LA28_385 <= '\uFFFF')) ) {s = 143;}
-						else s = 391;
+						if ( (LA28_385=='e') ) {s = 388;}
+						else if ( ((LA28_385 >= '\u0000' && LA28_385 <= 'd')||(LA28_385 >= 'f' && LA28_385 <= '\uFFFF')) ) {s = 143;}
+						if ( s>=0 ) return s;
+						break;
+
+					case 30 : 
+						int LA28_388 = input.LA(1);
+						s = -1;
+						if ( (LA28_388=='n') ) {s = 391;}
+						else if ( (LA28_388=='x') ) {s = 392;}
+						else if ( ((LA28_388 >= '\u0000' && LA28_388 <= 'm')||(LA28_388 >= 'o' && LA28_388 <= 'w')||(LA28_388 >= 'y' && LA28_388 <= '\uFFFF')) ) {s = 143;}
+						if ( s>=0 ) return s;
+						break;
+
+					case 31 : 
+						int LA28_70 = input.LA(1);
+						s = -1;
+						if ( (LA28_70=='P') ) {s = 141;}
+						else if ( (LA28_70=='p') ) {s = 142;}
+						else if ( ((LA28_70 >= '\u0000' && LA28_70 <= 'O')||(LA28_70 >= 'Q' && LA28_70 <= 'o')||(LA28_70 >= 'q' && LA28_70 <= '\uFFFF')) ) {s = 143;}
+						if ( s>=0 ) return s;
+						break;
+
+					case 32 : 
+						int LA28_384 = input.LA(1);
+						s = -1;
+						if ( (LA28_384=='/') ) {s = 387;}
+						else if ( ((LA28_384 >= '\u0000' && LA28_384 <= '.')||(LA28_384 >= '0' && LA28_384 <= '\uFFFF')) ) {s = 143;}
+						if ( s>=0 ) return s;
+						break;
+
+					case 33 : 
+						int LA28_399 = input.LA(1);
+						s = -1;
+						if ( (LA28_399=='/') ) {s = 401;}
+						else if ( ((LA28_399 >= '\u0000' && LA28_399 <= '.')||(LA28_399 >= '0' && LA28_399 <= '\uFFFF')) ) {s = 143;}
 						if ( s>=0 ) return s;
 						break;
 			}

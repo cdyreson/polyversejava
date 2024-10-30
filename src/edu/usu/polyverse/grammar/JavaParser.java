@@ -1,4 +1,4 @@
-// $ANTLR 3.5.2 Java.g 2024-10-23 15:44:02
+// $ANTLR 3.5.2 Java.g 2024-10-28 16:28:06
 
   package edu.usu.polyverse.grammar;
   import java.util.Iterator;
@@ -95,11 +95,11 @@ public class JavaParser extends Parser {
 		"JAVA_ID_PART", "JAVA_ID_START", "JAVA_SOURCE", "LABELED_STATEMENT", "LBRACK", 
 		"LCURLY", "LESS_OR_EQUAL", "LESS_THAN", "LINE_COMMENT", "LOCAL_MODIFIER_LIST", 
 		"LOGICAL_AND", "LOGICAL_NOT", "LOGICAL_OR", "LONG", "LPAREN", "METHOD_CALL", 
-		"MINUS", "MINUS_ASSIGN", "MOD", "MODIFIER_LIST", "MOD_ASSIGN", "MVENTER", 
-		"MVEXIT", "NATIVE", "NEW", "NOT", "NOT_EQUAL", "NULL", "OCTAL_ESCAPE", 
-		"OCTAL_LITERAL", "OR", "OR_ASSIGN", "PACKAGE", "PARENTESIZED_EXPR", "PLUS", 
-		"PLUS_ASSIGN", "POLYVERSE", "POST_DEC", "POST_INC", "PRE_DEC", "PRE_INC", 
-		"PRIVATE", "PROTECTED", "PUBLIC", "QUALIFIED_TYPE_IDENT", "QUESTION", 
+		"MINUS", "MINUS_ASSIGN", "MOD", "MODIFIER_LIST", "MOD_ASSIGN", "NATIVE", 
+		"NEW", "NOT", "NOT_EQUAL", "NULL", "OCTAL_ESCAPE", "OCTAL_LITERAL", "OR", 
+		"OR_ASSIGN", "PACKAGE", "PARENTESIZED_EXPR", "PLUS", "PLUS_ASSIGN", "POLYVERSE", 
+		"POLYVERSEENTER", "POLYVERSEEXIT", "POST_DEC", "POST_INC", "PRE_DEC", 
+		"PRE_INC", "PRIVATE", "PROTECTED", "PUBLIC", "QUALIFIED_TYPE_IDENT", "QUESTION", 
 		"RBRACK", "RCURLY", "RETURN", "RPAREN", "SEMI", "SHIFT_LEFT", "SHIFT_LEFT_ASSIGN", 
 		"SHIFT_RIGHT", "SHIFT_RIGHT_ASSIGN", "SHORT", "STAR", "STAR_ASSIGN", "STATIC", 
 		"STATIC_ARRAY_CREATOR", "STRICTFP", "STRING_LITERAL", "SUPER", "SUPER_CONSTRUCTOR_CALL", 
@@ -226,22 +226,22 @@ public class JavaParser extends Parser {
 	public static final int MOD=117;
 	public static final int MODIFIER_LIST=118;
 	public static final int MOD_ASSIGN=119;
-	public static final int MVENTER=120;
-	public static final int MVEXIT=121;
-	public static final int NATIVE=122;
-	public static final int NEW=123;
-	public static final int NOT=124;
-	public static final int NOT_EQUAL=125;
-	public static final int NULL=126;
-	public static final int OCTAL_ESCAPE=127;
-	public static final int OCTAL_LITERAL=128;
-	public static final int OR=129;
-	public static final int OR_ASSIGN=130;
-	public static final int PACKAGE=131;
-	public static final int PARENTESIZED_EXPR=132;
-	public static final int PLUS=133;
-	public static final int PLUS_ASSIGN=134;
-	public static final int POLYVERSE=135;
+	public static final int NATIVE=120;
+	public static final int NEW=121;
+	public static final int NOT=122;
+	public static final int NOT_EQUAL=123;
+	public static final int NULL=124;
+	public static final int OCTAL_ESCAPE=125;
+	public static final int OCTAL_LITERAL=126;
+	public static final int OR=127;
+	public static final int OR_ASSIGN=128;
+	public static final int PACKAGE=129;
+	public static final int PARENTESIZED_EXPR=130;
+	public static final int PLUS=131;
+	public static final int PLUS_ASSIGN=132;
+	public static final int POLYVERSE=133;
+	public static final int POLYVERSEENTER=134;
+	public static final int POLYVERSEEXIT=135;
 	public static final int POST_DEC=136;
 	public static final int POST_INC=137;
 	public static final int PRE_DEC=138;
@@ -660,7 +660,7 @@ public class JavaParser extends Parser {
 			while (true) {
 				int alt3=2;
 				int LA3_0 = input.LA(1);
-				if ( (LA3_0==ABSTRACT||LA3_0==AT||LA3_0==BOOLEAN||LA3_0==BYTE||LA3_0==CHAR||LA3_0==CLASS||LA3_0==DOUBLE||LA3_0==ENUM||LA3_0==FINAL||LA3_0==FLOAT||LA3_0==IDENT||LA3_0==INT||LA3_0==INTERFACE||LA3_0==LESS_THAN||LA3_0==LONG||LA3_0==MVENTER||LA3_0==NATIVE||(LA3_0 >= PRIVATE && LA3_0 <= PUBLIC)||LA3_0==SEMI||LA3_0==SHORT||LA3_0==STATIC||LA3_0==STRICTFP||LA3_0==SYNCHRONIZED||LA3_0==TRANSIENT||LA3_0==VOID||LA3_0==VOLATILE) ) {
+				if ( (LA3_0==ABSTRACT||LA3_0==AT||LA3_0==BOOLEAN||LA3_0==BYTE||LA3_0==CHAR||LA3_0==CLASS||LA3_0==DOUBLE||LA3_0==ENUM||LA3_0==FINAL||LA3_0==FLOAT||LA3_0==IDENT||LA3_0==INT||LA3_0==INTERFACE||LA3_0==LESS_THAN||LA3_0==LONG||LA3_0==NATIVE||LA3_0==POLYVERSEENTER||(LA3_0 >= PRIVATE && LA3_0 <= PUBLIC)||LA3_0==SEMI||LA3_0==SHORT||LA3_0==STATIC||LA3_0==STRICTFP||LA3_0==SYNCHRONIZED||LA3_0==TRANSIENT||LA3_0==VOID||LA3_0==VOLATILE) ) {
 					alt3=1;
 				}
 
@@ -771,7 +771,7 @@ public class JavaParser extends Parser {
 				alt4=1;
 				}
 				break;
-			case MVENTER:
+			case POLYVERSEENTER:
 				{
 				alt4=2;
 				}
@@ -1044,7 +1044,7 @@ public class JavaParser extends Parser {
 
 
 	// $ANTLR start "polyverseDeclaration"
-	// Java.g:469:1: polyverseDeclaration : MVENTER ( typeDeclaration )* MVEXIT ;
+	// Java.g:469:1: polyverseDeclaration : POLYVERSEENTER ( typeDeclaration )* POLYVERSEEXIT ;
 	public final JavaParser.polyverseDeclaration_return polyverseDeclaration() throws RecognitionException {
 		JavaParser.polyverseDeclaration_return retval = new JavaParser.polyverseDeclaration_return();
 		retval.start = input.LT(1);
@@ -1052,26 +1052,26 @@ public class JavaParser extends Parser {
 
 		CommonTree root_0 = null;
 
-		Token MVENTER17=null;
-		Token MVEXIT19=null;
+		Token POLYVERSEENTER17=null;
+		Token POLYVERSEEXIT19=null;
 		ParserRuleReturnScope typeDeclaration18 =null;
 
-		CommonTree MVENTER17_tree=null;
-		CommonTree MVEXIT19_tree=null;
+		CommonTree POLYVERSEENTER17_tree=null;
+		CommonTree POLYVERSEEXIT19_tree=null;
 
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 6) ) { return retval; }
 
-			// Java.g:470:13: ( MVENTER ( typeDeclaration )* MVEXIT )
-			// Java.g:470:17: MVENTER ( typeDeclaration )* MVEXIT
+			// Java.g:470:13: ( POLYVERSEENTER ( typeDeclaration )* POLYVERSEEXIT )
+			// Java.g:470:17: POLYVERSEENTER ( typeDeclaration )* POLYVERSEEXIT
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			MVENTER17=(Token)match(input,MVENTER,FOLLOW_MVENTER_in_polyverseDeclaration6405); if (state.failed) return retval;
+			POLYVERSEENTER17=(Token)match(input,POLYVERSEENTER,FOLLOW_POLYVERSEENTER_in_polyverseDeclaration6405); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			MVENTER17_tree = (CommonTree)adaptor.create(MVENTER17);
-			adaptor.addChild(root_0, MVENTER17_tree);
+			POLYVERSEENTER17_tree = (CommonTree)adaptor.create(POLYVERSEENTER17);
+			adaptor.addChild(root_0, POLYVERSEENTER17_tree);
 			}
 
 			if ( state.backtracking==0 ) {/*-----*/ // Enters a polyverse scope
@@ -1104,10 +1104,10 @@ public class JavaParser extends Parser {
 				}
 			}
 
-			MVEXIT19=(Token)match(input,MVEXIT,FOLLOW_MVEXIT_in_polyverseDeclaration6448); if (state.failed) return retval;
+			POLYVERSEEXIT19=(Token)match(input,POLYVERSEEXIT,FOLLOW_POLYVERSEEXIT_in_polyverseDeclaration6448); if (state.failed) return retval;
 			if ( state.backtracking==0 ) {
-			MVEXIT19_tree = (CommonTree)adaptor.create(MVEXIT19);
-			adaptor.addChild(root_0, MVEXIT19_tree);
+			POLYVERSEEXIT19_tree = (CommonTree)adaptor.create(POLYVERSEEXIT19);
+			adaptor.addChild(root_0, POLYVERSEEXIT19_tree);
 			}
 
 			if ( state.backtracking==0 ) {/*-----*/ // Exit a polyverse scope
@@ -15866,13 +15866,14 @@ public class JavaParser extends Parser {
 
 			if ( state.backtracking==0 ) {/*-----*/ // Now we see assignment operator, so fix up LHS of assignment
 			    if (PolyverseScope.isPolyverse()) {
-			      String opText = "";
+			      int opType = 0;
 			      if (op != null) {
+			        opType = (op!=null?op.getType():0);
 			        String xText = tokens.toString((x!=null?(x.start):null).getTokenIndex(), (x!=null?(x.stop):null).getTokenIndex());
 			        String cText = tokens.toString((c!=null?(c.start):null).getTokenIndex(), (c!=null?(c.stop):null).getTokenIndex());
-			        System.out.println("Assignment op " + (x!=null?input.toString(x.start,x.stop):null) + " :: " + opText + " " + (c!=null?input.toString(c.start,c.stop):null));
-			        System.out.println("Assignment op " + xText + " :: " + opText + " " + cText);
-			        tokens.replace((c!=null?(c.start):null).getTokenIndex(), (c!=null?(c.stop):null).getTokenIndex(), cText + ".binaryOperation(" + vtop() + ", JavaLexer." + opText + "," + xText + ")");
+			        System.out.println("Assignment op " + (x!=null?input.toString(x.start,x.stop):null) + " :: " + opType + " " + (c!=null?input.toString(c.start,c.stop):null));
+			        System.out.println("Assignment op " + xText + " :: " + opType + " " + cText);
+			        tokens.replace((c!=null?(c.start):null).getTokenIndex(), (c!=null?(c.stop):null).getTokenIndex(), cText + ".binaryOperationSelf(" + vtop() + /*", JavaLexer." + opText */ opType + "," + xText + ")");
 			        tokens.delete(op);
 			        tokens.delete((x!=null?(x.start):null), (x!=null?(x.stop):null));
 			/*
@@ -15934,7 +15935,7 @@ public class JavaParser extends Parser {
 
 
 	// $ANTLR start "conditionalExpression"
-	// Java.g:1424:1: conditionalExpression : e= logicalOrExpression ( QUESTION ^e1= assignmentExpression COLON !e2= conditionalExpression )? ;
+	// Java.g:1425:1: conditionalExpression : e= logicalOrExpression ( QUESTION ^e1= assignmentExpression COLON !e2= conditionalExpression )? ;
 	public final JavaParser.conditionalExpression_return conditionalExpression() throws RecognitionException {
 		JavaParser.conditionalExpression_return retval = new JavaParser.conditionalExpression_return();
 		retval.start = input.LT(1);
@@ -15954,8 +15955,8 @@ public class JavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 91) ) { return retval; }
 
-			// Java.g:1425:13: (e= logicalOrExpression ( QUESTION ^e1= assignmentExpression COLON !e2= conditionalExpression )? )
-			// Java.g:1426:16: e= logicalOrExpression ( QUESTION ^e1= assignmentExpression COLON !e2= conditionalExpression )?
+			// Java.g:1426:13: (e= logicalOrExpression ( QUESTION ^e1= assignmentExpression COLON !e2= conditionalExpression )? )
+			// Java.g:1427:16: e= logicalOrExpression ( QUESTION ^e1= assignmentExpression COLON !e2= conditionalExpression )?
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -15966,7 +15967,7 @@ public class JavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, e.getTree());
 
-			// Java.g:1427:16: ( QUESTION ^e1= assignmentExpression COLON !e2= conditionalExpression )?
+			// Java.g:1428:16: ( QUESTION ^e1= assignmentExpression COLON !e2= conditionalExpression )?
 			int alt111=2;
 			int LA111_0 = input.LA(1);
 			if ( (LA111_0==QUESTION) ) {
@@ -15974,7 +15975,7 @@ public class JavaParser extends Parser {
 			}
 			switch (alt111) {
 				case 1 :
-					// Java.g:1427:17: QUESTION ^e1= assignmentExpression COLON !e2= conditionalExpression
+					// Java.g:1428:17: QUESTION ^e1= assignmentExpression COLON !e2= conditionalExpression
 					{
 					QUESTION364=(Token)match(input,QUESTION,FOLLOW_QUESTION_in_conditionalExpression16852); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -16032,7 +16033,7 @@ public class JavaParser extends Parser {
 
 
 	// $ANTLR start "logicalOrExpression"
-	// Java.g:1430:1: logicalOrExpression : q= logicalAndExpression (opr= LOGICAL_OR ^z= logicalAndExpression )* ;
+	// Java.g:1431:1: logicalOrExpression : q= logicalAndExpression (opr= LOGICAL_OR ^z= logicalAndExpression )* ;
 	public final JavaParser.logicalOrExpression_return logicalOrExpression() throws RecognitionException {
 		JavaParser.logicalOrExpression_return retval = new JavaParser.logicalOrExpression_return();
 		retval.start = input.LT(1);
@@ -16049,8 +16050,8 @@ public class JavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 92) ) { return retval; }
 
-			// Java.g:1431:13: (q= logicalAndExpression (opr= LOGICAL_OR ^z= logicalAndExpression )* )
-			// Java.g:1431:15: q= logicalAndExpression (opr= LOGICAL_OR ^z= logicalAndExpression )*
+			// Java.g:1432:13: (q= logicalAndExpression (opr= LOGICAL_OR ^z= logicalAndExpression )* )
+			// Java.g:1432:15: q= logicalAndExpression (opr= LOGICAL_OR ^z= logicalAndExpression )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -16061,7 +16062,7 @@ public class JavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, q.getTree());
 
-			// Java.g:1431:38: (opr= LOGICAL_OR ^z= logicalAndExpression )*
+			// Java.g:1432:38: (opr= LOGICAL_OR ^z= logicalAndExpression )*
 			loop112:
 			while (true) {
 				int alt112=2;
@@ -16072,7 +16073,7 @@ public class JavaParser extends Parser {
 
 				switch (alt112) {
 				case 1 :
-					// Java.g:1431:39: opr= LOGICAL_OR ^z= logicalAndExpression
+					// Java.g:1432:39: opr= LOGICAL_OR ^z= logicalAndExpression
 					{
 					opr=(Token)match(input,LOGICAL_OR,FOLLOW_LOGICAL_OR_in_logicalOrExpression16916); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -16138,7 +16139,7 @@ public class JavaParser extends Parser {
 
 
 	// $ANTLR start "logicalAndExpression"
-	// Java.g:1447:1: logicalAndExpression : q= inclusiveOrExpression (opr= LOGICAL_AND ^z= inclusiveOrExpression )* ;
+	// Java.g:1448:1: logicalAndExpression : q= inclusiveOrExpression (opr= LOGICAL_AND ^z= inclusiveOrExpression )* ;
 	public final JavaParser.logicalAndExpression_return logicalAndExpression() throws RecognitionException {
 		JavaParser.logicalAndExpression_return retval = new JavaParser.logicalAndExpression_return();
 		retval.start = input.LT(1);
@@ -16155,8 +16156,8 @@ public class JavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 93) ) { return retval; }
 
-			// Java.g:1448:13: (q= inclusiveOrExpression (opr= LOGICAL_AND ^z= inclusiveOrExpression )* )
-			// Java.g:1448:15: q= inclusiveOrExpression (opr= LOGICAL_AND ^z= inclusiveOrExpression )*
+			// Java.g:1449:13: (q= inclusiveOrExpression (opr= LOGICAL_AND ^z= inclusiveOrExpression )* )
+			// Java.g:1449:15: q= inclusiveOrExpression (opr= LOGICAL_AND ^z= inclusiveOrExpression )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -16167,7 +16168,7 @@ public class JavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, q.getTree());
 
-			// Java.g:1448:39: (opr= LOGICAL_AND ^z= inclusiveOrExpression )*
+			// Java.g:1449:39: (opr= LOGICAL_AND ^z= inclusiveOrExpression )*
 			loop113:
 			while (true) {
 				int alt113=2;
@@ -16178,7 +16179,7 @@ public class JavaParser extends Parser {
 
 				switch (alt113) {
 				case 1 :
-					// Java.g:1448:40: opr= LOGICAL_AND ^z= inclusiveOrExpression
+					// Java.g:1449:40: opr= LOGICAL_AND ^z= inclusiveOrExpression
 					{
 					opr=(Token)match(input,LOGICAL_AND,FOLLOW_LOGICAL_AND_in_logicalAndExpression16989); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -16244,7 +16245,7 @@ public class JavaParser extends Parser {
 
 
 	// $ANTLR start "inclusiveOrExpression"
-	// Java.g:1464:1: inclusiveOrExpression : q= exclusiveOrExpression (opr= OR ^z= exclusiveOrExpression )* ;
+	// Java.g:1465:1: inclusiveOrExpression : q= exclusiveOrExpression (opr= OR ^z= exclusiveOrExpression )* ;
 	public final JavaParser.inclusiveOrExpression_return inclusiveOrExpression() throws RecognitionException {
 		JavaParser.inclusiveOrExpression_return retval = new JavaParser.inclusiveOrExpression_return();
 		retval.start = input.LT(1);
@@ -16261,8 +16262,8 @@ public class JavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 94) ) { return retval; }
 
-			// Java.g:1465:13: (q= exclusiveOrExpression (opr= OR ^z= exclusiveOrExpression )* )
-			// Java.g:1465:16: q= exclusiveOrExpression (opr= OR ^z= exclusiveOrExpression )*
+			// Java.g:1466:13: (q= exclusiveOrExpression (opr= OR ^z= exclusiveOrExpression )* )
+			// Java.g:1466:16: q= exclusiveOrExpression (opr= OR ^z= exclusiveOrExpression )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -16273,7 +16274,7 @@ public class JavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, q.getTree());
 
-			// Java.g:1465:40: (opr= OR ^z= exclusiveOrExpression )*
+			// Java.g:1466:40: (opr= OR ^z= exclusiveOrExpression )*
 			loop114:
 			while (true) {
 				int alt114=2;
@@ -16284,7 +16285,7 @@ public class JavaParser extends Parser {
 
 				switch (alt114) {
 				case 1 :
-					// Java.g:1465:41: opr= OR ^z= exclusiveOrExpression
+					// Java.g:1466:41: opr= OR ^z= exclusiveOrExpression
 					{
 					opr=(Token)match(input,OR,FOLLOW_OR_in_inclusiveOrExpression17064); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -16350,7 +16351,7 @@ public class JavaParser extends Parser {
 
 
 	// $ANTLR start "exclusiveOrExpression"
-	// Java.g:1481:1: exclusiveOrExpression : q= andExpression (opr= XOR ^z= andExpression )* ;
+	// Java.g:1482:1: exclusiveOrExpression : q= andExpression (opr= XOR ^z= andExpression )* ;
 	public final JavaParser.exclusiveOrExpression_return exclusiveOrExpression() throws RecognitionException {
 		JavaParser.exclusiveOrExpression_return retval = new JavaParser.exclusiveOrExpression_return();
 		retval.start = input.LT(1);
@@ -16367,8 +16368,8 @@ public class JavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 95) ) { return retval; }
 
-			// Java.g:1482:13: (q= andExpression (opr= XOR ^z= andExpression )* )
-			// Java.g:1482:16: q= andExpression (opr= XOR ^z= andExpression )*
+			// Java.g:1483:13: (q= andExpression (opr= XOR ^z= andExpression )* )
+			// Java.g:1483:16: q= andExpression (opr= XOR ^z= andExpression )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -16379,7 +16380,7 @@ public class JavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, q.getTree());
 
-			// Java.g:1482:32: (opr= XOR ^z= andExpression )*
+			// Java.g:1483:32: (opr= XOR ^z= andExpression )*
 			loop115:
 			while (true) {
 				int alt115=2;
@@ -16390,7 +16391,7 @@ public class JavaParser extends Parser {
 
 				switch (alt115) {
 				case 1 :
-					// Java.g:1482:33: opr= XOR ^z= andExpression
+					// Java.g:1483:33: opr= XOR ^z= andExpression
 					{
 					opr=(Token)match(input,XOR,FOLLOW_XOR_in_exclusiveOrExpression17137); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -16456,7 +16457,7 @@ public class JavaParser extends Parser {
 
 
 	// $ANTLR start "andExpression"
-	// Java.g:1498:1: andExpression : q= equalityExpression (opr= AND ^z= equalityExpression )* ;
+	// Java.g:1499:1: andExpression : q= equalityExpression (opr= AND ^z= equalityExpression )* ;
 	public final JavaParser.andExpression_return andExpression() throws RecognitionException {
 		JavaParser.andExpression_return retval = new JavaParser.andExpression_return();
 		retval.start = input.LT(1);
@@ -16473,8 +16474,8 @@ public class JavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 96) ) { return retval; }
 
-			// Java.g:1499:13: (q= equalityExpression (opr= AND ^z= equalityExpression )* )
-			// Java.g:1499:15: q= equalityExpression (opr= AND ^z= equalityExpression )*
+			// Java.g:1500:13: (q= equalityExpression (opr= AND ^z= equalityExpression )* )
+			// Java.g:1500:15: q= equalityExpression (opr= AND ^z= equalityExpression )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -16485,7 +16486,7 @@ public class JavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, q.getTree());
 
-			// Java.g:1499:36: (opr= AND ^z= equalityExpression )*
+			// Java.g:1500:36: (opr= AND ^z= equalityExpression )*
 			loop116:
 			while (true) {
 				int alt116=2;
@@ -16496,7 +16497,7 @@ public class JavaParser extends Parser {
 
 				switch (alt116) {
 				case 1 :
-					// Java.g:1499:37: opr= AND ^z= equalityExpression
+					// Java.g:1500:37: opr= AND ^z= equalityExpression
 					{
 					opr=(Token)match(input,AND,FOLLOW_AND_in_andExpression17210); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -16562,7 +16563,7 @@ public class JavaParser extends Parser {
 
 
 	// $ANTLR start "equalityExpression"
-	// Java.g:1515:1: equalityExpression : q= instanceOfExpression (opr= ( EQUAL ^| NOT_EQUAL ^) z= instanceOfExpression )* ;
+	// Java.g:1516:1: equalityExpression : q= instanceOfExpression (opr= ( EQUAL ^| NOT_EQUAL ^) z= instanceOfExpression )* ;
 	public final JavaParser.equalityExpression_return equalityExpression() throws RecognitionException {
 		JavaParser.equalityExpression_return retval = new JavaParser.equalityExpression_return();
 		retval.start = input.LT(1);
@@ -16579,8 +16580,8 @@ public class JavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 97) ) { return retval; }
 
-			// Java.g:1516:13: (q= instanceOfExpression (opr= ( EQUAL ^| NOT_EQUAL ^) z= instanceOfExpression )* )
-			// Java.g:1516:15: q= instanceOfExpression (opr= ( EQUAL ^| NOT_EQUAL ^) z= instanceOfExpression )*
+			// Java.g:1517:13: (q= instanceOfExpression (opr= ( EQUAL ^| NOT_EQUAL ^) z= instanceOfExpression )* )
+			// Java.g:1517:15: q= instanceOfExpression (opr= ( EQUAL ^| NOT_EQUAL ^) z= instanceOfExpression )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -16591,7 +16592,7 @@ public class JavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, q.getTree());
 
-			// Java.g:1517:17: (opr= ( EQUAL ^| NOT_EQUAL ^) z= instanceOfExpression )*
+			// Java.g:1518:17: (opr= ( EQUAL ^| NOT_EQUAL ^) z= instanceOfExpression )*
 			loop118:
 			while (true) {
 				int alt118=2;
@@ -16602,9 +16603,9 @@ public class JavaParser extends Parser {
 
 				switch (alt118) {
 				case 1 :
-					// Java.g:1517:21: opr= ( EQUAL ^| NOT_EQUAL ^) z= instanceOfExpression
+					// Java.g:1518:21: opr= ( EQUAL ^| NOT_EQUAL ^) z= instanceOfExpression
 					{
-					// Java.g:1517:25: ( EQUAL ^| NOT_EQUAL ^)
+					// Java.g:1518:25: ( EQUAL ^| NOT_EQUAL ^)
 					int alt117=2;
 					int LA117_0 = input.LA(1);
 					if ( (LA117_0==EQUAL) ) {
@@ -16623,7 +16624,7 @@ public class JavaParser extends Parser {
 
 					switch (alt117) {
 						case 1 :
-							// Java.g:1517:26: EQUAL ^
+							// Java.g:1518:26: EQUAL ^
 							{
 							opr=(Token)match(input,EQUAL,FOLLOW_EQUAL_in_equalityExpression17304); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -16634,7 +16635,7 @@ public class JavaParser extends Parser {
 							}
 							break;
 						case 2 :
-							// Java.g:1517:35: NOT_EQUAL ^
+							// Java.g:1518:35: NOT_EQUAL ^
 							{
 							opr=(Token)match(input,NOT_EQUAL,FOLLOW_NOT_EQUAL_in_equalityExpression17309); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -16710,7 +16711,7 @@ public class JavaParser extends Parser {
 
 
 	// $ANTLR start "instanceOfExpression"
-	// Java.g:1539:1: instanceOfExpression : q= relationalExpression (opr= INSTANCEOF ^z= type )? ;
+	// Java.g:1540:1: instanceOfExpression : q= relationalExpression (opr= INSTANCEOF ^z= type )? ;
 	public final JavaParser.instanceOfExpression_return instanceOfExpression() throws RecognitionException {
 		JavaParser.instanceOfExpression_return retval = new JavaParser.instanceOfExpression_return();
 		retval.start = input.LT(1);
@@ -16727,8 +16728,8 @@ public class JavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 98) ) { return retval; }
 
-			// Java.g:1540:13: (q= relationalExpression (opr= INSTANCEOF ^z= type )? )
-			// Java.g:1540:15: q= relationalExpression (opr= INSTANCEOF ^z= type )?
+			// Java.g:1541:13: (q= relationalExpression (opr= INSTANCEOF ^z= type )? )
+			// Java.g:1541:15: q= relationalExpression (opr= INSTANCEOF ^z= type )?
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -16739,7 +16740,7 @@ public class JavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, q.getTree());
 
-			// Java.g:1540:38: (opr= INSTANCEOF ^z= type )?
+			// Java.g:1541:38: (opr= INSTANCEOF ^z= type )?
 			int alt119=2;
 			int LA119_0 = input.LA(1);
 			if ( (LA119_0==INSTANCEOF) ) {
@@ -16747,7 +16748,7 @@ public class JavaParser extends Parser {
 			}
 			switch (alt119) {
 				case 1 :
-					// Java.g:1540:39: opr= INSTANCEOF ^z= type
+					// Java.g:1541:39: opr= INSTANCEOF ^z= type
 					{
 					opr=(Token)match(input,INSTANCEOF,FOLLOW_INSTANCEOF_in_instanceOfExpression17408); if (state.failed) return retval;
 					if ( state.backtracking==0 ) {
@@ -16805,7 +16806,7 @@ public class JavaParser extends Parser {
 
 
 	// $ANTLR start "relationalExpression"
-	// Java.g:1550:1: relationalExpression : q= shiftExpression (opr= ( LESS_OR_EQUAL ^| GREATER_OR_EQUAL ^| LESS_THAN ^| GREATER_THAN ^) z= shiftExpression )* ;
+	// Java.g:1551:1: relationalExpression : q= shiftExpression (opr= ( LESS_OR_EQUAL ^| GREATER_OR_EQUAL ^| LESS_THAN ^| GREATER_THAN ^) z= shiftExpression )* ;
 	public final JavaParser.relationalExpression_return relationalExpression() throws RecognitionException {
 		JavaParser.relationalExpression_return retval = new JavaParser.relationalExpression_return();
 		retval.start = input.LT(1);
@@ -16822,8 +16823,8 @@ public class JavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 99) ) { return retval; }
 
-			// Java.g:1551:13: (q= shiftExpression (opr= ( LESS_OR_EQUAL ^| GREATER_OR_EQUAL ^| LESS_THAN ^| GREATER_THAN ^) z= shiftExpression )* )
-			// Java.g:1551:15: q= shiftExpression (opr= ( LESS_OR_EQUAL ^| GREATER_OR_EQUAL ^| LESS_THAN ^| GREATER_THAN ^) z= shiftExpression )*
+			// Java.g:1552:13: (q= shiftExpression (opr= ( LESS_OR_EQUAL ^| GREATER_OR_EQUAL ^| LESS_THAN ^| GREATER_THAN ^) z= shiftExpression )* )
+			// Java.g:1552:15: q= shiftExpression (opr= ( LESS_OR_EQUAL ^| GREATER_OR_EQUAL ^| LESS_THAN ^| GREATER_THAN ^) z= shiftExpression )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -16834,7 +16835,7 @@ public class JavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, q.getTree());
 
-			// Java.g:1552:15: (opr= ( LESS_OR_EQUAL ^| GREATER_OR_EQUAL ^| LESS_THAN ^| GREATER_THAN ^) z= shiftExpression )*
+			// Java.g:1553:15: (opr= ( LESS_OR_EQUAL ^| GREATER_OR_EQUAL ^| LESS_THAN ^| GREATER_THAN ^) z= shiftExpression )*
 			loop121:
 			while (true) {
 				int alt121=2;
@@ -16845,9 +16846,9 @@ public class JavaParser extends Parser {
 
 				switch (alt121) {
 				case 1 :
-					// Java.g:1552:17: opr= ( LESS_OR_EQUAL ^| GREATER_OR_EQUAL ^| LESS_THAN ^| GREATER_THAN ^) z= shiftExpression
+					// Java.g:1553:17: opr= ( LESS_OR_EQUAL ^| GREATER_OR_EQUAL ^| LESS_THAN ^| GREATER_THAN ^) z= shiftExpression
 					{
-					// Java.g:1552:21: ( LESS_OR_EQUAL ^| GREATER_OR_EQUAL ^| LESS_THAN ^| GREATER_THAN ^)
+					// Java.g:1553:21: ( LESS_OR_EQUAL ^| GREATER_OR_EQUAL ^| LESS_THAN ^| GREATER_THAN ^)
 					int alt120=4;
 					switch ( input.LA(1) ) {
 					case LESS_OR_EQUAL:
@@ -16878,7 +16879,7 @@ public class JavaParser extends Parser {
 					}
 					switch (alt120) {
 						case 1 :
-							// Java.g:1552:23: LESS_OR_EQUAL ^
+							// Java.g:1553:23: LESS_OR_EQUAL ^
 							{
 							opr=(Token)match(input,LESS_OR_EQUAL,FOLLOW_LESS_OR_EQUAL_in_relationalExpression17485); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -16889,7 +16890,7 @@ public class JavaParser extends Parser {
 							}
 							break;
 						case 2 :
-							// Java.g:1552:40: GREATER_OR_EQUAL ^
+							// Java.g:1553:40: GREATER_OR_EQUAL ^
 							{
 							opr=(Token)match(input,GREATER_OR_EQUAL,FOLLOW_GREATER_OR_EQUAL_in_relationalExpression17490); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -16900,7 +16901,7 @@ public class JavaParser extends Parser {
 							}
 							break;
 						case 3 :
-							// Java.g:1552:60: LESS_THAN ^
+							// Java.g:1553:60: LESS_THAN ^
 							{
 							opr=(Token)match(input,LESS_THAN,FOLLOW_LESS_THAN_in_relationalExpression17495); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -16911,7 +16912,7 @@ public class JavaParser extends Parser {
 							}
 							break;
 						case 4 :
-							// Java.g:1552:73: GREATER_THAN ^
+							// Java.g:1553:73: GREATER_THAN ^
 							{
 							opr=(Token)match(input,GREATER_THAN,FOLLOW_GREATER_THAN_in_relationalExpression17500); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -16989,7 +16990,7 @@ public class JavaParser extends Parser {
 
 
 	// $ANTLR start "shiftExpression"
-	// Java.g:1576:1: shiftExpression : q= additiveExpression (opr= ( BIT_SHIFT_RIGHT ^| SHIFT_RIGHT ^| SHIFT_LEFT ^) z= additiveExpression )* ;
+	// Java.g:1577:1: shiftExpression : q= additiveExpression (opr= ( BIT_SHIFT_RIGHT ^| SHIFT_RIGHT ^| SHIFT_LEFT ^) z= additiveExpression )* ;
 	public final JavaParser.shiftExpression_return shiftExpression() throws RecognitionException {
 		JavaParser.shiftExpression_return retval = new JavaParser.shiftExpression_return();
 		retval.start = input.LT(1);
@@ -17006,8 +17007,8 @@ public class JavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 100) ) { return retval; }
 
-			// Java.g:1577:13: (q= additiveExpression (opr= ( BIT_SHIFT_RIGHT ^| SHIFT_RIGHT ^| SHIFT_LEFT ^) z= additiveExpression )* )
-			// Java.g:1577:16: q= additiveExpression (opr= ( BIT_SHIFT_RIGHT ^| SHIFT_RIGHT ^| SHIFT_LEFT ^) z= additiveExpression )*
+			// Java.g:1578:13: (q= additiveExpression (opr= ( BIT_SHIFT_RIGHT ^| SHIFT_RIGHT ^| SHIFT_LEFT ^) z= additiveExpression )* )
+			// Java.g:1578:16: q= additiveExpression (opr= ( BIT_SHIFT_RIGHT ^| SHIFT_RIGHT ^| SHIFT_LEFT ^) z= additiveExpression )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -17018,7 +17019,7 @@ public class JavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, q.getTree());
 
-			// Java.g:1578:16: (opr= ( BIT_SHIFT_RIGHT ^| SHIFT_RIGHT ^| SHIFT_LEFT ^) z= additiveExpression )*
+			// Java.g:1579:16: (opr= ( BIT_SHIFT_RIGHT ^| SHIFT_RIGHT ^| SHIFT_LEFT ^) z= additiveExpression )*
 			loop123:
 			while (true) {
 				int alt123=2;
@@ -17029,9 +17030,9 @@ public class JavaParser extends Parser {
 
 				switch (alt123) {
 				case 1 :
-					// Java.g:1578:18: opr= ( BIT_SHIFT_RIGHT ^| SHIFT_RIGHT ^| SHIFT_LEFT ^) z= additiveExpression
+					// Java.g:1579:18: opr= ( BIT_SHIFT_RIGHT ^| SHIFT_RIGHT ^| SHIFT_LEFT ^) z= additiveExpression
 					{
-					// Java.g:1578:22: ( BIT_SHIFT_RIGHT ^| SHIFT_RIGHT ^| SHIFT_LEFT ^)
+					// Java.g:1579:22: ( BIT_SHIFT_RIGHT ^| SHIFT_RIGHT ^| SHIFT_LEFT ^)
 					int alt122=3;
 					switch ( input.LA(1) ) {
 					case BIT_SHIFT_RIGHT:
@@ -17057,7 +17058,7 @@ public class JavaParser extends Parser {
 					}
 					switch (alt122) {
 						case 1 :
-							// Java.g:1578:23: BIT_SHIFT_RIGHT ^
+							// Java.g:1579:23: BIT_SHIFT_RIGHT ^
 							{
 							opr=(Token)match(input,BIT_SHIFT_RIGHT,FOLLOW_BIT_SHIFT_RIGHT_in_shiftExpression17618); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -17068,7 +17069,7 @@ public class JavaParser extends Parser {
 							}
 							break;
 						case 2 :
-							// Java.g:1578:42: SHIFT_RIGHT ^
+							// Java.g:1579:42: SHIFT_RIGHT ^
 							{
 							opr=(Token)match(input,SHIFT_RIGHT,FOLLOW_SHIFT_RIGHT_in_shiftExpression17623); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -17079,7 +17080,7 @@ public class JavaParser extends Parser {
 							}
 							break;
 						case 3 :
-							// Java.g:1578:57: SHIFT_LEFT ^
+							// Java.g:1579:57: SHIFT_LEFT ^
 							{
 							opr=(Token)match(input,SHIFT_LEFT,FOLLOW_SHIFT_LEFT_in_shiftExpression17628); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -17156,7 +17157,7 @@ public class JavaParser extends Parser {
 
 
 	// $ANTLR start "additiveExpression"
-	// Java.g:1601:1: additiveExpression : q= multiplicativeExpression (opr= ( PLUS ^| MINUS ^) z= multiplicativeExpression )* ;
+	// Java.g:1602:1: additiveExpression : q= multiplicativeExpression (opr= ( PLUS ^| MINUS ^) z= multiplicativeExpression )* ;
 	public final JavaParser.additiveExpression_return additiveExpression() throws RecognitionException {
 		JavaParser.additiveExpression_return retval = new JavaParser.additiveExpression_return();
 		retval.start = input.LT(1);
@@ -17173,8 +17174,8 @@ public class JavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 101) ) { return retval; }
 
-			// Java.g:1602:13: (q= multiplicativeExpression (opr= ( PLUS ^| MINUS ^) z= multiplicativeExpression )* )
-			// Java.g:1602:16: q= multiplicativeExpression (opr= ( PLUS ^| MINUS ^) z= multiplicativeExpression )*
+			// Java.g:1603:13: (q= multiplicativeExpression (opr= ( PLUS ^| MINUS ^) z= multiplicativeExpression )* )
+			// Java.g:1603:16: q= multiplicativeExpression (opr= ( PLUS ^| MINUS ^) z= multiplicativeExpression )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -17185,7 +17186,7 @@ public class JavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, q.getTree());
 
-			// Java.g:1603:17: (opr= ( PLUS ^| MINUS ^) z= multiplicativeExpression )*
+			// Java.g:1604:17: (opr= ( PLUS ^| MINUS ^) z= multiplicativeExpression )*
 			loop125:
 			while (true) {
 				int alt125=2;
@@ -17196,9 +17197,9 @@ public class JavaParser extends Parser {
 
 				switch (alt125) {
 				case 1 :
-					// Java.g:1603:21: opr= ( PLUS ^| MINUS ^) z= multiplicativeExpression
+					// Java.g:1604:21: opr= ( PLUS ^| MINUS ^) z= multiplicativeExpression
 					{
-					// Java.g:1603:25: ( PLUS ^| MINUS ^)
+					// Java.g:1604:25: ( PLUS ^| MINUS ^)
 					int alt124=2;
 					int LA124_0 = input.LA(1);
 					if ( (LA124_0==PLUS) ) {
@@ -17217,7 +17218,7 @@ public class JavaParser extends Parser {
 
 					switch (alt124) {
 						case 1 :
-							// Java.g:1603:26: PLUS ^
+							// Java.g:1604:26: PLUS ^
 							{
 							opr=(Token)match(input,PLUS,FOLLOW_PLUS_in_additiveExpression17746); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -17228,7 +17229,7 @@ public class JavaParser extends Parser {
 							}
 							break;
 						case 2 :
-							// Java.g:1603:34: MINUS ^
+							// Java.g:1604:34: MINUS ^
 							{
 							opr=(Token)match(input,MINUS,FOLLOW_MINUS_in_additiveExpression17751); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -17304,7 +17305,7 @@ public class JavaParser extends Parser {
 
 
 	// $ANTLR start "multiplicativeExpression"
-	// Java.g:1625:1: multiplicativeExpression : q= unaryExpression (opr= ( STAR ^| DIV ^| MOD ^) z= unaryExpression )* ;
+	// Java.g:1626:1: multiplicativeExpression : q= unaryExpression (opr= ( STAR ^| DIV ^| MOD ^) z= unaryExpression )* ;
 	public final JavaParser.multiplicativeExpression_return multiplicativeExpression() throws RecognitionException {
 		JavaParser.multiplicativeExpression_return retval = new JavaParser.multiplicativeExpression_return();
 		retval.start = input.LT(1);
@@ -17321,8 +17322,8 @@ public class JavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 102) ) { return retval; }
 
-			// Java.g:1626:13: (q= unaryExpression (opr= ( STAR ^| DIV ^| MOD ^) z= unaryExpression )* )
-			// Java.g:1626:15: q= unaryExpression (opr= ( STAR ^| DIV ^| MOD ^) z= unaryExpression )*
+			// Java.g:1627:13: (q= unaryExpression (opr= ( STAR ^| DIV ^| MOD ^) z= unaryExpression )* )
+			// Java.g:1627:15: q= unaryExpression (opr= ( STAR ^| DIV ^| MOD ^) z= unaryExpression )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -17333,7 +17334,7 @@ public class JavaParser extends Parser {
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) adaptor.addChild(root_0, q.getTree());
 
-			// Java.g:1627:15: (opr= ( STAR ^| DIV ^| MOD ^) z= unaryExpression )*
+			// Java.g:1628:15: (opr= ( STAR ^| DIV ^| MOD ^) z= unaryExpression )*
 			loop127:
 			while (true) {
 				int alt127=2;
@@ -17344,9 +17345,9 @@ public class JavaParser extends Parser {
 
 				switch (alt127) {
 				case 1 :
-					// Java.g:1627:17: opr= ( STAR ^| DIV ^| MOD ^) z= unaryExpression
+					// Java.g:1628:17: opr= ( STAR ^| DIV ^| MOD ^) z= unaryExpression
 					{
-					// Java.g:1627:21: ( STAR ^| DIV ^| MOD ^)
+					// Java.g:1628:21: ( STAR ^| DIV ^| MOD ^)
 					int alt126=3;
 					switch ( input.LA(1) ) {
 					case STAR:
@@ -17372,7 +17373,7 @@ public class JavaParser extends Parser {
 					}
 					switch (alt126) {
 						case 1 :
-							// Java.g:1627:22: STAR ^
+							// Java.g:1628:22: STAR ^
 							{
 							opr=(Token)match(input,STAR,FOLLOW_STAR_in_multiplicativeExpression17866); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -17383,7 +17384,7 @@ public class JavaParser extends Parser {
 							}
 							break;
 						case 2 :
-							// Java.g:1627:30: DIV ^
+							// Java.g:1628:30: DIV ^
 							{
 							opr=(Token)match(input,DIV,FOLLOW_DIV_in_multiplicativeExpression17871); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -17394,7 +17395,7 @@ public class JavaParser extends Parser {
 							}
 							break;
 						case 3 :
-							// Java.g:1627:37: MOD ^
+							// Java.g:1628:37: MOD ^
 							{
 							opr=(Token)match(input,MOD,FOLLOW_MOD_in_multiplicativeExpression17876); if (state.failed) return retval;
 							if ( state.backtracking==0 ) {
@@ -17471,7 +17472,7 @@ public class JavaParser extends Parser {
 
 
 	// $ANTLR start "unaryExpression"
-	// Java.g:1650:1: unaryExpression : (opr= PLUS p= unaryExpression -> ^( UNARY_PLUS[$PLUS, \"UNARY_PLUS\"] unaryExpression ) |opr= MINUS p= unaryExpression -> ^( UNARY_MINUS[$MINUS, \"UNARY_MINUS\"] unaryExpression ) |opr= INC p= postfixedExpression -> ^( PRE_INC[$INC, \"PRE_INC\"] postfixedExpression ) |opr= DEC p= postfixedExpression -> ^( PRE_DEC[$DEC, \"PRE_DEC\"] postfixedExpression ) | unaryExpressionNotPlusMinus );
+	// Java.g:1651:1: unaryExpression : (opr= PLUS p= unaryExpression -> ^( UNARY_PLUS[$PLUS, \"UNARY_PLUS\"] unaryExpression ) |opr= MINUS p= unaryExpression -> ^( UNARY_MINUS[$MINUS, \"UNARY_MINUS\"] unaryExpression ) |opr= INC p= postfixedExpression -> ^( PRE_INC[$INC, \"PRE_INC\"] postfixedExpression ) |opr= DEC p= postfixedExpression -> ^( PRE_DEC[$DEC, \"PRE_DEC\"] postfixedExpression ) | unaryExpressionNotPlusMinus );
 	public final JavaParser.unaryExpression_return unaryExpression() throws RecognitionException {
 		JavaParser.unaryExpression_return retval = new JavaParser.unaryExpression_return();
 		retval.start = input.LT(1);
@@ -17494,7 +17495,7 @@ public class JavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 103) ) { return retval; }
 
-			// Java.g:1651:13: (opr= PLUS p= unaryExpression -> ^( UNARY_PLUS[$PLUS, \"UNARY_PLUS\"] unaryExpression ) |opr= MINUS p= unaryExpression -> ^( UNARY_MINUS[$MINUS, \"UNARY_MINUS\"] unaryExpression ) |opr= INC p= postfixedExpression -> ^( PRE_INC[$INC, \"PRE_INC\"] postfixedExpression ) |opr= DEC p= postfixedExpression -> ^( PRE_DEC[$DEC, \"PRE_DEC\"] postfixedExpression ) | unaryExpressionNotPlusMinus )
+			// Java.g:1652:13: (opr= PLUS p= unaryExpression -> ^( UNARY_PLUS[$PLUS, \"UNARY_PLUS\"] unaryExpression ) |opr= MINUS p= unaryExpression -> ^( UNARY_MINUS[$MINUS, \"UNARY_MINUS\"] unaryExpression ) |opr= INC p= postfixedExpression -> ^( PRE_INC[$INC, \"PRE_INC\"] postfixedExpression ) |opr= DEC p= postfixedExpression -> ^( PRE_DEC[$DEC, \"PRE_DEC\"] postfixedExpression ) | unaryExpressionNotPlusMinus )
 			int alt128=5;
 			switch ( input.LA(1) ) {
 			case PLUS:
@@ -17555,7 +17556,7 @@ public class JavaParser extends Parser {
 			}
 			switch (alt128) {
 				case 1 :
-					// Java.g:1651:15: opr= PLUS p= unaryExpression
+					// Java.g:1652:15: opr= PLUS p= unaryExpression
 					{
 					opr=(Token)match(input,PLUS,FOLLOW_PLUS_in_unaryExpression17969); if (state.failed) return retval; 
 					if ( state.backtracking==0 ) stream_PLUS.add(opr);
@@ -17586,9 +17587,9 @@ public class JavaParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (CommonTree)adaptor.nil();
-					// 1661:18: -> ^( UNARY_PLUS[$PLUS, \"UNARY_PLUS\"] unaryExpression )
+					// 1662:18: -> ^( UNARY_PLUS[$PLUS, \"UNARY_PLUS\"] unaryExpression )
 					{
-						// Java.g:1661:22: ^( UNARY_PLUS[$PLUS, \"UNARY_PLUS\"] unaryExpression )
+						// Java.g:1662:22: ^( UNARY_PLUS[$PLUS, \"UNARY_PLUS\"] unaryExpression )
 						{
 						CommonTree root_1 = (CommonTree)adaptor.nil();
 						root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(UNARY_PLUS, opr, "UNARY_PLUS"), root_1);
@@ -17605,7 +17606,7 @@ public class JavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// Java.g:1662:15: opr= MINUS p= unaryExpression
+					// Java.g:1663:15: opr= MINUS p= unaryExpression
 					{
 					opr=(Token)match(input,MINUS,FOLLOW_MINUS_in_unaryExpression18024); if (state.failed) return retval; 
 					if ( state.backtracking==0 ) stream_MINUS.add(opr);
@@ -17636,9 +17637,9 @@ public class JavaParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (CommonTree)adaptor.nil();
-					// 1672:18: -> ^( UNARY_MINUS[$MINUS, \"UNARY_MINUS\"] unaryExpression )
+					// 1673:18: -> ^( UNARY_MINUS[$MINUS, \"UNARY_MINUS\"] unaryExpression )
 					{
-						// Java.g:1672:22: ^( UNARY_MINUS[$MINUS, \"UNARY_MINUS\"] unaryExpression )
+						// Java.g:1673:22: ^( UNARY_MINUS[$MINUS, \"UNARY_MINUS\"] unaryExpression )
 						{
 						CommonTree root_1 = (CommonTree)adaptor.nil();
 						root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(UNARY_MINUS, opr, "UNARY_MINUS"), root_1);
@@ -17655,7 +17656,7 @@ public class JavaParser extends Parser {
 					}
 					break;
 				case 3 :
-					// Java.g:1673:15: opr= INC p= postfixedExpression
+					// Java.g:1674:15: opr= INC p= postfixedExpression
 					{
 					opr=(Token)match(input,INC,FOLLOW_INC_in_unaryExpression18079); if (state.failed) return retval; 
 					if ( state.backtracking==0 ) stream_INC.add(opr);
@@ -17686,9 +17687,9 @@ public class JavaParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (CommonTree)adaptor.nil();
-					// 1683:18: -> ^( PRE_INC[$INC, \"PRE_INC\"] postfixedExpression )
+					// 1684:18: -> ^( PRE_INC[$INC, \"PRE_INC\"] postfixedExpression )
 					{
-						// Java.g:1683:22: ^( PRE_INC[$INC, \"PRE_INC\"] postfixedExpression )
+						// Java.g:1684:22: ^( PRE_INC[$INC, \"PRE_INC\"] postfixedExpression )
 						{
 						CommonTree root_1 = (CommonTree)adaptor.nil();
 						root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(PRE_INC, opr, "PRE_INC"), root_1);
@@ -17705,7 +17706,7 @@ public class JavaParser extends Parser {
 					}
 					break;
 				case 4 :
-					// Java.g:1684:15: opr= DEC p= postfixedExpression
+					// Java.g:1685:15: opr= DEC p= postfixedExpression
 					{
 					opr=(Token)match(input,DEC,FOLLOW_DEC_in_unaryExpression18135); if (state.failed) return retval; 
 					if ( state.backtracking==0 ) stream_DEC.add(opr);
@@ -17736,9 +17737,9 @@ public class JavaParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (CommonTree)adaptor.nil();
-					// 1694:16: -> ^( PRE_DEC[$DEC, \"PRE_DEC\"] postfixedExpression )
+					// 1695:16: -> ^( PRE_DEC[$DEC, \"PRE_DEC\"] postfixedExpression )
 					{
-						// Java.g:1694:20: ^( PRE_DEC[$DEC, \"PRE_DEC\"] postfixedExpression )
+						// Java.g:1695:20: ^( PRE_DEC[$DEC, \"PRE_DEC\"] postfixedExpression )
 						{
 						CommonTree root_1 = (CommonTree)adaptor.nil();
 						root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(PRE_DEC, opr, "PRE_DEC"), root_1);
@@ -17755,7 +17756,7 @@ public class JavaParser extends Parser {
 					}
 					break;
 				case 5 :
-					// Java.g:1695:17: unaryExpressionNotPlusMinus
+					// Java.g:1696:17: unaryExpressionNotPlusMinus
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -17800,7 +17801,7 @@ public class JavaParser extends Parser {
 
 
 	// $ANTLR start "unaryExpressionNotPlusMinus"
-	// Java.g:1698:1: unaryExpressionNotPlusMinus : (opr= NOT p= unaryExpression -> ^( NOT unaryExpression ) |opr= LOGICAL_NOT p= unaryExpression -> ^( LOGICAL_NOT unaryExpression ) | LPAREN t= type RPAREN p= unaryExpression -> ^( CAST_EXPR[$LPAREN, \"CAST_EXPR\"] type unaryExpression ) | postfixedExpression );
+	// Java.g:1699:1: unaryExpressionNotPlusMinus : (opr= NOT p= unaryExpression -> ^( NOT unaryExpression ) |opr= LOGICAL_NOT p= unaryExpression -> ^( LOGICAL_NOT unaryExpression ) | LPAREN t= type RPAREN p= unaryExpression -> ^( CAST_EXPR[$LPAREN, \"CAST_EXPR\"] type unaryExpression ) | postfixedExpression );
 	public final JavaParser.unaryExpressionNotPlusMinus_return unaryExpressionNotPlusMinus() throws RecognitionException {
 		JavaParser.unaryExpressionNotPlusMinus_return retval = new JavaParser.unaryExpressionNotPlusMinus_return();
 		retval.start = input.LT(1);
@@ -17828,7 +17829,7 @@ public class JavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 104) ) { return retval; }
 
-			// Java.g:1699:13: (opr= NOT p= unaryExpression -> ^( NOT unaryExpression ) |opr= LOGICAL_NOT p= unaryExpression -> ^( LOGICAL_NOT unaryExpression ) | LPAREN t= type RPAREN p= unaryExpression -> ^( CAST_EXPR[$LPAREN, \"CAST_EXPR\"] type unaryExpression ) | postfixedExpression )
+			// Java.g:1700:13: (opr= NOT p= unaryExpression -> ^( NOT unaryExpression ) |opr= LOGICAL_NOT p= unaryExpression -> ^( LOGICAL_NOT unaryExpression ) | LPAREN t= type RPAREN p= unaryExpression -> ^( CAST_EXPR[$LPAREN, \"CAST_EXPR\"] type unaryExpression ) | postfixedExpression )
 			int alt129=4;
 			switch ( input.LA(1) ) {
 			case NOT:
@@ -17888,7 +17889,7 @@ public class JavaParser extends Parser {
 			}
 			switch (alt129) {
 				case 1 :
-					// Java.g:1699:16: opr= NOT p= unaryExpression
+					// Java.g:1700:16: opr= NOT p= unaryExpression
 					{
 					opr=(Token)match(input,NOT,FOLLOW_NOT_in_unaryExpressionNotPlusMinus18233); if (state.failed) return retval; 
 					if ( state.backtracking==0 ) stream_NOT.add(opr);
@@ -17919,9 +17920,9 @@ public class JavaParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (CommonTree)adaptor.nil();
-					// 1709:17: -> ^( NOT unaryExpression )
+					// 1710:17: -> ^( NOT unaryExpression )
 					{
-						// Java.g:1709:21: ^( NOT unaryExpression )
+						// Java.g:1710:21: ^( NOT unaryExpression )
 						{
 						CommonTree root_1 = (CommonTree)adaptor.nil();
 						root_1 = (CommonTree)adaptor.becomeRoot(stream_NOT.nextNode(), root_1);
@@ -17938,7 +17939,7 @@ public class JavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// Java.g:1710:16: opr= LOGICAL_NOT p= unaryExpression
+					// Java.g:1711:16: opr= LOGICAL_NOT p= unaryExpression
 					{
 					opr=(Token)match(input,LOGICAL_NOT,FOLLOW_LOGICAL_NOT_in_unaryExpressionNotPlusMinus18289); if (state.failed) return retval; 
 					if ( state.backtracking==0 ) stream_LOGICAL_NOT.add(opr);
@@ -17969,9 +17970,9 @@ public class JavaParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (CommonTree)adaptor.nil();
-					// 1720:34: -> ^( LOGICAL_NOT unaryExpression )
+					// 1721:34: -> ^( LOGICAL_NOT unaryExpression )
 					{
-						// Java.g:1720:38: ^( LOGICAL_NOT unaryExpression )
+						// Java.g:1721:38: ^( LOGICAL_NOT unaryExpression )
 						{
 						CommonTree root_1 = (CommonTree)adaptor.nil();
 						root_1 = (CommonTree)adaptor.becomeRoot(stream_LOGICAL_NOT.nextNode(), root_1);
@@ -17988,7 +17989,7 @@ public class JavaParser extends Parser {
 					}
 					break;
 				case 3 :
-					// Java.g:1721:16: LPAREN t= type RPAREN p= unaryExpression
+					// Java.g:1722:16: LPAREN t= type RPAREN p= unaryExpression
 					{
 					LPAREN367=(Token)match(input,LPAREN,FOLLOW_LPAREN_in_unaryExpressionNotPlusMinus18356); if (state.failed) return retval; 
 					if ( state.backtracking==0 ) stream_LPAREN.add(LPAREN367);
@@ -18024,9 +18025,9 @@ public class JavaParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (CommonTree)adaptor.nil();
-					// 1728:17: -> ^( CAST_EXPR[$LPAREN, \"CAST_EXPR\"] type unaryExpression )
+					// 1729:17: -> ^( CAST_EXPR[$LPAREN, \"CAST_EXPR\"] type unaryExpression )
 					{
-						// Java.g:1728:21: ^( CAST_EXPR[$LPAREN, \"CAST_EXPR\"] type unaryExpression )
+						// Java.g:1729:21: ^( CAST_EXPR[$LPAREN, \"CAST_EXPR\"] type unaryExpression )
 						{
 						CommonTree root_1 = (CommonTree)adaptor.nil();
 						root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(CAST_EXPR, LPAREN367, "CAST_EXPR"), root_1);
@@ -18044,7 +18045,7 @@ public class JavaParser extends Parser {
 					}
 					break;
 				case 4 :
-					// Java.g:1729:16: postfixedExpression
+					// Java.g:1730:16: postfixedExpression
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -18089,7 +18090,7 @@ public class JavaParser extends Parser {
 
 
 	// $ANTLR start "postfixedExpression"
-	// Java.g:1732:1: postfixedExpression : (q= primaryExpression -> primaryExpression ) (outerDot= DOT ( ( ( genericTypeArgumentListSimplified )? IDENT -> ^( DOT $postfixedExpression IDENT ) ) ( arguments -> ^( METHOD_CALL $postfixedExpression ( genericTypeArgumentListSimplified )? arguments ) )? | THIS -> ^( DOT $postfixedExpression THIS ) |Super= SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] $postfixedExpression arguments ) | ( SUPER innerDot= DOT IDENT -> ^( $innerDot ^( $outerDot $postfixedExpression SUPER ) IDENT ) ) ( arguments -> ^( METHOD_CALL $postfixedExpression arguments ) )? | innerNewExpression -> ^( DOT $postfixedExpression innerNewExpression ) ) | LBRACK expression RBRACK -> ^( ARRAY_ELEMENT_ACCESS $postfixedExpression expression ) )* ( INC -> ^( POST_INC[$INC, \"POST_INC\"] $postfixedExpression) | DEC -> ^( POST_DEC[$DEC, \"POST_DEC\"] $postfixedExpression) )? ;
+	// Java.g:1733:1: postfixedExpression : (q= primaryExpression -> primaryExpression ) (outerDot= DOT ( ( ( genericTypeArgumentListSimplified )? IDENT -> ^( DOT $postfixedExpression IDENT ) ) ( arguments -> ^( METHOD_CALL $postfixedExpression ( genericTypeArgumentListSimplified )? arguments ) )? | THIS -> ^( DOT $postfixedExpression THIS ) |Super= SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] $postfixedExpression arguments ) | ( SUPER innerDot= DOT IDENT -> ^( $innerDot ^( $outerDot $postfixedExpression SUPER ) IDENT ) ) ( arguments -> ^( METHOD_CALL $postfixedExpression arguments ) )? | innerNewExpression -> ^( DOT $postfixedExpression innerNewExpression ) ) | LBRACK expression RBRACK -> ^( ARRAY_ELEMENT_ACCESS $postfixedExpression expression ) )* ( INC -> ^( POST_INC[$INC, \"POST_INC\"] $postfixedExpression) | DEC -> ^( POST_DEC[$DEC, \"POST_DEC\"] $postfixedExpression) )? ;
 	public final JavaParser.postfixedExpression_return postfixedExpression() throws RecognitionException {
 		JavaParser.postfixedExpression_return retval = new JavaParser.postfixedExpression_return();
 		retval.start = input.LT(1);
@@ -18144,11 +18145,11 @@ public class JavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 105) ) { return retval; }
 
-			// Java.g:1734:13: ( (q= primaryExpression -> primaryExpression ) (outerDot= DOT ( ( ( genericTypeArgumentListSimplified )? IDENT -> ^( DOT $postfixedExpression IDENT ) ) ( arguments -> ^( METHOD_CALL $postfixedExpression ( genericTypeArgumentListSimplified )? arguments ) )? | THIS -> ^( DOT $postfixedExpression THIS ) |Super= SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] $postfixedExpression arguments ) | ( SUPER innerDot= DOT IDENT -> ^( $innerDot ^( $outerDot $postfixedExpression SUPER ) IDENT ) ) ( arguments -> ^( METHOD_CALL $postfixedExpression arguments ) )? | innerNewExpression -> ^( DOT $postfixedExpression innerNewExpression ) ) | LBRACK expression RBRACK -> ^( ARRAY_ELEMENT_ACCESS $postfixedExpression expression ) )* ( INC -> ^( POST_INC[$INC, \"POST_INC\"] $postfixedExpression) | DEC -> ^( POST_DEC[$DEC, \"POST_DEC\"] $postfixedExpression) )? )
-			// Java.g:1734:17: (q= primaryExpression -> primaryExpression ) (outerDot= DOT ( ( ( genericTypeArgumentListSimplified )? IDENT -> ^( DOT $postfixedExpression IDENT ) ) ( arguments -> ^( METHOD_CALL $postfixedExpression ( genericTypeArgumentListSimplified )? arguments ) )? | THIS -> ^( DOT $postfixedExpression THIS ) |Super= SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] $postfixedExpression arguments ) | ( SUPER innerDot= DOT IDENT -> ^( $innerDot ^( $outerDot $postfixedExpression SUPER ) IDENT ) ) ( arguments -> ^( METHOD_CALL $postfixedExpression arguments ) )? | innerNewExpression -> ^( DOT $postfixedExpression innerNewExpression ) ) | LBRACK expression RBRACK -> ^( ARRAY_ELEMENT_ACCESS $postfixedExpression expression ) )* ( INC -> ^( POST_INC[$INC, \"POST_INC\"] $postfixedExpression) | DEC -> ^( POST_DEC[$DEC, \"POST_DEC\"] $postfixedExpression) )?
+			// Java.g:1735:13: ( (q= primaryExpression -> primaryExpression ) (outerDot= DOT ( ( ( genericTypeArgumentListSimplified )? IDENT -> ^( DOT $postfixedExpression IDENT ) ) ( arguments -> ^( METHOD_CALL $postfixedExpression ( genericTypeArgumentListSimplified )? arguments ) )? | THIS -> ^( DOT $postfixedExpression THIS ) |Super= SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] $postfixedExpression arguments ) | ( SUPER innerDot= DOT IDENT -> ^( $innerDot ^( $outerDot $postfixedExpression SUPER ) IDENT ) ) ( arguments -> ^( METHOD_CALL $postfixedExpression arguments ) )? | innerNewExpression -> ^( DOT $postfixedExpression innerNewExpression ) ) | LBRACK expression RBRACK -> ^( ARRAY_ELEMENT_ACCESS $postfixedExpression expression ) )* ( INC -> ^( POST_INC[$INC, \"POST_INC\"] $postfixedExpression) | DEC -> ^( POST_DEC[$DEC, \"POST_DEC\"] $postfixedExpression) )? )
+			// Java.g:1735:17: (q= primaryExpression -> primaryExpression ) (outerDot= DOT ( ( ( genericTypeArgumentListSimplified )? IDENT -> ^( DOT $postfixedExpression IDENT ) ) ( arguments -> ^( METHOD_CALL $postfixedExpression ( genericTypeArgumentListSimplified )? arguments ) )? | THIS -> ^( DOT $postfixedExpression THIS ) |Super= SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] $postfixedExpression arguments ) | ( SUPER innerDot= DOT IDENT -> ^( $innerDot ^( $outerDot $postfixedExpression SUPER ) IDENT ) ) ( arguments -> ^( METHOD_CALL $postfixedExpression arguments ) )? | innerNewExpression -> ^( DOT $postfixedExpression innerNewExpression ) ) | LBRACK expression RBRACK -> ^( ARRAY_ELEMENT_ACCESS $postfixedExpression expression ) )* ( INC -> ^( POST_INC[$INC, \"POST_INC\"] $postfixedExpression) | DEC -> ^( POST_DEC[$DEC, \"POST_DEC\"] $postfixedExpression) )?
 			{
-			// Java.g:1734:17: (q= primaryExpression -> primaryExpression )
-			// Java.g:1734:19: q= primaryExpression
+			// Java.g:1735:17: (q= primaryExpression -> primaryExpression )
+			// Java.g:1735:19: q= primaryExpression
 			{
 			pushFollow(FOLLOW_primaryExpression_in_postfixedExpression18484);
 			q=primaryExpression();
@@ -18167,7 +18168,7 @@ public class JavaParser extends Parser {
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 			root_0 = (CommonTree)adaptor.nil();
-			// 1735:21: -> primaryExpression
+			// 1736:21: -> primaryExpression
 			{
 				adaptor.addChild(root_0, stream_primaryExpression.nextTree());
 			}
@@ -18178,7 +18179,7 @@ public class JavaParser extends Parser {
 
 			}
 
-			// Java.g:1738:17: (outerDot= DOT ( ( ( genericTypeArgumentListSimplified )? IDENT -> ^( DOT $postfixedExpression IDENT ) ) ( arguments -> ^( METHOD_CALL $postfixedExpression ( genericTypeArgumentListSimplified )? arguments ) )? | THIS -> ^( DOT $postfixedExpression THIS ) |Super= SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] $postfixedExpression arguments ) | ( SUPER innerDot= DOT IDENT -> ^( $innerDot ^( $outerDot $postfixedExpression SUPER ) IDENT ) ) ( arguments -> ^( METHOD_CALL $postfixedExpression arguments ) )? | innerNewExpression -> ^( DOT $postfixedExpression innerNewExpression ) ) | LBRACK expression RBRACK -> ^( ARRAY_ELEMENT_ACCESS $postfixedExpression expression ) )*
+			// Java.g:1739:17: (outerDot= DOT ( ( ( genericTypeArgumentListSimplified )? IDENT -> ^( DOT $postfixedExpression IDENT ) ) ( arguments -> ^( METHOD_CALL $postfixedExpression ( genericTypeArgumentListSimplified )? arguments ) )? | THIS -> ^( DOT $postfixedExpression THIS ) |Super= SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] $postfixedExpression arguments ) | ( SUPER innerDot= DOT IDENT -> ^( $innerDot ^( $outerDot $postfixedExpression SUPER ) IDENT ) ) ( arguments -> ^( METHOD_CALL $postfixedExpression arguments ) )? | innerNewExpression -> ^( DOT $postfixedExpression innerNewExpression ) ) | LBRACK expression RBRACK -> ^( ARRAY_ELEMENT_ACCESS $postfixedExpression expression ) )*
 			loop134:
 			while (true) {
 				int alt134=3;
@@ -18192,12 +18193,12 @@ public class JavaParser extends Parser {
 
 				switch (alt134) {
 				case 1 :
-					// Java.g:1738:21: outerDot= DOT ( ( ( genericTypeArgumentListSimplified )? IDENT -> ^( DOT $postfixedExpression IDENT ) ) ( arguments -> ^( METHOD_CALL $postfixedExpression ( genericTypeArgumentListSimplified )? arguments ) )? | THIS -> ^( DOT $postfixedExpression THIS ) |Super= SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] $postfixedExpression arguments ) | ( SUPER innerDot= DOT IDENT -> ^( $innerDot ^( $outerDot $postfixedExpression SUPER ) IDENT ) ) ( arguments -> ^( METHOD_CALL $postfixedExpression arguments ) )? | innerNewExpression -> ^( DOT $postfixedExpression innerNewExpression ) )
+					// Java.g:1739:21: outerDot= DOT ( ( ( genericTypeArgumentListSimplified )? IDENT -> ^( DOT $postfixedExpression IDENT ) ) ( arguments -> ^( METHOD_CALL $postfixedExpression ( genericTypeArgumentListSimplified )? arguments ) )? | THIS -> ^( DOT $postfixedExpression THIS ) |Super= SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] $postfixedExpression arguments ) | ( SUPER innerDot= DOT IDENT -> ^( $innerDot ^( $outerDot $postfixedExpression SUPER ) IDENT ) ) ( arguments -> ^( METHOD_CALL $postfixedExpression arguments ) )? | innerNewExpression -> ^( DOT $postfixedExpression innerNewExpression ) )
 					{
 					outerDot=(Token)match(input,DOT,FOLLOW_DOT_in_postfixedExpression18570); if (state.failed) return retval; 
 					if ( state.backtracking==0 ) stream_DOT.add(outerDot);
 
-					// Java.g:1739:21: ( ( ( genericTypeArgumentListSimplified )? IDENT -> ^( DOT $postfixedExpression IDENT ) ) ( arguments -> ^( METHOD_CALL $postfixedExpression ( genericTypeArgumentListSimplified )? arguments ) )? | THIS -> ^( DOT $postfixedExpression THIS ) |Super= SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] $postfixedExpression arguments ) | ( SUPER innerDot= DOT IDENT -> ^( $innerDot ^( $outerDot $postfixedExpression SUPER ) IDENT ) ) ( arguments -> ^( METHOD_CALL $postfixedExpression arguments ) )? | innerNewExpression -> ^( DOT $postfixedExpression innerNewExpression ) )
+					// Java.g:1740:21: ( ( ( genericTypeArgumentListSimplified )? IDENT -> ^( DOT $postfixedExpression IDENT ) ) ( arguments -> ^( METHOD_CALL $postfixedExpression ( genericTypeArgumentListSimplified )? arguments ) )? | THIS -> ^( DOT $postfixedExpression THIS ) |Super= SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] $postfixedExpression arguments ) | ( SUPER innerDot= DOT IDENT -> ^( $innerDot ^( $outerDot $postfixedExpression SUPER ) IDENT ) ) ( arguments -> ^( METHOD_CALL $postfixedExpression arguments ) )? | innerNewExpression -> ^( DOT $postfixedExpression innerNewExpression ) )
 					int alt133=5;
 					switch ( input.LA(1) ) {
 					case IDENT:
@@ -18249,12 +18250,12 @@ public class JavaParser extends Parser {
 					}
 					switch (alt133) {
 						case 1 :
-							// Java.g:1739:25: ( ( genericTypeArgumentListSimplified )? IDENT -> ^( DOT $postfixedExpression IDENT ) ) ( arguments -> ^( METHOD_CALL $postfixedExpression ( genericTypeArgumentListSimplified )? arguments ) )?
+							// Java.g:1740:25: ( ( genericTypeArgumentListSimplified )? IDENT -> ^( DOT $postfixedExpression IDENT ) ) ( arguments -> ^( METHOD_CALL $postfixedExpression ( genericTypeArgumentListSimplified )? arguments ) )?
 							{
-							// Java.g:1739:25: ( ( genericTypeArgumentListSimplified )? IDENT -> ^( DOT $postfixedExpression IDENT ) )
-							// Java.g:1739:29: ( genericTypeArgumentListSimplified )? IDENT
+							// Java.g:1740:25: ( ( genericTypeArgumentListSimplified )? IDENT -> ^( DOT $postfixedExpression IDENT ) )
+							// Java.g:1740:29: ( genericTypeArgumentListSimplified )? IDENT
 							{
-							// Java.g:1739:29: ( genericTypeArgumentListSimplified )?
+							// Java.g:1740:29: ( genericTypeArgumentListSimplified )?
 							int alt130=2;
 							int LA130_0 = input.LA(1);
 							if ( (LA130_0==LESS_THAN) ) {
@@ -18262,7 +18263,7 @@ public class JavaParser extends Parser {
 							}
 							switch (alt130) {
 								case 1 :
-									// Java.g:1739:29: genericTypeArgumentListSimplified
+									// Java.g:1740:29: genericTypeArgumentListSimplified
 									{
 									pushFollow(FOLLOW_genericTypeArgumentListSimplified_in_postfixedExpression18628);
 									genericTypeArgumentListSimplified370=genericTypeArgumentListSimplified();
@@ -18289,9 +18290,9 @@ public class JavaParser extends Parser {
 							RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 							root_0 = (CommonTree)adaptor.nil();
-							// 1741:61: -> ^( DOT $postfixedExpression IDENT )
+							// 1742:61: -> ^( DOT $postfixedExpression IDENT )
 							{
-								// Java.g:1741:65: ^( DOT $postfixedExpression IDENT )
+								// Java.g:1742:65: ^( DOT $postfixedExpression IDENT )
 								{
 								CommonTree root_1 = (CommonTree)adaptor.nil();
 								root_1 = (CommonTree)adaptor.becomeRoot(stream_DOT.nextNode(), root_1);
@@ -18308,7 +18309,7 @@ public class JavaParser extends Parser {
 
 							}
 
-							// Java.g:1743:25: ( arguments -> ^( METHOD_CALL $postfixedExpression ( genericTypeArgumentListSimplified )? arguments ) )?
+							// Java.g:1744:25: ( arguments -> ^( METHOD_CALL $postfixedExpression ( genericTypeArgumentListSimplified )? arguments ) )?
 							int alt131=2;
 							int LA131_0 = input.LA(1);
 							if ( (LA131_0==LPAREN) ) {
@@ -18316,7 +18317,7 @@ public class JavaParser extends Parser {
 							}
 							switch (alt131) {
 								case 1 :
-									// Java.g:1743:29: arguments
+									// Java.g:1744:29: arguments
 									{
 									pushFollow(FOLLOW_arguments_in_postfixedExpression18821);
 									arguments372=arguments();
@@ -18335,14 +18336,14 @@ public class JavaParser extends Parser {
 									RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 									root_0 = (CommonTree)adaptor.nil();
-									// 1744:46: -> ^( METHOD_CALL $postfixedExpression ( genericTypeArgumentListSimplified )? arguments )
+									// 1745:46: -> ^( METHOD_CALL $postfixedExpression ( genericTypeArgumentListSimplified )? arguments )
 									{
-										// Java.g:1744:50: ^( METHOD_CALL $postfixedExpression ( genericTypeArgumentListSimplified )? arguments )
+										// Java.g:1745:50: ^( METHOD_CALL $postfixedExpression ( genericTypeArgumentListSimplified )? arguments )
 										{
 										CommonTree root_1 = (CommonTree)adaptor.nil();
 										root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(METHOD_CALL, "METHOD_CALL"), root_1);
 										adaptor.addChild(root_1, stream_retval.nextTree());
-										// Java.g:1744:85: ( genericTypeArgumentListSimplified )?
+										// Java.g:1745:85: ( genericTypeArgumentListSimplified )?
 										if ( stream_genericTypeArgumentListSimplified.hasNext() ) {
 											adaptor.addChild(root_1, stream_genericTypeArgumentListSimplified.nextTree());
 										}
@@ -18366,7 +18367,7 @@ public class JavaParser extends Parser {
 							}
 							break;
 						case 2 :
-							// Java.g:1746:25: THIS
+							// Java.g:1747:25: THIS
 							{
 							THIS373=(Token)match(input,THIS,FOLLOW_THIS_in_postfixedExpression18936); if (state.failed) return retval; 
 							if ( state.backtracking==0 ) stream_THIS.add(THIS373);
@@ -18383,9 +18384,9 @@ public class JavaParser extends Parser {
 							RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 							root_0 = (CommonTree)adaptor.nil();
-							// 1746:61: -> ^( DOT $postfixedExpression THIS )
+							// 1747:61: -> ^( DOT $postfixedExpression THIS )
 							{
-								// Java.g:1746:65: ^( DOT $postfixedExpression THIS )
+								// Java.g:1747:65: ^( DOT $postfixedExpression THIS )
 								{
 								CommonTree root_1 = (CommonTree)adaptor.nil();
 								root_1 = (CommonTree)adaptor.becomeRoot(stream_DOT.nextNode(), root_1);
@@ -18403,7 +18404,7 @@ public class JavaParser extends Parser {
 							}
 							break;
 						case 3 :
-							// Java.g:1747:25: Super= SUPER arguments
+							// Java.g:1748:25: Super= SUPER arguments
 							{
 							Super=(Token)match(input,SUPER,FOLLOW_SUPER_in_postfixedExpression19007); if (state.failed) return retval; 
 							if ( state.backtracking==0 ) stream_SUPER.add(Super);
@@ -18425,9 +18426,9 @@ public class JavaParser extends Parser {
 							RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 							root_0 = (CommonTree)adaptor.nil();
-							// 1747:65: -> ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] $postfixedExpression arguments )
+							// 1748:65: -> ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] $postfixedExpression arguments )
 							{
-								// Java.g:1747:69: ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] $postfixedExpression arguments )
+								// Java.g:1748:69: ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] $postfixedExpression arguments )
 								{
 								CommonTree root_1 = (CommonTree)adaptor.nil();
 								root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(SUPER_CONSTRUCTOR_CALL, Super, "SUPER_CONSTRUCTOR_CALL"), root_1);
@@ -18445,10 +18446,10 @@ public class JavaParser extends Parser {
 							}
 							break;
 						case 4 :
-							// Java.g:1748:25: ( SUPER innerDot= DOT IDENT -> ^( $innerDot ^( $outerDot $postfixedExpression SUPER ) IDENT ) ) ( arguments -> ^( METHOD_CALL $postfixedExpression arguments ) )?
+							// Java.g:1749:25: ( SUPER innerDot= DOT IDENT -> ^( $innerDot ^( $outerDot $postfixedExpression SUPER ) IDENT ) ) ( arguments -> ^( METHOD_CALL $postfixedExpression arguments ) )?
 							{
-							// Java.g:1748:25: ( SUPER innerDot= DOT IDENT -> ^( $innerDot ^( $outerDot $postfixedExpression SUPER ) IDENT ) )
-							// Java.g:1748:29: SUPER innerDot= DOT IDENT
+							// Java.g:1749:25: ( SUPER innerDot= DOT IDENT -> ^( $innerDot ^( $outerDot $postfixedExpression SUPER ) IDENT ) )
+							// Java.g:1749:29: SUPER innerDot= DOT IDENT
 							{
 							SUPER375=(Token)match(input,SUPER,FOLLOW_SUPER_in_postfixedExpression19070); if (state.failed) return retval; 
 							if ( state.backtracking==0 ) stream_SUPER.add(SUPER375);
@@ -18473,13 +18474,13 @@ public class JavaParser extends Parser {
 							RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 							root_0 = (CommonTree)adaptor.nil();
-							// 1748:61: -> ^( $innerDot ^( $outerDot $postfixedExpression SUPER ) IDENT )
+							// 1749:61: -> ^( $innerDot ^( $outerDot $postfixedExpression SUPER ) IDENT )
 							{
-								// Java.g:1748:65: ^( $innerDot ^( $outerDot $postfixedExpression SUPER ) IDENT )
+								// Java.g:1749:65: ^( $innerDot ^( $outerDot $postfixedExpression SUPER ) IDENT )
 								{
 								CommonTree root_1 = (CommonTree)adaptor.nil();
 								root_1 = (CommonTree)adaptor.becomeRoot(stream_innerDot.nextNode(), root_1);
-								// Java.g:1748:77: ^( $outerDot $postfixedExpression SUPER )
+								// Java.g:1749:77: ^( $outerDot $postfixedExpression SUPER )
 								{
 								CommonTree root_2 = (CommonTree)adaptor.nil();
 								root_2 = (CommonTree)adaptor.becomeRoot(stream_outerDot.nextNode(), root_2);
@@ -18500,7 +18501,7 @@ public class JavaParser extends Parser {
 
 							}
 
-							// Java.g:1750:25: ( arguments -> ^( METHOD_CALL $postfixedExpression arguments ) )?
+							// Java.g:1751:25: ( arguments -> ^( METHOD_CALL $postfixedExpression arguments ) )?
 							int alt132=2;
 							int LA132_0 = input.LA(1);
 							if ( (LA132_0==LPAREN) ) {
@@ -18508,7 +18509,7 @@ public class JavaParser extends Parser {
 							}
 							switch (alt132) {
 								case 1 :
-									// Java.g:1750:29: arguments
+									// Java.g:1751:29: arguments
 									{
 									pushFollow(FOLLOW_arguments_in_postfixedExpression19159);
 									arguments377=arguments();
@@ -18527,9 +18528,9 @@ public class JavaParser extends Parser {
 									RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 									root_0 = (CommonTree)adaptor.nil();
-									// 1751:41: -> ^( METHOD_CALL $postfixedExpression arguments )
+									// 1752:41: -> ^( METHOD_CALL $postfixedExpression arguments )
 									{
-										// Java.g:1751:45: ^( METHOD_CALL $postfixedExpression arguments )
+										// Java.g:1752:45: ^( METHOD_CALL $postfixedExpression arguments )
 										{
 										CommonTree root_1 = (CommonTree)adaptor.nil();
 										root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(METHOD_CALL, "METHOD_CALL"), root_1);
@@ -18552,7 +18553,7 @@ public class JavaParser extends Parser {
 							}
 							break;
 						case 5 :
-							// Java.g:1753:25: innerNewExpression
+							// Java.g:1754:25: innerNewExpression
 							{
 							pushFollow(FOLLOW_innerNewExpression_in_postfixedExpression19271);
 							innerNewExpression378=innerNewExpression();
@@ -18571,9 +18572,9 @@ public class JavaParser extends Parser {
 							RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 							root_0 = (CommonTree)adaptor.nil();
-							// 1753:61: -> ^( DOT $postfixedExpression innerNewExpression )
+							// 1754:61: -> ^( DOT $postfixedExpression innerNewExpression )
 							{
-								// Java.g:1753:65: ^( DOT $postfixedExpression innerNewExpression )
+								// Java.g:1754:65: ^( DOT $postfixedExpression innerNewExpression )
 								{
 								CommonTree root_1 = (CommonTree)adaptor.nil();
 								root_1 = (CommonTree)adaptor.becomeRoot(stream_DOT.nextNode(), root_1);
@@ -18596,7 +18597,7 @@ public class JavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// Java.g:1755:21: LBRACK expression RBRACK
+					// Java.g:1756:21: LBRACK expression RBRACK
 					{
 					LBRACK379=(Token)match(input,LBRACK,FOLLOW_LBRACK_in_postfixedExpression19344); if (state.failed) return retval; 
 					if ( state.backtracking==0 ) stream_LBRACK.add(LBRACK379);
@@ -18621,9 +18622,9 @@ public class JavaParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (CommonTree)adaptor.nil();
-					// 1755:61: -> ^( ARRAY_ELEMENT_ACCESS $postfixedExpression expression )
+					// 1756:61: -> ^( ARRAY_ELEMENT_ACCESS $postfixedExpression expression )
 					{
-						// Java.g:1755:65: ^( ARRAY_ELEMENT_ACCESS $postfixedExpression expression )
+						// Java.g:1756:65: ^( ARRAY_ELEMENT_ACCESS $postfixedExpression expression )
 						{
 						CommonTree root_1 = (CommonTree)adaptor.nil();
 						root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(ARRAY_ELEMENT_ACCESS, "ARRAY_ELEMENT_ACCESS"), root_1);
@@ -18646,7 +18647,7 @@ public class JavaParser extends Parser {
 				}
 			}
 
-			// Java.g:1758:17: ( INC -> ^( POST_INC[$INC, \"POST_INC\"] $postfixedExpression) | DEC -> ^( POST_DEC[$DEC, \"POST_DEC\"] $postfixedExpression) )?
+			// Java.g:1759:17: ( INC -> ^( POST_INC[$INC, \"POST_INC\"] $postfixedExpression) | DEC -> ^( POST_DEC[$DEC, \"POST_DEC\"] $postfixedExpression) )?
 			int alt135=3;
 			int LA135_0 = input.LA(1);
 			if ( (LA135_0==INC) ) {
@@ -18657,7 +18658,7 @@ public class JavaParser extends Parser {
 			}
 			switch (alt135) {
 				case 1 :
-					// Java.g:1758:21: INC
+					// Java.g:1759:21: INC
 					{
 					INC382=(Token)match(input,INC,FOLLOW_INC_in_postfixedExpression19433); if (state.failed) return retval; 
 					if ( state.backtracking==0 ) stream_INC.add(INC382);
@@ -18674,9 +18675,9 @@ public class JavaParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (CommonTree)adaptor.nil();
-					// 1759:18: -> ^( POST_INC[$INC, \"POST_INC\"] $postfixedExpression)
+					// 1760:18: -> ^( POST_INC[$INC, \"POST_INC\"] $postfixedExpression)
 					{
-						// Java.g:1759:21: ^( POST_INC[$INC, \"POST_INC\"] $postfixedExpression)
+						// Java.g:1760:21: ^( POST_INC[$INC, \"POST_INC\"] $postfixedExpression)
 						{
 						CommonTree root_1 = (CommonTree)adaptor.nil();
 						root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(POST_INC, INC382, "POST_INC"), root_1);
@@ -18693,7 +18694,7 @@ public class JavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// Java.g:1760:21: DEC
+					// Java.g:1761:21: DEC
 					{
 					DEC383=(Token)match(input,DEC,FOLLOW_DEC_in_postfixedExpression19483); if (state.failed) return retval; 
 					if ( state.backtracking==0 ) stream_DEC.add(DEC383);
@@ -18710,9 +18711,9 @@ public class JavaParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (CommonTree)adaptor.nil();
-					// 1761:17: -> ^( POST_DEC[$DEC, \"POST_DEC\"] $postfixedExpression)
+					// 1762:17: -> ^( POST_DEC[$DEC, \"POST_DEC\"] $postfixedExpression)
 					{
-						// Java.g:1761:20: ^( POST_DEC[$DEC, \"POST_DEC\"] $postfixedExpression)
+						// Java.g:1762:20: ^( POST_DEC[$DEC, \"POST_DEC\"] $postfixedExpression)
 						{
 						CommonTree root_1 = (CommonTree)adaptor.nil();
 						root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(POST_DEC, DEC383, "POST_DEC"), root_1);
@@ -18763,7 +18764,7 @@ public class JavaParser extends Parser {
 
 
 	// $ANTLR start "primaryExpression"
-	// Java.g:1765:1: primaryExpression : ( parenthesizedExpression |z= literal | newExpression |q= qualifiedIdentExpression | genericTypeArgumentListSimplified ( SUPER ( arguments -> ^( SUPER_CONSTRUCTOR_CALL[$SUPER, \"SUPER_CONSTRUCTOR_CALL\"] genericTypeArgumentListSimplified arguments ) | DOT IDENT arguments -> ^( METHOD_CALL ^( DOT SUPER IDENT ) genericTypeArgumentListSimplified arguments ) ) |q1= IDENT arguments -> ^( METHOD_CALL IDENT genericTypeArgumentListSimplified arguments ) | THIS arguments -> ^( THIS_CONSTRUCTOR_CALL[$THIS, \"THIS_CONSTRUCTOR_CALL\"] genericTypeArgumentListSimplified arguments ) ) | ( THIS -> THIS ) ( arguments -> ^( THIS_CONSTRUCTOR_CALL[$THIS, \"THIS_CONSTRUCTOR_CALL\"] arguments ) )? | SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$SUPER, \"SUPER_CONSTRUCTOR_CALL\"] arguments ) | ( SUPER DOT IDENT ) ( arguments -> ^( METHOD_CALL ^( DOT SUPER IDENT ) arguments ) | -> ^( DOT SUPER IDENT ) ) | ( primitiveType -> primitiveType ) ( arrayDeclarator -> ^( arrayDeclarator $primaryExpression) )* DOT CLASS -> ^( DOT $primaryExpression CLASS ) | VOID DOT CLASS -> ^( DOT VOID CLASS ) );
+	// Java.g:1766:1: primaryExpression : ( parenthesizedExpression |z= literal | newExpression |q= qualifiedIdentExpression | genericTypeArgumentListSimplified ( SUPER ( arguments -> ^( SUPER_CONSTRUCTOR_CALL[$SUPER, \"SUPER_CONSTRUCTOR_CALL\"] genericTypeArgumentListSimplified arguments ) | DOT IDENT arguments -> ^( METHOD_CALL ^( DOT SUPER IDENT ) genericTypeArgumentListSimplified arguments ) ) |q1= IDENT arguments -> ^( METHOD_CALL IDENT genericTypeArgumentListSimplified arguments ) | THIS arguments -> ^( THIS_CONSTRUCTOR_CALL[$THIS, \"THIS_CONSTRUCTOR_CALL\"] genericTypeArgumentListSimplified arguments ) ) | ( THIS -> THIS ) ( arguments -> ^( THIS_CONSTRUCTOR_CALL[$THIS, \"THIS_CONSTRUCTOR_CALL\"] arguments ) )? | SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$SUPER, \"SUPER_CONSTRUCTOR_CALL\"] arguments ) | ( SUPER DOT IDENT ) ( arguments -> ^( METHOD_CALL ^( DOT SUPER IDENT ) arguments ) | -> ^( DOT SUPER IDENT ) ) | ( primitiveType -> primitiveType ) ( arrayDeclarator -> ^( arrayDeclarator $primaryExpression) )* DOT CLASS -> ^( DOT $primaryExpression CLASS ) | VOID DOT CLASS -> ^( DOT VOID CLASS ) );
 	public final JavaParser.primaryExpression_return primaryExpression() throws RecognitionException {
 		JavaParser.primaryExpression_return retval = new JavaParser.primaryExpression_return();
 		retval.start = input.LT(1);
@@ -18830,7 +18831,7 @@ public class JavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 106) ) { return retval; }
 
-			// Java.g:1766:13: ( parenthesizedExpression |z= literal | newExpression |q= qualifiedIdentExpression | genericTypeArgumentListSimplified ( SUPER ( arguments -> ^( SUPER_CONSTRUCTOR_CALL[$SUPER, \"SUPER_CONSTRUCTOR_CALL\"] genericTypeArgumentListSimplified arguments ) | DOT IDENT arguments -> ^( METHOD_CALL ^( DOT SUPER IDENT ) genericTypeArgumentListSimplified arguments ) ) |q1= IDENT arguments -> ^( METHOD_CALL IDENT genericTypeArgumentListSimplified arguments ) | THIS arguments -> ^( THIS_CONSTRUCTOR_CALL[$THIS, \"THIS_CONSTRUCTOR_CALL\"] genericTypeArgumentListSimplified arguments ) ) | ( THIS -> THIS ) ( arguments -> ^( THIS_CONSTRUCTOR_CALL[$THIS, \"THIS_CONSTRUCTOR_CALL\"] arguments ) )? | SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$SUPER, \"SUPER_CONSTRUCTOR_CALL\"] arguments ) | ( SUPER DOT IDENT ) ( arguments -> ^( METHOD_CALL ^( DOT SUPER IDENT ) arguments ) | -> ^( DOT SUPER IDENT ) ) | ( primitiveType -> primitiveType ) ( arrayDeclarator -> ^( arrayDeclarator $primaryExpression) )* DOT CLASS -> ^( DOT $primaryExpression CLASS ) | VOID DOT CLASS -> ^( DOT VOID CLASS ) )
+			// Java.g:1767:13: ( parenthesizedExpression |z= literal | newExpression |q= qualifiedIdentExpression | genericTypeArgumentListSimplified ( SUPER ( arguments -> ^( SUPER_CONSTRUCTOR_CALL[$SUPER, \"SUPER_CONSTRUCTOR_CALL\"] genericTypeArgumentListSimplified arguments ) | DOT IDENT arguments -> ^( METHOD_CALL ^( DOT SUPER IDENT ) genericTypeArgumentListSimplified arguments ) ) |q1= IDENT arguments -> ^( METHOD_CALL IDENT genericTypeArgumentListSimplified arguments ) | THIS arguments -> ^( THIS_CONSTRUCTOR_CALL[$THIS, \"THIS_CONSTRUCTOR_CALL\"] genericTypeArgumentListSimplified arguments ) ) | ( THIS -> THIS ) ( arguments -> ^( THIS_CONSTRUCTOR_CALL[$THIS, \"THIS_CONSTRUCTOR_CALL\"] arguments ) )? | SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$SUPER, \"SUPER_CONSTRUCTOR_CALL\"] arguments ) | ( SUPER DOT IDENT ) ( arguments -> ^( METHOD_CALL ^( DOT SUPER IDENT ) arguments ) | -> ^( DOT SUPER IDENT ) ) | ( primitiveType -> primitiveType ) ( arrayDeclarator -> ^( arrayDeclarator $primaryExpression) )* DOT CLASS -> ^( DOT $primaryExpression CLASS ) | VOID DOT CLASS -> ^( DOT VOID CLASS ) )
 			int alt141=10;
 			switch ( input.LA(1) ) {
 			case LPAREN:
@@ -18921,7 +18922,7 @@ public class JavaParser extends Parser {
 			}
 			switch (alt141) {
 				case 1 :
-					// Java.g:1766:15: parenthesizedExpression
+					// Java.g:1767:15: parenthesizedExpression
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -18935,7 +18936,7 @@ public class JavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// Java.g:1767:17: z= literal
+					// Java.g:1768:17: z= literal
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -18949,7 +18950,7 @@ public class JavaParser extends Parser {
 					}
 					break;
 				case 3 :
-					// Java.g:1768:17: newExpression
+					// Java.g:1769:17: newExpression
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -18963,7 +18964,7 @@ public class JavaParser extends Parser {
 					}
 					break;
 				case 4 :
-					// Java.g:1769:17: q= qualifiedIdentExpression
+					// Java.g:1770:17: q= qualifiedIdentExpression
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -18977,14 +18978,14 @@ public class JavaParser extends Parser {
 					}
 					break;
 				case 5 :
-					// Java.g:1781:17: genericTypeArgumentListSimplified ( SUPER ( arguments -> ^( SUPER_CONSTRUCTOR_CALL[$SUPER, \"SUPER_CONSTRUCTOR_CALL\"] genericTypeArgumentListSimplified arguments ) | DOT IDENT arguments -> ^( METHOD_CALL ^( DOT SUPER IDENT ) genericTypeArgumentListSimplified arguments ) ) |q1= IDENT arguments -> ^( METHOD_CALL IDENT genericTypeArgumentListSimplified arguments ) | THIS arguments -> ^( THIS_CONSTRUCTOR_CALL[$THIS, \"THIS_CONSTRUCTOR_CALL\"] genericTypeArgumentListSimplified arguments ) )
+					// Java.g:1782:17: genericTypeArgumentListSimplified ( SUPER ( arguments -> ^( SUPER_CONSTRUCTOR_CALL[$SUPER, \"SUPER_CONSTRUCTOR_CALL\"] genericTypeArgumentListSimplified arguments ) | DOT IDENT arguments -> ^( METHOD_CALL ^( DOT SUPER IDENT ) genericTypeArgumentListSimplified arguments ) ) |q1= IDENT arguments -> ^( METHOD_CALL IDENT genericTypeArgumentListSimplified arguments ) | THIS arguments -> ^( THIS_CONSTRUCTOR_CALL[$THIS, \"THIS_CONSTRUCTOR_CALL\"] genericTypeArgumentListSimplified arguments ) )
 					{
 					pushFollow(FOLLOW_genericTypeArgumentListSimplified_in_primaryExpression19720);
 					genericTypeArgumentListSimplified386=genericTypeArgumentListSimplified();
 					state._fsp--;
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) stream_genericTypeArgumentListSimplified.add(genericTypeArgumentListSimplified386.getTree());
-					// Java.g:1782:17: ( SUPER ( arguments -> ^( SUPER_CONSTRUCTOR_CALL[$SUPER, \"SUPER_CONSTRUCTOR_CALL\"] genericTypeArgumentListSimplified arguments ) | DOT IDENT arguments -> ^( METHOD_CALL ^( DOT SUPER IDENT ) genericTypeArgumentListSimplified arguments ) ) |q1= IDENT arguments -> ^( METHOD_CALL IDENT genericTypeArgumentListSimplified arguments ) | THIS arguments -> ^( THIS_CONSTRUCTOR_CALL[$THIS, \"THIS_CONSTRUCTOR_CALL\"] genericTypeArgumentListSimplified arguments ) )
+					// Java.g:1783:17: ( SUPER ( arguments -> ^( SUPER_CONSTRUCTOR_CALL[$SUPER, \"SUPER_CONSTRUCTOR_CALL\"] genericTypeArgumentListSimplified arguments ) | DOT IDENT arguments -> ^( METHOD_CALL ^( DOT SUPER IDENT ) genericTypeArgumentListSimplified arguments ) ) |q1= IDENT arguments -> ^( METHOD_CALL IDENT genericTypeArgumentListSimplified arguments ) | THIS arguments -> ^( THIS_CONSTRUCTOR_CALL[$THIS, \"THIS_CONSTRUCTOR_CALL\"] genericTypeArgumentListSimplified arguments ) )
 					int alt137=3;
 					switch ( input.LA(1) ) {
 					case SUPER:
@@ -19010,12 +19011,12 @@ public class JavaParser extends Parser {
 					}
 					switch (alt137) {
 						case 1 :
-							// Java.g:1782:21: SUPER ( arguments -> ^( SUPER_CONSTRUCTOR_CALL[$SUPER, \"SUPER_CONSTRUCTOR_CALL\"] genericTypeArgumentListSimplified arguments ) | DOT IDENT arguments -> ^( METHOD_CALL ^( DOT SUPER IDENT ) genericTypeArgumentListSimplified arguments ) )
+							// Java.g:1783:21: SUPER ( arguments -> ^( SUPER_CONSTRUCTOR_CALL[$SUPER, \"SUPER_CONSTRUCTOR_CALL\"] genericTypeArgumentListSimplified arguments ) | DOT IDENT arguments -> ^( METHOD_CALL ^( DOT SUPER IDENT ) genericTypeArgumentListSimplified arguments ) )
 							{
 							SUPER387=(Token)match(input,SUPER,FOLLOW_SUPER_in_primaryExpression19743); if (state.failed) return retval; 
 							if ( state.backtracking==0 ) stream_SUPER.add(SUPER387);
 
-							// Java.g:1783:21: ( arguments -> ^( SUPER_CONSTRUCTOR_CALL[$SUPER, \"SUPER_CONSTRUCTOR_CALL\"] genericTypeArgumentListSimplified arguments ) | DOT IDENT arguments -> ^( METHOD_CALL ^( DOT SUPER IDENT ) genericTypeArgumentListSimplified arguments ) )
+							// Java.g:1784:21: ( arguments -> ^( SUPER_CONSTRUCTOR_CALL[$SUPER, \"SUPER_CONSTRUCTOR_CALL\"] genericTypeArgumentListSimplified arguments ) | DOT IDENT arguments -> ^( METHOD_CALL ^( DOT SUPER IDENT ) genericTypeArgumentListSimplified arguments ) )
 							int alt136=2;
 							int LA136_0 = input.LA(1);
 							if ( (LA136_0==LPAREN) ) {
@@ -19034,7 +19035,7 @@ public class JavaParser extends Parser {
 
 							switch (alt136) {
 								case 1 :
-									// Java.g:1783:25: arguments
+									// Java.g:1784:25: arguments
 									{
 									pushFollow(FOLLOW_arguments_in_primaryExpression19769);
 									arguments388=arguments();
@@ -19053,9 +19054,9 @@ public class JavaParser extends Parser {
 									RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 									root_0 = (CommonTree)adaptor.nil();
-									// 1783:65: -> ^( SUPER_CONSTRUCTOR_CALL[$SUPER, \"SUPER_CONSTRUCTOR_CALL\"] genericTypeArgumentListSimplified arguments )
+									// 1784:65: -> ^( SUPER_CONSTRUCTOR_CALL[$SUPER, \"SUPER_CONSTRUCTOR_CALL\"] genericTypeArgumentListSimplified arguments )
 									{
-										// Java.g:1783:69: ^( SUPER_CONSTRUCTOR_CALL[$SUPER, \"SUPER_CONSTRUCTOR_CALL\"] genericTypeArgumentListSimplified arguments )
+										// Java.g:1784:69: ^( SUPER_CONSTRUCTOR_CALL[$SUPER, \"SUPER_CONSTRUCTOR_CALL\"] genericTypeArgumentListSimplified arguments )
 										{
 										CommonTree root_1 = (CommonTree)adaptor.nil();
 										root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(SUPER_CONSTRUCTOR_CALL, SUPER387, "SUPER_CONSTRUCTOR_CALL"), root_1);
@@ -19073,7 +19074,7 @@ public class JavaParser extends Parser {
 									}
 									break;
 								case 2 :
-									// Java.g:1784:25: DOT IDENT arguments
+									// Java.g:1785:25: DOT IDENT arguments
 									{
 									DOT389=(Token)match(input,DOT,FOLLOW_DOT_in_primaryExpression19837); if (state.failed) return retval; 
 									if ( state.backtracking==0 ) stream_DOT.add(DOT389);
@@ -19098,13 +19099,13 @@ public class JavaParser extends Parser {
 									RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 									root_0 = (CommonTree)adaptor.nil();
-									// 1784:65: -> ^( METHOD_CALL ^( DOT SUPER IDENT ) genericTypeArgumentListSimplified arguments )
+									// 1785:65: -> ^( METHOD_CALL ^( DOT SUPER IDENT ) genericTypeArgumentListSimplified arguments )
 									{
-										// Java.g:1784:69: ^( METHOD_CALL ^( DOT SUPER IDENT ) genericTypeArgumentListSimplified arguments )
+										// Java.g:1785:69: ^( METHOD_CALL ^( DOT SUPER IDENT ) genericTypeArgumentListSimplified arguments )
 										{
 										CommonTree root_1 = (CommonTree)adaptor.nil();
 										root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(METHOD_CALL, "METHOD_CALL"), root_1);
-										// Java.g:1784:83: ^( DOT SUPER IDENT )
+										// Java.g:1785:83: ^( DOT SUPER IDENT )
 										{
 										CommonTree root_2 = (CommonTree)adaptor.nil();
 										root_2 = (CommonTree)adaptor.becomeRoot(stream_DOT.nextNode(), root_2);
@@ -19132,7 +19133,7 @@ public class JavaParser extends Parser {
 							}
 							break;
 						case 2 :
-							// Java.g:1786:21: q1= IDENT arguments
+							// Java.g:1787:21: q1= IDENT arguments
 							{
 							q1=(Token)match(input,IDENT,FOLLOW_IDENT_in_primaryExpression19926); if (state.failed) return retval; 
 							if ( state.backtracking==0 ) stream_IDENT.add(q1);
@@ -19154,9 +19155,9 @@ public class JavaParser extends Parser {
 							RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 							root_0 = (CommonTree)adaptor.nil();
-							// 1787:55: -> ^( METHOD_CALL IDENT genericTypeArgumentListSimplified arguments )
+							// 1788:55: -> ^( METHOD_CALL IDENT genericTypeArgumentListSimplified arguments )
 							{
-								// Java.g:1787:59: ^( METHOD_CALL IDENT genericTypeArgumentListSimplified arguments )
+								// Java.g:1788:59: ^( METHOD_CALL IDENT genericTypeArgumentListSimplified arguments )
 								{
 								CommonTree root_1 = (CommonTree)adaptor.nil();
 								root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(METHOD_CALL, "METHOD_CALL"), root_1);
@@ -19175,7 +19176,7 @@ public class JavaParser extends Parser {
 							}
 							break;
 						case 3 :
-							// Java.g:1788:21: THIS arguments
+							// Java.g:1789:21: THIS arguments
 							{
 							THIS393=(Token)match(input,THIS,FOLLOW_THIS_in_primaryExpression20008); if (state.failed) return retval; 
 							if ( state.backtracking==0 ) stream_THIS.add(THIS393);
@@ -19197,9 +19198,9 @@ public class JavaParser extends Parser {
 							RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 							root_0 = (CommonTree)adaptor.nil();
-							// 1788:65: -> ^( THIS_CONSTRUCTOR_CALL[$THIS, \"THIS_CONSTRUCTOR_CALL\"] genericTypeArgumentListSimplified arguments )
+							// 1789:65: -> ^( THIS_CONSTRUCTOR_CALL[$THIS, \"THIS_CONSTRUCTOR_CALL\"] genericTypeArgumentListSimplified arguments )
 							{
-								// Java.g:1788:69: ^( THIS_CONSTRUCTOR_CALL[$THIS, \"THIS_CONSTRUCTOR_CALL\"] genericTypeArgumentListSimplified arguments )
+								// Java.g:1789:69: ^( THIS_CONSTRUCTOR_CALL[$THIS, \"THIS_CONSTRUCTOR_CALL\"] genericTypeArgumentListSimplified arguments )
 								{
 								CommonTree root_1 = (CommonTree)adaptor.nil();
 								root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(THIS_CONSTRUCTOR_CALL, THIS393, "THIS_CONSTRUCTOR_CALL"), root_1);
@@ -19222,10 +19223,10 @@ public class JavaParser extends Parser {
 					}
 					break;
 				case 6 :
-					// Java.g:1790:17: ( THIS -> THIS ) ( arguments -> ^( THIS_CONSTRUCTOR_CALL[$THIS, \"THIS_CONSTRUCTOR_CALL\"] arguments ) )?
+					// Java.g:1791:17: ( THIS -> THIS ) ( arguments -> ^( THIS_CONSTRUCTOR_CALL[$THIS, \"THIS_CONSTRUCTOR_CALL\"] arguments ) )?
 					{
-					// Java.g:1790:17: ( THIS -> THIS )
-					// Java.g:1790:21: THIS
+					// Java.g:1791:17: ( THIS -> THIS )
+					// Java.g:1791:21: THIS
 					{
 					THIS395=(Token)match(input,THIS,FOLLOW_THIS_in_primaryExpression20091); if (state.failed) return retval; 
 					if ( state.backtracking==0 ) stream_THIS.add(THIS395);
@@ -19242,7 +19243,7 @@ public class JavaParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (CommonTree)adaptor.nil();
-					// 1790:65: -> THIS
+					// 1791:65: -> THIS
 					{
 						adaptor.addChild(root_0, stream_THIS.nextNode());
 					}
@@ -19253,7 +19254,7 @@ public class JavaParser extends Parser {
 
 					}
 
-					// Java.g:1792:17: ( arguments -> ^( THIS_CONSTRUCTOR_CALL[$THIS, \"THIS_CONSTRUCTOR_CALL\"] arguments ) )?
+					// Java.g:1793:17: ( arguments -> ^( THIS_CONSTRUCTOR_CALL[$THIS, \"THIS_CONSTRUCTOR_CALL\"] arguments ) )?
 					int alt138=2;
 					int LA138_0 = input.LA(1);
 					if ( (LA138_0==LPAREN) ) {
@@ -19261,7 +19262,7 @@ public class JavaParser extends Parser {
 					}
 					switch (alt138) {
 						case 1 :
-							// Java.g:1792:21: arguments
+							// Java.g:1793:21: arguments
 							{
 							pushFollow(FOLLOW_arguments_in_primaryExpression20175);
 							arguments396=arguments();
@@ -19280,9 +19281,9 @@ public class JavaParser extends Parser {
 							RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 							root_0 = (CommonTree)adaptor.nil();
-							// 1792:65: -> ^( THIS_CONSTRUCTOR_CALL[$THIS, \"THIS_CONSTRUCTOR_CALL\"] arguments )
+							// 1793:65: -> ^( THIS_CONSTRUCTOR_CALL[$THIS, \"THIS_CONSTRUCTOR_CALL\"] arguments )
 							{
-								// Java.g:1792:69: ^( THIS_CONSTRUCTOR_CALL[$THIS, \"THIS_CONSTRUCTOR_CALL\"] arguments )
+								// Java.g:1793:69: ^( THIS_CONSTRUCTOR_CALL[$THIS, \"THIS_CONSTRUCTOR_CALL\"] arguments )
 								{
 								CommonTree root_1 = (CommonTree)adaptor.nil();
 								root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(THIS_CONSTRUCTOR_CALL, THIS395, "THIS_CONSTRUCTOR_CALL"), root_1);
@@ -19304,7 +19305,7 @@ public class JavaParser extends Parser {
 					}
 					break;
 				case 7 :
-					// Java.g:1794:17: SUPER arguments
+					// Java.g:1795:17: SUPER arguments
 					{
 					SUPER397=(Token)match(input,SUPER,FOLLOW_SUPER_in_primaryExpression20256); if (state.failed) return retval; 
 					if ( state.backtracking==0 ) stream_SUPER.add(SUPER397);
@@ -19326,9 +19327,9 @@ public class JavaParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (CommonTree)adaptor.nil();
-					// 1794:65: -> ^( SUPER_CONSTRUCTOR_CALL[$SUPER, \"SUPER_CONSTRUCTOR_CALL\"] arguments )
+					// 1795:65: -> ^( SUPER_CONSTRUCTOR_CALL[$SUPER, \"SUPER_CONSTRUCTOR_CALL\"] arguments )
 					{
-						// Java.g:1794:69: ^( SUPER_CONSTRUCTOR_CALL[$SUPER, \"SUPER_CONSTRUCTOR_CALL\"] arguments )
+						// Java.g:1795:69: ^( SUPER_CONSTRUCTOR_CALL[$SUPER, \"SUPER_CONSTRUCTOR_CALL\"] arguments )
 						{
 						CommonTree root_1 = (CommonTree)adaptor.nil();
 						root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(SUPER_CONSTRUCTOR_CALL, SUPER397, "SUPER_CONSTRUCTOR_CALL"), root_1);
@@ -19345,10 +19346,10 @@ public class JavaParser extends Parser {
 					}
 					break;
 				case 8 :
-					// Java.g:1795:17: ( SUPER DOT IDENT ) ( arguments -> ^( METHOD_CALL ^( DOT SUPER IDENT ) arguments ) | -> ^( DOT SUPER IDENT ) )
+					// Java.g:1796:17: ( SUPER DOT IDENT ) ( arguments -> ^( METHOD_CALL ^( DOT SUPER IDENT ) arguments ) | -> ^( DOT SUPER IDENT ) )
 					{
-					// Java.g:1795:17: ( SUPER DOT IDENT )
-					// Java.g:1795:21: SUPER DOT IDENT
+					// Java.g:1796:17: ( SUPER DOT IDENT )
+					// Java.g:1796:21: SUPER DOT IDENT
 					{
 					SUPER399=(Token)match(input,SUPER,FOLLOW_SUPER_in_primaryExpression20322); if (state.failed) return retval; 
 					if ( state.backtracking==0 ) stream_SUPER.add(SUPER399);
@@ -19361,7 +19362,7 @@ public class JavaParser extends Parser {
 
 					}
 
-					// Java.g:1797:17: ( arguments -> ^( METHOD_CALL ^( DOT SUPER IDENT ) arguments ) | -> ^( DOT SUPER IDENT ) )
+					// Java.g:1798:17: ( arguments -> ^( METHOD_CALL ^( DOT SUPER IDENT ) arguments ) | -> ^( DOT SUPER IDENT ) )
 					int alt139=2;
 					int LA139_0 = input.LA(1);
 					if ( (LA139_0==LPAREN) ) {
@@ -19380,7 +19381,7 @@ public class JavaParser extends Parser {
 
 					switch (alt139) {
 						case 1 :
-							// Java.g:1797:21: arguments
+							// Java.g:1798:21: arguments
 							{
 							pushFollow(FOLLOW_arguments_in_primaryExpression20366);
 							arguments402=arguments();
@@ -19399,13 +19400,13 @@ public class JavaParser extends Parser {
 							RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 							root_0 = (CommonTree)adaptor.nil();
-							// 1798:49: -> ^( METHOD_CALL ^( DOT SUPER IDENT ) arguments )
+							// 1799:49: -> ^( METHOD_CALL ^( DOT SUPER IDENT ) arguments )
 							{
-								// Java.g:1798:53: ^( METHOD_CALL ^( DOT SUPER IDENT ) arguments )
+								// Java.g:1799:53: ^( METHOD_CALL ^( DOT SUPER IDENT ) arguments )
 								{
 								CommonTree root_1 = (CommonTree)adaptor.nil();
 								root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(METHOD_CALL, "METHOD_CALL"), root_1);
-								// Java.g:1798:67: ^( DOT SUPER IDENT )
+								// Java.g:1799:67: ^( DOT SUPER IDENT )
 								{
 								CommonTree root_2 = (CommonTree)adaptor.nil();
 								root_2 = (CommonTree)adaptor.becomeRoot(stream_DOT.nextNode(), root_2);
@@ -19427,7 +19428,7 @@ public class JavaParser extends Parser {
 							}
 							break;
 						case 2 :
-							// Java.g:1799:65: 
+							// Java.g:1800:65: 
 							{
 							// AST REWRITE
 							// elements: SUPER, IDENT, DOT
@@ -19441,9 +19442,9 @@ public class JavaParser extends Parser {
 							RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 							root_0 = (CommonTree)adaptor.nil();
-							// 1799:65: -> ^( DOT SUPER IDENT )
+							// 1800:65: -> ^( DOT SUPER IDENT )
 							{
-								// Java.g:1799:69: ^( DOT SUPER IDENT )
+								// Java.g:1800:69: ^( DOT SUPER IDENT )
 								{
 								CommonTree root_1 = (CommonTree)adaptor.nil();
 								root_1 = (CommonTree)adaptor.becomeRoot(stream_DOT.nextNode(), root_1);
@@ -19466,10 +19467,10 @@ public class JavaParser extends Parser {
 					}
 					break;
 				case 9 :
-					// Java.g:1801:17: ( primitiveType -> primitiveType ) ( arrayDeclarator -> ^( arrayDeclarator $primaryExpression) )* DOT CLASS
+					// Java.g:1802:17: ( primitiveType -> primitiveType ) ( arrayDeclarator -> ^( arrayDeclarator $primaryExpression) )* DOT CLASS
 					{
-					// Java.g:1801:17: ( primitiveType -> primitiveType )
-					// Java.g:1801:21: primitiveType
+					// Java.g:1802:17: ( primitiveType -> primitiveType )
+					// Java.g:1802:21: primitiveType
 					{
 					pushFollow(FOLLOW_primitiveType_in_primaryExpression20549);
 					primitiveType403=primitiveType();
@@ -19488,7 +19489,7 @@ public class JavaParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (CommonTree)adaptor.nil();
-					// 1801:65: -> primitiveType
+					// 1802:65: -> primitiveType
 					{
 						adaptor.addChild(root_0, stream_primitiveType.nextTree());
 					}
@@ -19499,7 +19500,7 @@ public class JavaParser extends Parser {
 
 					}
 
-					// Java.g:1803:17: ( arrayDeclarator -> ^( arrayDeclarator $primaryExpression) )*
+					// Java.g:1804:17: ( arrayDeclarator -> ^( arrayDeclarator $primaryExpression) )*
 					loop140:
 					while (true) {
 						int alt140=2;
@@ -19510,7 +19511,7 @@ public class JavaParser extends Parser {
 
 						switch (alt140) {
 						case 1 :
-							// Java.g:1803:21: arrayDeclarator
+							// Java.g:1804:21: arrayDeclarator
 							{
 							pushFollow(FOLLOW_arrayDeclarator_in_primaryExpression20624);
 							arrayDeclarator404=arrayDeclarator();
@@ -19529,9 +19530,9 @@ public class JavaParser extends Parser {
 							RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 							root_0 = (CommonTree)adaptor.nil();
-							// 1803:65: -> ^( arrayDeclarator $primaryExpression)
+							// 1804:65: -> ^( arrayDeclarator $primaryExpression)
 							{
-								// Java.g:1803:69: ^( arrayDeclarator $primaryExpression)
+								// Java.g:1804:69: ^( arrayDeclarator $primaryExpression)
 								{
 								CommonTree root_1 = (CommonTree)adaptor.nil();
 								root_1 = (CommonTree)adaptor.becomeRoot(stream_arrayDeclarator.nextNode(), root_1);
@@ -19571,9 +19572,9 @@ public class JavaParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (CommonTree)adaptor.nil();
-					// 1805:65: -> ^( DOT $primaryExpression CLASS )
+					// 1806:65: -> ^( DOT $primaryExpression CLASS )
 					{
-						// Java.g:1805:69: ^( DOT $primaryExpression CLASS )
+						// Java.g:1806:69: ^( DOT $primaryExpression CLASS )
 						{
 						CommonTree root_1 = (CommonTree)adaptor.nil();
 						root_1 = (CommonTree)adaptor.becomeRoot(stream_DOT.nextNode(), root_1);
@@ -19591,7 +19592,7 @@ public class JavaParser extends Parser {
 					}
 					break;
 				case 10 :
-					// Java.g:1806:17: VOID DOT CLASS
+					// Java.g:1807:17: VOID DOT CLASS
 					{
 					VOID407=(Token)match(input,VOID,FOLLOW_VOID_in_primaryExpression20773); if (state.failed) return retval; 
 					if ( state.backtracking==0 ) stream_VOID.add(VOID407);
@@ -19614,9 +19615,9 @@ public class JavaParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (CommonTree)adaptor.nil();
-					// 1806:65: -> ^( DOT VOID CLASS )
+					// 1807:65: -> ^( DOT VOID CLASS )
 					{
-						// Java.g:1806:69: ^( DOT VOID CLASS )
+						// Java.g:1807:69: ^( DOT VOID CLASS )
 						{
 						CommonTree root_1 = (CommonTree)adaptor.nil();
 						root_1 = (CommonTree)adaptor.becomeRoot(stream_DOT.nextNode(), root_1);
@@ -19665,7 +19666,7 @@ public class JavaParser extends Parser {
 
 
 	// $ANTLR start "qualifiedIdentExpression"
-	// Java.g:1809:1: qualifiedIdentExpression : (x= qualifiedIdentifier -> qualifiedIdentifier ) ( ( arrayDeclarator -> ^( arrayDeclarator $qualifiedIdentExpression) )+ ( DOT CLASS -> ^( DOT $qualifiedIdentExpression CLASS ) ) | arguments -> ^( METHOD_CALL qualifiedIdentifier arguments ) |outerDot= DOT ( CLASS -> ^( DOT qualifiedIdentifier CLASS ) | genericTypeArgumentListSimplified (Super= SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier genericTypeArgumentListSimplified arguments ) | SUPER innerDot= DOT IDENT arguments -> ^( METHOD_CALL ^( $innerDot ^( $outerDot qualifiedIdentifier SUPER ) IDENT ) genericTypeArgumentListSimplified arguments ) | IDENT arguments -> ^( METHOD_CALL ^( DOT qualifiedIdentifier IDENT ) genericTypeArgumentListSimplified arguments ) ) | THIS -> ^( DOT qualifiedIdentifier THIS ) |Super= SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier arguments ) | innerNewExpression -> ^( DOT qualifiedIdentifier innerNewExpression ) ) )? ;
+	// Java.g:1810:1: qualifiedIdentExpression : (x= qualifiedIdentifier -> qualifiedIdentifier ) ( ( arrayDeclarator -> ^( arrayDeclarator $qualifiedIdentExpression) )+ ( DOT CLASS -> ^( DOT $qualifiedIdentExpression CLASS ) ) | arguments -> ^( METHOD_CALL qualifiedIdentifier arguments ) |outerDot= DOT ( CLASS -> ^( DOT qualifiedIdentifier CLASS ) | genericTypeArgumentListSimplified (Super= SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier genericTypeArgumentListSimplified arguments ) | SUPER innerDot= DOT IDENT arguments -> ^( METHOD_CALL ^( $innerDot ^( $outerDot qualifiedIdentifier SUPER ) IDENT ) genericTypeArgumentListSimplified arguments ) | IDENT arguments -> ^( METHOD_CALL ^( DOT qualifiedIdentifier IDENT ) genericTypeArgumentListSimplified arguments ) ) | THIS -> ^( DOT qualifiedIdentifier THIS ) |Super= SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier arguments ) | innerNewExpression -> ^( DOT qualifiedIdentifier innerNewExpression ) ) )? ;
 	public final JavaParser.qualifiedIdentExpression_return qualifiedIdentExpression() throws RecognitionException {
 		JavaParser.qualifiedIdentExpression_return retval = new JavaParser.qualifiedIdentExpression_return();
 		retval.start = input.LT(1);
@@ -19717,11 +19718,11 @@ public class JavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 107) ) { return retval; }
 
-			// Java.g:1811:13: ( (x= qualifiedIdentifier -> qualifiedIdentifier ) ( ( arrayDeclarator -> ^( arrayDeclarator $qualifiedIdentExpression) )+ ( DOT CLASS -> ^( DOT $qualifiedIdentExpression CLASS ) ) | arguments -> ^( METHOD_CALL qualifiedIdentifier arguments ) |outerDot= DOT ( CLASS -> ^( DOT qualifiedIdentifier CLASS ) | genericTypeArgumentListSimplified (Super= SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier genericTypeArgumentListSimplified arguments ) | SUPER innerDot= DOT IDENT arguments -> ^( METHOD_CALL ^( $innerDot ^( $outerDot qualifiedIdentifier SUPER ) IDENT ) genericTypeArgumentListSimplified arguments ) | IDENT arguments -> ^( METHOD_CALL ^( DOT qualifiedIdentifier IDENT ) genericTypeArgumentListSimplified arguments ) ) | THIS -> ^( DOT qualifiedIdentifier THIS ) |Super= SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier arguments ) | innerNewExpression -> ^( DOT qualifiedIdentifier innerNewExpression ) ) )? )
-			// Java.g:1811:17: (x= qualifiedIdentifier -> qualifiedIdentifier ) ( ( arrayDeclarator -> ^( arrayDeclarator $qualifiedIdentExpression) )+ ( DOT CLASS -> ^( DOT $qualifiedIdentExpression CLASS ) ) | arguments -> ^( METHOD_CALL qualifiedIdentifier arguments ) |outerDot= DOT ( CLASS -> ^( DOT qualifiedIdentifier CLASS ) | genericTypeArgumentListSimplified (Super= SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier genericTypeArgumentListSimplified arguments ) | SUPER innerDot= DOT IDENT arguments -> ^( METHOD_CALL ^( $innerDot ^( $outerDot qualifiedIdentifier SUPER ) IDENT ) genericTypeArgumentListSimplified arguments ) | IDENT arguments -> ^( METHOD_CALL ^( DOT qualifiedIdentifier IDENT ) genericTypeArgumentListSimplified arguments ) ) | THIS -> ^( DOT qualifiedIdentifier THIS ) |Super= SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier arguments ) | innerNewExpression -> ^( DOT qualifiedIdentifier innerNewExpression ) ) )?
+			// Java.g:1812:13: ( (x= qualifiedIdentifier -> qualifiedIdentifier ) ( ( arrayDeclarator -> ^( arrayDeclarator $qualifiedIdentExpression) )+ ( DOT CLASS -> ^( DOT $qualifiedIdentExpression CLASS ) ) | arguments -> ^( METHOD_CALL qualifiedIdentifier arguments ) |outerDot= DOT ( CLASS -> ^( DOT qualifiedIdentifier CLASS ) | genericTypeArgumentListSimplified (Super= SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier genericTypeArgumentListSimplified arguments ) | SUPER innerDot= DOT IDENT arguments -> ^( METHOD_CALL ^( $innerDot ^( $outerDot qualifiedIdentifier SUPER ) IDENT ) genericTypeArgumentListSimplified arguments ) | IDENT arguments -> ^( METHOD_CALL ^( DOT qualifiedIdentifier IDENT ) genericTypeArgumentListSimplified arguments ) ) | THIS -> ^( DOT qualifiedIdentifier THIS ) |Super= SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier arguments ) | innerNewExpression -> ^( DOT qualifiedIdentifier innerNewExpression ) ) )? )
+			// Java.g:1812:17: (x= qualifiedIdentifier -> qualifiedIdentifier ) ( ( arrayDeclarator -> ^( arrayDeclarator $qualifiedIdentExpression) )+ ( DOT CLASS -> ^( DOT $qualifiedIdentExpression CLASS ) ) | arguments -> ^( METHOD_CALL qualifiedIdentifier arguments ) |outerDot= DOT ( CLASS -> ^( DOT qualifiedIdentifier CLASS ) | genericTypeArgumentListSimplified (Super= SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier genericTypeArgumentListSimplified arguments ) | SUPER innerDot= DOT IDENT arguments -> ^( METHOD_CALL ^( $innerDot ^( $outerDot qualifiedIdentifier SUPER ) IDENT ) genericTypeArgumentListSimplified arguments ) | IDENT arguments -> ^( METHOD_CALL ^( DOT qualifiedIdentifier IDENT ) genericTypeArgumentListSimplified arguments ) ) | THIS -> ^( DOT qualifiedIdentifier THIS ) |Super= SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier arguments ) | innerNewExpression -> ^( DOT qualifiedIdentifier innerNewExpression ) ) )?
 			{
-			// Java.g:1811:17: (x= qualifiedIdentifier -> qualifiedIdentifier )
-			// Java.g:1811:18: x= qualifiedIdentifier
+			// Java.g:1812:17: (x= qualifiedIdentifier -> qualifiedIdentifier )
+			// Java.g:1812:18: x= qualifiedIdentifier
 			{
 			pushFollow(FOLLOW_qualifiedIdentifier_in_qualifiedIdentExpression20889);
 			x=qualifiedIdentifier();
@@ -19740,7 +19741,7 @@ public class JavaParser extends Parser {
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 			root_0 = (CommonTree)adaptor.nil();
-			// 1812:18: -> qualifiedIdentifier
+			// 1813:18: -> qualifiedIdentifier
 			{
 				adaptor.addChild(root_0, stream_qualifiedIdentifier.nextTree());
 			}
@@ -19751,7 +19752,7 @@ public class JavaParser extends Parser {
 
 			}
 
-			// Java.g:1819:17: ( ( arrayDeclarator -> ^( arrayDeclarator $qualifiedIdentExpression) )+ ( DOT CLASS -> ^( DOT $qualifiedIdentExpression CLASS ) ) | arguments -> ^( METHOD_CALL qualifiedIdentifier arguments ) |outerDot= DOT ( CLASS -> ^( DOT qualifiedIdentifier CLASS ) | genericTypeArgumentListSimplified (Super= SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier genericTypeArgumentListSimplified arguments ) | SUPER innerDot= DOT IDENT arguments -> ^( METHOD_CALL ^( $innerDot ^( $outerDot qualifiedIdentifier SUPER ) IDENT ) genericTypeArgumentListSimplified arguments ) | IDENT arguments -> ^( METHOD_CALL ^( DOT qualifiedIdentifier IDENT ) genericTypeArgumentListSimplified arguments ) ) | THIS -> ^( DOT qualifiedIdentifier THIS ) |Super= SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier arguments ) | innerNewExpression -> ^( DOT qualifiedIdentifier innerNewExpression ) ) )?
+			// Java.g:1820:17: ( ( arrayDeclarator -> ^( arrayDeclarator $qualifiedIdentExpression) )+ ( DOT CLASS -> ^( DOT $qualifiedIdentExpression CLASS ) ) | arguments -> ^( METHOD_CALL qualifiedIdentifier arguments ) |outerDot= DOT ( CLASS -> ^( DOT qualifiedIdentifier CLASS ) | genericTypeArgumentListSimplified (Super= SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier genericTypeArgumentListSimplified arguments ) | SUPER innerDot= DOT IDENT arguments -> ^( METHOD_CALL ^( $innerDot ^( $outerDot qualifiedIdentifier SUPER ) IDENT ) genericTypeArgumentListSimplified arguments ) | IDENT arguments -> ^( METHOD_CALL ^( DOT qualifiedIdentifier IDENT ) genericTypeArgumentListSimplified arguments ) ) | THIS -> ^( DOT qualifiedIdentifier THIS ) |Super= SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier arguments ) | innerNewExpression -> ^( DOT qualifiedIdentifier innerNewExpression ) ) )?
 			int alt145=4;
 			switch ( input.LA(1) ) {
 				case LBRACK:
@@ -19778,9 +19779,9 @@ public class JavaParser extends Parser {
 			}
 			switch (alt145) {
 				case 1 :
-					// Java.g:1819:21: ( arrayDeclarator -> ^( arrayDeclarator $qualifiedIdentExpression) )+ ( DOT CLASS -> ^( DOT $qualifiedIdentExpression CLASS ) )
+					// Java.g:1820:21: ( arrayDeclarator -> ^( arrayDeclarator $qualifiedIdentExpression) )+ ( DOT CLASS -> ^( DOT $qualifiedIdentExpression CLASS ) )
 					{
-					// Java.g:1819:21: ( arrayDeclarator -> ^( arrayDeclarator $qualifiedIdentExpression) )+
+					// Java.g:1820:21: ( arrayDeclarator -> ^( arrayDeclarator $qualifiedIdentExpression) )+
 					int cnt142=0;
 					loop142:
 					while (true) {
@@ -19792,7 +19793,7 @@ public class JavaParser extends Parser {
 
 						switch (alt142) {
 						case 1 :
-							// Java.g:1819:25: arrayDeclarator
+							// Java.g:1820:25: arrayDeclarator
 							{
 							pushFollow(FOLLOW_arrayDeclarator_in_qualifiedIdentExpression21000);
 							arrayDeclarator410=arrayDeclarator();
@@ -19811,9 +19812,9 @@ public class JavaParser extends Parser {
 							RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 							root_0 = (CommonTree)adaptor.nil();
-							// 1820:25: -> ^( arrayDeclarator $qualifiedIdentExpression)
+							// 1821:25: -> ^( arrayDeclarator $qualifiedIdentExpression)
 							{
-								// Java.g:1820:29: ^( arrayDeclarator $qualifiedIdentExpression)
+								// Java.g:1821:29: ^( arrayDeclarator $qualifiedIdentExpression)
 								{
 								CommonTree root_1 = (CommonTree)adaptor.nil();
 								root_1 = (CommonTree)adaptor.becomeRoot(stream_arrayDeclarator.nextNode(), root_1);
@@ -19839,8 +19840,8 @@ public class JavaParser extends Parser {
 						cnt142++;
 					}
 
-					// Java.g:1822:21: ( DOT CLASS -> ^( DOT $qualifiedIdentExpression CLASS ) )
-					// Java.g:1822:25: DOT CLASS
+					// Java.g:1823:21: ( DOT CLASS -> ^( DOT $qualifiedIdentExpression CLASS ) )
+					// Java.g:1823:25: DOT CLASS
 					{
 					DOT411=(Token)match(input,DOT,FOLLOW_DOT_in_qualifiedIdentExpression21109); if (state.failed) return retval; 
 					if ( state.backtracking==0 ) stream_DOT.add(DOT411);
@@ -19860,9 +19861,9 @@ public class JavaParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (CommonTree)adaptor.nil();
-					// 1823:25: -> ^( DOT $qualifiedIdentExpression CLASS )
+					// 1824:25: -> ^( DOT $qualifiedIdentExpression CLASS )
 					{
-						// Java.g:1823:29: ^( DOT $qualifiedIdentExpression CLASS )
+						// Java.g:1824:29: ^( DOT $qualifiedIdentExpression CLASS )
 						{
 						CommonTree root_1 = (CommonTree)adaptor.nil();
 						root_1 = (CommonTree)adaptor.becomeRoot(stream_DOT.nextNode(), root_1);
@@ -19882,7 +19883,7 @@ public class JavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// Java.g:1825:19: arguments
+					// Java.g:1826:19: arguments
 					{
 					pushFollow(FOLLOW_arguments_in_qualifiedIdentExpression21220);
 					arguments413=arguments();
@@ -19901,9 +19902,9 @@ public class JavaParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (CommonTree)adaptor.nil();
-					// 1826:20: -> ^( METHOD_CALL qualifiedIdentifier arguments )
+					// 1827:20: -> ^( METHOD_CALL qualifiedIdentifier arguments )
 					{
-						// Java.g:1826:24: ^( METHOD_CALL qualifiedIdentifier arguments )
+						// Java.g:1827:24: ^( METHOD_CALL qualifiedIdentifier arguments )
 						{
 						CommonTree root_1 = (CommonTree)adaptor.nil();
 						root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(METHOD_CALL, "METHOD_CALL"), root_1);
@@ -19921,12 +19922,12 @@ public class JavaParser extends Parser {
 					}
 					break;
 				case 3 :
-					// Java.g:1827:21: outerDot= DOT ( CLASS -> ^( DOT qualifiedIdentifier CLASS ) | genericTypeArgumentListSimplified (Super= SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier genericTypeArgumentListSimplified arguments ) | SUPER innerDot= DOT IDENT arguments -> ^( METHOD_CALL ^( $innerDot ^( $outerDot qualifiedIdentifier SUPER ) IDENT ) genericTypeArgumentListSimplified arguments ) | IDENT arguments -> ^( METHOD_CALL ^( DOT qualifiedIdentifier IDENT ) genericTypeArgumentListSimplified arguments ) ) | THIS -> ^( DOT qualifiedIdentifier THIS ) |Super= SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier arguments ) | innerNewExpression -> ^( DOT qualifiedIdentifier innerNewExpression ) )
+					// Java.g:1828:21: outerDot= DOT ( CLASS -> ^( DOT qualifiedIdentifier CLASS ) | genericTypeArgumentListSimplified (Super= SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier genericTypeArgumentListSimplified arguments ) | SUPER innerDot= DOT IDENT arguments -> ^( METHOD_CALL ^( $innerDot ^( $outerDot qualifiedIdentifier SUPER ) IDENT ) genericTypeArgumentListSimplified arguments ) | IDENT arguments -> ^( METHOD_CALL ^( DOT qualifiedIdentifier IDENT ) genericTypeArgumentListSimplified arguments ) ) | THIS -> ^( DOT qualifiedIdentifier THIS ) |Super= SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier arguments ) | innerNewExpression -> ^( DOT qualifiedIdentifier innerNewExpression ) )
 					{
 					outerDot=(Token)match(input,DOT,FOLLOW_DOT_in_qualifiedIdentExpression21276); if (state.failed) return retval; 
 					if ( state.backtracking==0 ) stream_DOT.add(outerDot);
 
-					// Java.g:1828:21: ( CLASS -> ^( DOT qualifiedIdentifier CLASS ) | genericTypeArgumentListSimplified (Super= SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier genericTypeArgumentListSimplified arguments ) | SUPER innerDot= DOT IDENT arguments -> ^( METHOD_CALL ^( $innerDot ^( $outerDot qualifiedIdentifier SUPER ) IDENT ) genericTypeArgumentListSimplified arguments ) | IDENT arguments -> ^( METHOD_CALL ^( DOT qualifiedIdentifier IDENT ) genericTypeArgumentListSimplified arguments ) ) | THIS -> ^( DOT qualifiedIdentifier THIS ) |Super= SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier arguments ) | innerNewExpression -> ^( DOT qualifiedIdentifier innerNewExpression ) )
+					// Java.g:1829:21: ( CLASS -> ^( DOT qualifiedIdentifier CLASS ) | genericTypeArgumentListSimplified (Super= SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier genericTypeArgumentListSimplified arguments ) | SUPER innerDot= DOT IDENT arguments -> ^( METHOD_CALL ^( $innerDot ^( $outerDot qualifiedIdentifier SUPER ) IDENT ) genericTypeArgumentListSimplified arguments ) | IDENT arguments -> ^( METHOD_CALL ^( DOT qualifiedIdentifier IDENT ) genericTypeArgumentListSimplified arguments ) ) | THIS -> ^( DOT qualifiedIdentifier THIS ) |Super= SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier arguments ) | innerNewExpression -> ^( DOT qualifiedIdentifier innerNewExpression ) )
 					int alt144=5;
 					switch ( input.LA(1) ) {
 					case CLASS:
@@ -19962,7 +19963,7 @@ public class JavaParser extends Parser {
 					}
 					switch (alt144) {
 						case 1 :
-							// Java.g:1828:25: CLASS
+							// Java.g:1829:25: CLASS
 							{
 							CLASS414=(Token)match(input,CLASS,FOLLOW_CLASS_in_qualifiedIdentExpression21302); if (state.failed) return retval; 
 							if ( state.backtracking==0 ) stream_CLASS.add(CLASS414);
@@ -19979,9 +19980,9 @@ public class JavaParser extends Parser {
 							RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 							root_0 = (CommonTree)adaptor.nil();
-							// 1829:25: -> ^( DOT qualifiedIdentifier CLASS )
+							// 1830:25: -> ^( DOT qualifiedIdentifier CLASS )
 							{
-								// Java.g:1829:29: ^( DOT qualifiedIdentifier CLASS )
+								// Java.g:1830:29: ^( DOT qualifiedIdentifier CLASS )
 								{
 								CommonTree root_1 = (CommonTree)adaptor.nil();
 								root_1 = (CommonTree)adaptor.becomeRoot(stream_DOT.nextNode(), root_1);
@@ -19999,14 +20000,14 @@ public class JavaParser extends Parser {
 							}
 							break;
 						case 2 :
-							// Java.g:1830:25: genericTypeArgumentListSimplified (Super= SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier genericTypeArgumentListSimplified arguments ) | SUPER innerDot= DOT IDENT arguments -> ^( METHOD_CALL ^( $innerDot ^( $outerDot qualifiedIdentifier SUPER ) IDENT ) genericTypeArgumentListSimplified arguments ) | IDENT arguments -> ^( METHOD_CALL ^( DOT qualifiedIdentifier IDENT ) genericTypeArgumentListSimplified arguments ) )
+							// Java.g:1831:25: genericTypeArgumentListSimplified (Super= SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier genericTypeArgumentListSimplified arguments ) | SUPER innerDot= DOT IDENT arguments -> ^( METHOD_CALL ^( $innerDot ^( $outerDot qualifiedIdentifier SUPER ) IDENT ) genericTypeArgumentListSimplified arguments ) | IDENT arguments -> ^( METHOD_CALL ^( DOT qualifiedIdentifier IDENT ) genericTypeArgumentListSimplified arguments ) )
 							{
 							pushFollow(FOLLOW_genericTypeArgumentListSimplified_in_qualifiedIdentExpression21398);
 							genericTypeArgumentListSimplified415=genericTypeArgumentListSimplified();
 							state._fsp--;
 							if (state.failed) return retval;
 							if ( state.backtracking==0 ) stream_genericTypeArgumentListSimplified.add(genericTypeArgumentListSimplified415.getTree());
-							// Java.g:1831:25: (Super= SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier genericTypeArgumentListSimplified arguments ) | SUPER innerDot= DOT IDENT arguments -> ^( METHOD_CALL ^( $innerDot ^( $outerDot qualifiedIdentifier SUPER ) IDENT ) genericTypeArgumentListSimplified arguments ) | IDENT arguments -> ^( METHOD_CALL ^( DOT qualifiedIdentifier IDENT ) genericTypeArgumentListSimplified arguments ) )
+							// Java.g:1832:25: (Super= SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier genericTypeArgumentListSimplified arguments ) | SUPER innerDot= DOT IDENT arguments -> ^( METHOD_CALL ^( $innerDot ^( $outerDot qualifiedIdentifier SUPER ) IDENT ) genericTypeArgumentListSimplified arguments ) | IDENT arguments -> ^( METHOD_CALL ^( DOT qualifiedIdentifier IDENT ) genericTypeArgumentListSimplified arguments ) )
 							int alt143=3;
 							int LA143_0 = input.LA(1);
 							if ( (LA143_0==SUPER) ) {
@@ -20045,7 +20046,7 @@ public class JavaParser extends Parser {
 
 							switch (alt143) {
 								case 1 :
-									// Java.g:1831:29: Super= SUPER arguments
+									// Java.g:1832:29: Super= SUPER arguments
 									{
 									Super=(Token)match(input,SUPER,FOLLOW_SUPER_in_qualifiedIdentExpression21431); if (state.failed) return retval; 
 									if ( state.backtracking==0 ) stream_SUPER.add(Super);
@@ -20067,9 +20068,9 @@ public class JavaParser extends Parser {
 									RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 									root_0 = (CommonTree)adaptor.nil();
-									// 1832:29: -> ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier genericTypeArgumentListSimplified arguments )
+									// 1833:29: -> ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier genericTypeArgumentListSimplified arguments )
 									{
-										// Java.g:1832:33: ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier genericTypeArgumentListSimplified arguments )
+										// Java.g:1833:33: ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier genericTypeArgumentListSimplified arguments )
 										{
 										CommonTree root_1 = (CommonTree)adaptor.nil();
 										root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(SUPER_CONSTRUCTOR_CALL, Super, "SUPER_CONSTRUCTOR_CALL"), root_1);
@@ -20088,7 +20089,7 @@ public class JavaParser extends Parser {
 									}
 									break;
 								case 2 :
-									// Java.g:1833:29: SUPER innerDot= DOT IDENT arguments
+									// Java.g:1834:29: SUPER innerDot= DOT IDENT arguments
 									{
 									SUPER417=(Token)match(input,SUPER,FOLLOW_SUPER_in_qualifiedIdentExpression21520); if (state.failed) return retval; 
 									if ( state.backtracking==0 ) stream_SUPER.add(SUPER417);
@@ -20118,17 +20119,17 @@ public class JavaParser extends Parser {
 									RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 									root_0 = (CommonTree)adaptor.nil();
-									// 1834:29: -> ^( METHOD_CALL ^( $innerDot ^( $outerDot qualifiedIdentifier SUPER ) IDENT ) genericTypeArgumentListSimplified arguments )
+									// 1835:29: -> ^( METHOD_CALL ^( $innerDot ^( $outerDot qualifiedIdentifier SUPER ) IDENT ) genericTypeArgumentListSimplified arguments )
 									{
-										// Java.g:1834:33: ^( METHOD_CALL ^( $innerDot ^( $outerDot qualifiedIdentifier SUPER ) IDENT ) genericTypeArgumentListSimplified arguments )
+										// Java.g:1835:33: ^( METHOD_CALL ^( $innerDot ^( $outerDot qualifiedIdentifier SUPER ) IDENT ) genericTypeArgumentListSimplified arguments )
 										{
 										CommonTree root_1 = (CommonTree)adaptor.nil();
 										root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(METHOD_CALL, "METHOD_CALL"), root_1);
-										// Java.g:1834:47: ^( $innerDot ^( $outerDot qualifiedIdentifier SUPER ) IDENT )
+										// Java.g:1835:47: ^( $innerDot ^( $outerDot qualifiedIdentifier SUPER ) IDENT )
 										{
 										CommonTree root_2 = (CommonTree)adaptor.nil();
 										root_2 = (CommonTree)adaptor.becomeRoot(stream_innerDot.nextNode(), root_2);
-										// Java.g:1834:59: ^( $outerDot qualifiedIdentifier SUPER )
+										// Java.g:1835:59: ^( $outerDot qualifiedIdentifier SUPER )
 										{
 										CommonTree root_3 = (CommonTree)adaptor.nil();
 										root_3 = (CommonTree)adaptor.becomeRoot(stream_outerDot.nextNode(), root_3);
@@ -20155,7 +20156,7 @@ public class JavaParser extends Parser {
 									}
 									break;
 								case 3 :
-									// Java.g:1835:29: IDENT arguments
+									// Java.g:1836:29: IDENT arguments
 									{
 									IDENT420=(Token)match(input,IDENT,FOLLOW_IDENT_in_qualifiedIdentExpression21614); if (state.failed) return retval; 
 									if ( state.backtracking==0 ) stream_IDENT.add(IDENT420);
@@ -20177,13 +20178,13 @@ public class JavaParser extends Parser {
 									RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 									root_0 = (CommonTree)adaptor.nil();
-									// 1836:29: -> ^( METHOD_CALL ^( DOT qualifiedIdentifier IDENT ) genericTypeArgumentListSimplified arguments )
+									// 1837:29: -> ^( METHOD_CALL ^( DOT qualifiedIdentifier IDENT ) genericTypeArgumentListSimplified arguments )
 									{
-										// Java.g:1836:33: ^( METHOD_CALL ^( DOT qualifiedIdentifier IDENT ) genericTypeArgumentListSimplified arguments )
+										// Java.g:1837:33: ^( METHOD_CALL ^( DOT qualifiedIdentifier IDENT ) genericTypeArgumentListSimplified arguments )
 										{
 										CommonTree root_1 = (CommonTree)adaptor.nil();
 										root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(METHOD_CALL, "METHOD_CALL"), root_1);
-										// Java.g:1836:47: ^( DOT qualifiedIdentifier IDENT )
+										// Java.g:1837:47: ^( DOT qualifiedIdentifier IDENT )
 										{
 										CommonTree root_2 = (CommonTree)adaptor.nil();
 										root_2 = (CommonTree)adaptor.becomeRoot(stream_DOT.nextNode(), root_2);
@@ -20211,7 +20212,7 @@ public class JavaParser extends Parser {
 							}
 							break;
 						case 3 :
-							// Java.g:1838:25: THIS
+							// Java.g:1839:25: THIS
 							{
 							THIS422=(Token)match(input,THIS,FOLLOW_THIS_in_qualifiedIdentExpression21716); if (state.failed) return retval; 
 							if ( state.backtracking==0 ) stream_THIS.add(THIS422);
@@ -20228,9 +20229,9 @@ public class JavaParser extends Parser {
 							RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 							root_0 = (CommonTree)adaptor.nil();
-							// 1839:25: -> ^( DOT qualifiedIdentifier THIS )
+							// 1840:25: -> ^( DOT qualifiedIdentifier THIS )
 							{
-								// Java.g:1839:29: ^( DOT qualifiedIdentifier THIS )
+								// Java.g:1840:29: ^( DOT qualifiedIdentifier THIS )
 								{
 								CommonTree root_1 = (CommonTree)adaptor.nil();
 								root_1 = (CommonTree)adaptor.becomeRoot(stream_DOT.nextNode(), root_1);
@@ -20248,7 +20249,7 @@ public class JavaParser extends Parser {
 							}
 							break;
 						case 4 :
-							// Java.g:1840:25: Super= SUPER arguments
+							// Java.g:1841:25: Super= SUPER arguments
 							{
 							Super=(Token)match(input,SUPER,FOLLOW_SUPER_in_qualifiedIdentExpression21779); if (state.failed) return retval; 
 							if ( state.backtracking==0 ) stream_SUPER.add(Super);
@@ -20270,9 +20271,9 @@ public class JavaParser extends Parser {
 							RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 							root_0 = (CommonTree)adaptor.nil();
-							// 1841:25: -> ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier arguments )
+							// 1842:25: -> ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier arguments )
 							{
-								// Java.g:1841:29: ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier arguments )
+								// Java.g:1842:29: ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier arguments )
 								{
 								CommonTree root_1 = (CommonTree)adaptor.nil();
 								root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(SUPER_CONSTRUCTOR_CALL, Super, "SUPER_CONSTRUCTOR_CALL"), root_1);
@@ -20290,7 +20291,7 @@ public class JavaParser extends Parser {
 							}
 							break;
 						case 5 :
-							// Java.g:1842:25: innerNewExpression
+							// Java.g:1843:25: innerNewExpression
 							{
 							pushFollow(FOLLOW_innerNewExpression_in_qualifiedIdentExpression21843);
 							innerNewExpression424=innerNewExpression();
@@ -20309,9 +20310,9 @@ public class JavaParser extends Parser {
 							RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 							root_0 = (CommonTree)adaptor.nil();
-							// 1843:25: -> ^( DOT qualifiedIdentifier innerNewExpression )
+							// 1844:25: -> ^( DOT qualifiedIdentifier innerNewExpression )
 							{
-								// Java.g:1843:29: ^( DOT qualifiedIdentifier innerNewExpression )
+								// Java.g:1844:29: ^( DOT qualifiedIdentifier innerNewExpression )
 								{
 								CommonTree root_1 = (CommonTree)adaptor.nil();
 								root_1 = (CommonTree)adaptor.becomeRoot(stream_DOT.nextNode(), root_1);
@@ -20368,7 +20369,7 @@ public class JavaParser extends Parser {
 
 
 	// $ANTLR start "newExpression"
-	// Java.g:1848:1: newExpression : NEW ( primitiveType newArrayConstruction -> ^( STATIC_ARRAY_CREATOR[$NEW, \"STATIC_ARRAY_CREATOR\"] primitiveType newArrayConstruction ) | ( genericTypeArgumentListSimplified )? qualifiedTypeIdentSimplified ( newArrayConstruction -> ^( STATIC_ARRAY_CREATOR[$NEW, \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )? qualifiedTypeIdentSimplified newArrayConstruction ) | arguments ( classBody )? -> ^( CLASS_CONSTRUCTOR_CALL[$NEW, \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )? qualifiedTypeIdentSimplified arguments ( classBody )? ) ) ) ;
+	// Java.g:1849:1: newExpression : NEW ( primitiveType newArrayConstruction -> ^( STATIC_ARRAY_CREATOR[$NEW, \"STATIC_ARRAY_CREATOR\"] primitiveType newArrayConstruction ) | ( genericTypeArgumentListSimplified )? qualifiedTypeIdentSimplified ( newArrayConstruction -> ^( STATIC_ARRAY_CREATOR[$NEW, \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )? qualifiedTypeIdentSimplified newArrayConstruction ) | arguments ( classBody )? -> ^( CLASS_CONSTRUCTOR_CALL[$NEW, \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )? qualifiedTypeIdentSimplified arguments ( classBody )? ) ) ) ;
 	public final JavaParser.newExpression_return newExpression() throws RecognitionException {
 		JavaParser.newExpression_return retval = new JavaParser.newExpression_return();
 		retval.start = input.LT(1);
@@ -20397,13 +20398,13 @@ public class JavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 108) ) { return retval; }
 
-			// Java.g:1849:13: ( NEW ( primitiveType newArrayConstruction -> ^( STATIC_ARRAY_CREATOR[$NEW, \"STATIC_ARRAY_CREATOR\"] primitiveType newArrayConstruction ) | ( genericTypeArgumentListSimplified )? qualifiedTypeIdentSimplified ( newArrayConstruction -> ^( STATIC_ARRAY_CREATOR[$NEW, \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )? qualifiedTypeIdentSimplified newArrayConstruction ) | arguments ( classBody )? -> ^( CLASS_CONSTRUCTOR_CALL[$NEW, \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )? qualifiedTypeIdentSimplified arguments ( classBody )? ) ) ) )
-			// Java.g:1849:17: NEW ( primitiveType newArrayConstruction -> ^( STATIC_ARRAY_CREATOR[$NEW, \"STATIC_ARRAY_CREATOR\"] primitiveType newArrayConstruction ) | ( genericTypeArgumentListSimplified )? qualifiedTypeIdentSimplified ( newArrayConstruction -> ^( STATIC_ARRAY_CREATOR[$NEW, \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )? qualifiedTypeIdentSimplified newArrayConstruction ) | arguments ( classBody )? -> ^( CLASS_CONSTRUCTOR_CALL[$NEW, \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )? qualifiedTypeIdentSimplified arguments ( classBody )? ) ) )
+			// Java.g:1850:13: ( NEW ( primitiveType newArrayConstruction -> ^( STATIC_ARRAY_CREATOR[$NEW, \"STATIC_ARRAY_CREATOR\"] primitiveType newArrayConstruction ) | ( genericTypeArgumentListSimplified )? qualifiedTypeIdentSimplified ( newArrayConstruction -> ^( STATIC_ARRAY_CREATOR[$NEW, \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )? qualifiedTypeIdentSimplified newArrayConstruction ) | arguments ( classBody )? -> ^( CLASS_CONSTRUCTOR_CALL[$NEW, \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )? qualifiedTypeIdentSimplified arguments ( classBody )? ) ) ) )
+			// Java.g:1850:17: NEW ( primitiveType newArrayConstruction -> ^( STATIC_ARRAY_CREATOR[$NEW, \"STATIC_ARRAY_CREATOR\"] primitiveType newArrayConstruction ) | ( genericTypeArgumentListSimplified )? qualifiedTypeIdentSimplified ( newArrayConstruction -> ^( STATIC_ARRAY_CREATOR[$NEW, \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )? qualifiedTypeIdentSimplified newArrayConstruction ) | arguments ( classBody )? -> ^( CLASS_CONSTRUCTOR_CALL[$NEW, \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )? qualifiedTypeIdentSimplified arguments ( classBody )? ) ) )
 			{
 			NEW425=(Token)match(input,NEW,FOLLOW_NEW_in_newExpression21963); if (state.failed) return retval; 
 			if ( state.backtracking==0 ) stream_NEW.add(NEW425);
 
-			// Java.g:1850:17: ( primitiveType newArrayConstruction -> ^( STATIC_ARRAY_CREATOR[$NEW, \"STATIC_ARRAY_CREATOR\"] primitiveType newArrayConstruction ) | ( genericTypeArgumentListSimplified )? qualifiedTypeIdentSimplified ( newArrayConstruction -> ^( STATIC_ARRAY_CREATOR[$NEW, \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )? qualifiedTypeIdentSimplified newArrayConstruction ) | arguments ( classBody )? -> ^( CLASS_CONSTRUCTOR_CALL[$NEW, \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )? qualifiedTypeIdentSimplified arguments ( classBody )? ) ) )
+			// Java.g:1851:17: ( primitiveType newArrayConstruction -> ^( STATIC_ARRAY_CREATOR[$NEW, \"STATIC_ARRAY_CREATOR\"] primitiveType newArrayConstruction ) | ( genericTypeArgumentListSimplified )? qualifiedTypeIdentSimplified ( newArrayConstruction -> ^( STATIC_ARRAY_CREATOR[$NEW, \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )? qualifiedTypeIdentSimplified newArrayConstruction ) | arguments ( classBody )? -> ^( CLASS_CONSTRUCTOR_CALL[$NEW, \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )? qualifiedTypeIdentSimplified arguments ( classBody )? ) ) )
 			int alt149=2;
 			int LA149_0 = input.LA(1);
 			if ( (LA149_0==BOOLEAN||LA149_0==BYTE||LA149_0==CHAR||LA149_0==DOUBLE||LA149_0==FLOAT||LA149_0==INT||LA149_0==LONG||LA149_0==SHORT) ) {
@@ -20422,7 +20423,7 @@ public class JavaParser extends Parser {
 
 			switch (alt149) {
 				case 1 :
-					// Java.g:1850:21: primitiveType newArrayConstruction
+					// Java.g:1851:21: primitiveType newArrayConstruction
 					{
 					pushFollow(FOLLOW_primitiveType_in_newExpression21987);
 					primitiveType426=primitiveType();
@@ -20446,9 +20447,9 @@ public class JavaParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (CommonTree)adaptor.nil();
-					// 1851:21: -> ^( STATIC_ARRAY_CREATOR[$NEW, \"STATIC_ARRAY_CREATOR\"] primitiveType newArrayConstruction )
+					// 1852:21: -> ^( STATIC_ARRAY_CREATOR[$NEW, \"STATIC_ARRAY_CREATOR\"] primitiveType newArrayConstruction )
 					{
-						// Java.g:1851:25: ^( STATIC_ARRAY_CREATOR[$NEW, \"STATIC_ARRAY_CREATOR\"] primitiveType newArrayConstruction )
+						// Java.g:1852:25: ^( STATIC_ARRAY_CREATOR[$NEW, \"STATIC_ARRAY_CREATOR\"] primitiveType newArrayConstruction )
 						{
 						CommonTree root_1 = (CommonTree)adaptor.nil();
 						root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(STATIC_ARRAY_CREATOR, NEW425, "STATIC_ARRAY_CREATOR"), root_1);
@@ -20466,9 +20467,9 @@ public class JavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// Java.g:1852:21: ( genericTypeArgumentListSimplified )? qualifiedTypeIdentSimplified ( newArrayConstruction -> ^( STATIC_ARRAY_CREATOR[$NEW, \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )? qualifiedTypeIdentSimplified newArrayConstruction ) | arguments ( classBody )? -> ^( CLASS_CONSTRUCTOR_CALL[$NEW, \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )? qualifiedTypeIdentSimplified arguments ( classBody )? ) )
+					// Java.g:1853:21: ( genericTypeArgumentListSimplified )? qualifiedTypeIdentSimplified ( newArrayConstruction -> ^( STATIC_ARRAY_CREATOR[$NEW, \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )? qualifiedTypeIdentSimplified newArrayConstruction ) | arguments ( classBody )? -> ^( CLASS_CONSTRUCTOR_CALL[$NEW, \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )? qualifiedTypeIdentSimplified arguments ( classBody )? ) )
 					{
-					// Java.g:1852:21: ( genericTypeArgumentListSimplified )?
+					// Java.g:1853:21: ( genericTypeArgumentListSimplified )?
 					int alt146=2;
 					int LA146_0 = input.LA(1);
 					if ( (LA146_0==LESS_THAN) ) {
@@ -20476,7 +20477,7 @@ public class JavaParser extends Parser {
 					}
 					switch (alt146) {
 						case 1 :
-							// Java.g:1852:21: genericTypeArgumentListSimplified
+							// Java.g:1853:21: genericTypeArgumentListSimplified
 							{
 							pushFollow(FOLLOW_genericTypeArgumentListSimplified_in_newExpression22049);
 							genericTypeArgumentListSimplified428=genericTypeArgumentListSimplified();
@@ -20493,7 +20494,7 @@ public class JavaParser extends Parser {
 					state._fsp--;
 					if (state.failed) return retval;
 					if ( state.backtracking==0 ) stream_qualifiedTypeIdentSimplified.add(qualifiedTypeIdentSimplified429.getTree());
-					// Java.g:1853:21: ( newArrayConstruction -> ^( STATIC_ARRAY_CREATOR[$NEW, \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )? qualifiedTypeIdentSimplified newArrayConstruction ) | arguments ( classBody )? -> ^( CLASS_CONSTRUCTOR_CALL[$NEW, \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )? qualifiedTypeIdentSimplified arguments ( classBody )? ) )
+					// Java.g:1854:21: ( newArrayConstruction -> ^( STATIC_ARRAY_CREATOR[$NEW, \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )? qualifiedTypeIdentSimplified newArrayConstruction ) | arguments ( classBody )? -> ^( CLASS_CONSTRUCTOR_CALL[$NEW, \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )? qualifiedTypeIdentSimplified arguments ( classBody )? ) )
 					int alt148=2;
 					int LA148_0 = input.LA(1);
 					if ( (LA148_0==LBRACK) ) {
@@ -20512,7 +20513,7 @@ public class JavaParser extends Parser {
 
 					switch (alt148) {
 						case 1 :
-							// Java.g:1853:25: newArrayConstruction
+							// Java.g:1854:25: newArrayConstruction
 							{
 							pushFollow(FOLLOW_newArrayConstruction_in_newExpression22078);
 							newArrayConstruction430=newArrayConstruction();
@@ -20531,13 +20532,13 @@ public class JavaParser extends Parser {
 							RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 							root_0 = (CommonTree)adaptor.nil();
-							// 1854:25: -> ^( STATIC_ARRAY_CREATOR[$NEW, \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )? qualifiedTypeIdentSimplified newArrayConstruction )
+							// 1855:25: -> ^( STATIC_ARRAY_CREATOR[$NEW, \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )? qualifiedTypeIdentSimplified newArrayConstruction )
 							{
-								// Java.g:1854:29: ^( STATIC_ARRAY_CREATOR[$NEW, \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )? qualifiedTypeIdentSimplified newArrayConstruction )
+								// Java.g:1855:29: ^( STATIC_ARRAY_CREATOR[$NEW, \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )? qualifiedTypeIdentSimplified newArrayConstruction )
 								{
 								CommonTree root_1 = (CommonTree)adaptor.nil();
 								root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(STATIC_ARRAY_CREATOR, NEW425, "STATIC_ARRAY_CREATOR"), root_1);
-								// Java.g:1854:82: ( genericTypeArgumentListSimplified )?
+								// Java.g:1855:82: ( genericTypeArgumentListSimplified )?
 								if ( stream_genericTypeArgumentListSimplified.hasNext() ) {
 									adaptor.addChild(root_1, stream_genericTypeArgumentListSimplified.nextTree());
 								}
@@ -20557,14 +20558,14 @@ public class JavaParser extends Parser {
 							}
 							break;
 						case 2 :
-							// Java.g:1855:25: arguments ( classBody )?
+							// Java.g:1856:25: arguments ( classBody )?
 							{
 							pushFollow(FOLLOW_arguments_in_newExpression22159);
 							arguments431=arguments();
 							state._fsp--;
 							if (state.failed) return retval;
 							if ( state.backtracking==0 ) stream_arguments.add(arguments431.getTree());
-							// Java.g:1855:35: ( classBody )?
+							// Java.g:1856:35: ( classBody )?
 							int alt147=2;
 							int LA147_0 = input.LA(1);
 							if ( (LA147_0==LCURLY) ) {
@@ -20572,7 +20573,7 @@ public class JavaParser extends Parser {
 							}
 							switch (alt147) {
 								case 1 :
-									// Java.g:1855:35: classBody
+									// Java.g:1856:35: classBody
 									{
 									pushFollow(FOLLOW_classBody_in_newExpression22161);
 									classBody432=classBody();
@@ -20596,13 +20597,13 @@ public class JavaParser extends Parser {
 							RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 							root_0 = (CommonTree)adaptor.nil();
-							// 1856:25: -> ^( CLASS_CONSTRUCTOR_CALL[$NEW, \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )? qualifiedTypeIdentSimplified arguments ( classBody )? )
+							// 1857:25: -> ^( CLASS_CONSTRUCTOR_CALL[$NEW, \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )? qualifiedTypeIdentSimplified arguments ( classBody )? )
 							{
-								// Java.g:1856:29: ^( CLASS_CONSTRUCTOR_CALL[$NEW, \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )? qualifiedTypeIdentSimplified arguments ( classBody )? )
+								// Java.g:1857:29: ^( CLASS_CONSTRUCTOR_CALL[$NEW, \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )? qualifiedTypeIdentSimplified arguments ( classBody )? )
 								{
 								CommonTree root_1 = (CommonTree)adaptor.nil();
 								root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(CLASS_CONSTRUCTOR_CALL, NEW425, "STATIC_ARRAY_CREATOR"), root_1);
-								// Java.g:1856:84: ( genericTypeArgumentListSimplified )?
+								// Java.g:1857:84: ( genericTypeArgumentListSimplified )?
 								if ( stream_genericTypeArgumentListSimplified.hasNext() ) {
 									adaptor.addChild(root_1, stream_genericTypeArgumentListSimplified.nextTree());
 								}
@@ -20610,7 +20611,7 @@ public class JavaParser extends Parser {
 
 								adaptor.addChild(root_1, stream_qualifiedTypeIdentSimplified.nextTree());
 								adaptor.addChild(root_1, stream_arguments.nextTree());
-								// Java.g:1856:158: ( classBody )?
+								// Java.g:1857:158: ( classBody )?
 								if ( stream_classBody.hasNext() ) {
 									adaptor.addChild(root_1, stream_classBody.nextTree());
 								}
@@ -20667,7 +20668,7 @@ public class JavaParser extends Parser {
 
 
 	// $ANTLR start "innerNewExpression"
-	// Java.g:1861:9: innerNewExpression : NEW ( genericTypeArgumentListSimplified )? IDENT arguments ( classBody )? -> ^( CLASS_CONSTRUCTOR_CALL[$NEW, \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )? IDENT arguments ( classBody )? ) ;
+	// Java.g:1862:9: innerNewExpression : NEW ( genericTypeArgumentListSimplified )? IDENT arguments ( classBody )? -> ^( CLASS_CONSTRUCTOR_CALL[$NEW, \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )? IDENT arguments ( classBody )? ) ;
 	public final JavaParser.innerNewExpression_return innerNewExpression() throws RecognitionException {
 		JavaParser.innerNewExpression_return retval = new JavaParser.innerNewExpression_return();
 		retval.start = input.LT(1);
@@ -20692,13 +20693,13 @@ public class JavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 109) ) { return retval; }
 
-			// Java.g:1862:13: ( NEW ( genericTypeArgumentListSimplified )? IDENT arguments ( classBody )? -> ^( CLASS_CONSTRUCTOR_CALL[$NEW, \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )? IDENT arguments ( classBody )? ) )
-			// Java.g:1862:17: NEW ( genericTypeArgumentListSimplified )? IDENT arguments ( classBody )?
+			// Java.g:1863:13: ( NEW ( genericTypeArgumentListSimplified )? IDENT arguments ( classBody )? -> ^( CLASS_CONSTRUCTOR_CALL[$NEW, \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )? IDENT arguments ( classBody )? ) )
+			// Java.g:1863:17: NEW ( genericTypeArgumentListSimplified )? IDENT arguments ( classBody )?
 			{
 			NEW433=(Token)match(input,NEW,FOLLOW_NEW_in_innerNewExpression22316); if (state.failed) return retval; 
 			if ( state.backtracking==0 ) stream_NEW.add(NEW433);
 
-			// Java.g:1862:21: ( genericTypeArgumentListSimplified )?
+			// Java.g:1863:21: ( genericTypeArgumentListSimplified )?
 			int alt150=2;
 			int LA150_0 = input.LA(1);
 			if ( (LA150_0==LESS_THAN) ) {
@@ -20706,7 +20707,7 @@ public class JavaParser extends Parser {
 			}
 			switch (alt150) {
 				case 1 :
-					// Java.g:1862:21: genericTypeArgumentListSimplified
+					// Java.g:1863:21: genericTypeArgumentListSimplified
 					{
 					pushFollow(FOLLOW_genericTypeArgumentListSimplified_in_innerNewExpression22318);
 					genericTypeArgumentListSimplified434=genericTypeArgumentListSimplified();
@@ -20726,7 +20727,7 @@ public class JavaParser extends Parser {
 			state._fsp--;
 			if (state.failed) return retval;
 			if ( state.backtracking==0 ) stream_arguments.add(arguments436.getTree());
-			// Java.g:1862:72: ( classBody )?
+			// Java.g:1863:72: ( classBody )?
 			int alt151=2;
 			int LA151_0 = input.LA(1);
 			if ( (LA151_0==LCURLY) ) {
@@ -20734,7 +20735,7 @@ public class JavaParser extends Parser {
 			}
 			switch (alt151) {
 				case 1 :
-					// Java.g:1862:72: classBody
+					// Java.g:1863:72: classBody
 					{
 					pushFollow(FOLLOW_classBody_in_innerNewExpression22325);
 					classBody437=classBody();
@@ -20758,13 +20759,13 @@ public class JavaParser extends Parser {
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 			root_0 = (CommonTree)adaptor.nil();
-			// 1863:17: -> ^( CLASS_CONSTRUCTOR_CALL[$NEW, \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )? IDENT arguments ( classBody )? )
+			// 1864:17: -> ^( CLASS_CONSTRUCTOR_CALL[$NEW, \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )? IDENT arguments ( classBody )? )
 			{
-				// Java.g:1863:21: ^( CLASS_CONSTRUCTOR_CALL[$NEW, \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )? IDENT arguments ( classBody )? )
+				// Java.g:1864:21: ^( CLASS_CONSTRUCTOR_CALL[$NEW, \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )? IDENT arguments ( classBody )? )
 				{
 				CommonTree root_1 = (CommonTree)adaptor.nil();
 				root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(CLASS_CONSTRUCTOR_CALL, NEW433, "STATIC_ARRAY_CREATOR"), root_1);
-				// Java.g:1863:76: ( genericTypeArgumentListSimplified )?
+				// Java.g:1864:76: ( genericTypeArgumentListSimplified )?
 				if ( stream_genericTypeArgumentListSimplified.hasNext() ) {
 					adaptor.addChild(root_1, stream_genericTypeArgumentListSimplified.nextTree());
 				}
@@ -20772,7 +20773,7 @@ public class JavaParser extends Parser {
 
 				adaptor.addChild(root_1, stream_IDENT.nextNode());
 				adaptor.addChild(root_1, stream_arguments.nextTree());
-				// Java.g:1863:127: ( classBody )?
+				// Java.g:1864:127: ( classBody )?
 				if ( stream_classBody.hasNext() ) {
 					adaptor.addChild(root_1, stream_classBody.nextTree());
 				}
@@ -20819,7 +20820,7 @@ public class JavaParser extends Parser {
 
 
 	// $ANTLR start "newArrayConstruction"
-	// Java.g:1866:1: newArrayConstruction : ( arrayDeclaratorList arrayInitializer | LBRACK ! expression RBRACK ! ( LBRACK ! expression RBRACK !)* ( arrayDeclaratorList )? );
+	// Java.g:1867:1: newArrayConstruction : ( arrayDeclaratorList arrayInitializer | LBRACK ! expression RBRACK ! ( LBRACK ! expression RBRACK !)* ( arrayDeclaratorList )? );
 	public final JavaParser.newArrayConstruction_return newArrayConstruction() throws RecognitionException {
 		JavaParser.newArrayConstruction_return retval = new JavaParser.newArrayConstruction_return();
 		retval.start = input.LT(1);
@@ -20845,7 +20846,7 @@ public class JavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 110) ) { return retval; }
 
-			// Java.g:1867:13: ( arrayDeclaratorList arrayInitializer | LBRACK ! expression RBRACK ! ( LBRACK ! expression RBRACK !)* ( arrayDeclaratorList )? )
+			// Java.g:1868:13: ( arrayDeclaratorList arrayInitializer | LBRACK ! expression RBRACK ! ( LBRACK ! expression RBRACK !)* ( arrayDeclaratorList )? )
 			int alt154=2;
 			int LA154_0 = input.LA(1);
 			if ( (LA154_0==LBRACK) ) {
@@ -20881,7 +20882,7 @@ public class JavaParser extends Parser {
 
 			switch (alt154) {
 				case 1 :
-					// Java.g:1867:17: arrayDeclaratorList arrayInitializer
+					// Java.g:1868:17: arrayDeclaratorList arrayInitializer
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -20901,7 +20902,7 @@ public class JavaParser extends Parser {
 					}
 					break;
 				case 2 :
-					// Java.g:1868:17: LBRACK ! expression RBRACK ! ( LBRACK ! expression RBRACK !)* ( arrayDeclaratorList )?
+					// Java.g:1869:17: LBRACK ! expression RBRACK ! ( LBRACK ! expression RBRACK !)* ( arrayDeclaratorList )?
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -20914,7 +20915,7 @@ public class JavaParser extends Parser {
 					if ( state.backtracking==0 ) adaptor.addChild(root_0, expression441.getTree());
 
 					RBRACK442=(Token)match(input,RBRACK,FOLLOW_RBRACK_in_newArrayConstruction22428); if (state.failed) return retval;
-					// Java.g:1868:44: ( LBRACK ! expression RBRACK !)*
+					// Java.g:1869:44: ( LBRACK ! expression RBRACK !)*
 					loop152:
 					while (true) {
 						int alt152=2;
@@ -20929,7 +20930,7 @@ public class JavaParser extends Parser {
 
 						switch (alt152) {
 						case 1 :
-							// Java.g:1868:45: LBRACK ! expression RBRACK !
+							// Java.g:1869:45: LBRACK ! expression RBRACK !
 							{
 							LBRACK443=(Token)match(input,LBRACK,FOLLOW_LBRACK_in_newArrayConstruction22432); if (state.failed) return retval;
 							pushFollow(FOLLOW_expression_in_newArrayConstruction22435);
@@ -20947,7 +20948,7 @@ public class JavaParser extends Parser {
 						}
 					}
 
-					// Java.g:1868:74: ( arrayDeclaratorList )?
+					// Java.g:1869:74: ( arrayDeclaratorList )?
 					int alt153=2;
 					int LA153_0 = input.LA(1);
 					if ( (LA153_0==LBRACK) ) {
@@ -20958,7 +20959,7 @@ public class JavaParser extends Parser {
 					}
 					switch (alt153) {
 						case 1 :
-							// Java.g:1868:74: arrayDeclaratorList
+							// Java.g:1869:74: arrayDeclaratorList
 							{
 							pushFollow(FOLLOW_arrayDeclaratorList_in_newArrayConstruction22442);
 							arrayDeclaratorList446=arrayDeclaratorList();
@@ -21005,7 +21006,7 @@ public class JavaParser extends Parser {
 
 
 	// $ANTLR start "arguments"
-	// Java.g:1871:1: arguments : LPAREN ( expressionList )? RPAREN -> ^( ARGUMENT_LIST[$LPAREN, \"ARGUMENT_LIST\"] ( expressionList )? ) ;
+	// Java.g:1872:1: arguments : LPAREN ( expressionList )? RPAREN -> ^( ARGUMENT_LIST[$LPAREN, \"ARGUMENT_LIST\"] ( expressionList )? ) ;
 	public final JavaParser.arguments_return arguments() throws RecognitionException {
 		JavaParser.arguments_return retval = new JavaParser.arguments_return();
 		retval.start = input.LT(1);
@@ -21026,8 +21027,8 @@ public class JavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 111) ) { return retval; }
 
-			// Java.g:1872:13: ( LPAREN ( expressionList )? RPAREN -> ^( ARGUMENT_LIST[$LPAREN, \"ARGUMENT_LIST\"] ( expressionList )? ) )
-			// Java.g:1872:17: LPAREN ( expressionList )? RPAREN
+			// Java.g:1873:13: ( LPAREN ( expressionList )? RPAREN -> ^( ARGUMENT_LIST[$LPAREN, \"ARGUMENT_LIST\"] ( expressionList )? ) )
+			// Java.g:1873:17: LPAREN ( expressionList )? RPAREN
 			{
 			LPAREN447=(Token)match(input,LPAREN,FOLLOW_LPAREN_in_arguments22486); if (state.failed) return retval; 
 			if ( state.backtracking==0 ) stream_LPAREN.add(LPAREN447);
@@ -21040,7 +21041,7 @@ public class JavaParser extends Parser {
 			                                methodCall = false;
 			                        }
 			                }
-			// Java.g:1881:17: ( expressionList )?
+			// Java.g:1882:17: ( expressionList )?
 			int alt155=2;
 			int LA155_0 = input.LA(1);
 			if ( (LA155_0==BOOLEAN||LA155_0==BYTE||(LA155_0 >= CHAR && LA155_0 <= CHARACTER_LITERAL)||(LA155_0 >= DEC && LA155_0 <= DECIMAL_LITERAL)||LA155_0==DOUBLE||LA155_0==FALSE||(LA155_0 >= FLOAT && LA155_0 <= FLOATING_POINT_LITERAL)||(LA155_0 >= HEX_LITERAL && LA155_0 <= IDENT)||LA155_0==INC||LA155_0==INT||LA155_0==LESS_THAN||LA155_0==LOGICAL_NOT||(LA155_0 >= LONG && LA155_0 <= LPAREN)||LA155_0==MINUS||(LA155_0 >= NEW && LA155_0 <= NOT)||LA155_0==NULL||LA155_0==OCTAL_LITERAL||LA155_0==PLUS||LA155_0==SHORT||(LA155_0 >= STRING_LITERAL && LA155_0 <= SUPER)||LA155_0==THIS||LA155_0==TRUE||LA155_0==VOID) ) {
@@ -21048,7 +21049,7 @@ public class JavaParser extends Parser {
 			}
 			switch (alt155) {
 				case 1 :
-					// Java.g:1881:17: expressionList
+					// Java.g:1882:17: expressionList
 					{
 					pushFollow(FOLLOW_expressionList_in_arguments22523);
 					expressionList448=expressionList();
@@ -21075,13 +21076,13 @@ public class JavaParser extends Parser {
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 			root_0 = (CommonTree)adaptor.nil();
-			// 1882:17: -> ^( ARGUMENT_LIST[$LPAREN, \"ARGUMENT_LIST\"] ( expressionList )? )
+			// 1883:17: -> ^( ARGUMENT_LIST[$LPAREN, \"ARGUMENT_LIST\"] ( expressionList )? )
 			{
-				// Java.g:1882:21: ^( ARGUMENT_LIST[$LPAREN, \"ARGUMENT_LIST\"] ( expressionList )? )
+				// Java.g:1883:21: ^( ARGUMENT_LIST[$LPAREN, \"ARGUMENT_LIST\"] ( expressionList )? )
 				{
 				CommonTree root_1 = (CommonTree)adaptor.nil();
 				root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(ARGUMENT_LIST, LPAREN447, "ARGUMENT_LIST"), root_1);
-				// Java.g:1882:63: ( expressionList )?
+				// Java.g:1883:63: ( expressionList )?
 				if ( stream_expressionList.hasNext() ) {
 					adaptor.addChild(root_1, stream_expressionList.nextTree());
 				}
@@ -21128,7 +21129,7 @@ public class JavaParser extends Parser {
 
 
 	// $ANTLR start "literal"
-	// Java.g:1885:1: literal : q= ( HEX_LITERAL | OCTAL_LITERAL | DECIMAL_LITERAL | FLOATING_POINT_LITERAL | CHARACTER_LITERAL | STRING_LITERAL | TRUE | FALSE | NULL ) ;
+	// Java.g:1886:1: literal : q= ( HEX_LITERAL | OCTAL_LITERAL | DECIMAL_LITERAL | FLOATING_POINT_LITERAL | CHARACTER_LITERAL | STRING_LITERAL | TRUE | FALSE | NULL ) ;
 	public final JavaParser.literal_return literal() throws RecognitionException {
 		JavaParser.literal_return retval = new JavaParser.literal_return();
 		retval.start = input.LT(1);
@@ -21143,8 +21144,8 @@ public class JavaParser extends Parser {
 		try {
 			if ( state.backtracking>0 && alreadyParsedRule(input, 112) ) { return retval; }
 
-			// Java.g:1886:13: (q= ( HEX_LITERAL | OCTAL_LITERAL | DECIMAL_LITERAL | FLOATING_POINT_LITERAL | CHARACTER_LITERAL | STRING_LITERAL | TRUE | FALSE | NULL ) )
-			// Java.g:1886:15: q= ( HEX_LITERAL | OCTAL_LITERAL | DECIMAL_LITERAL | FLOATING_POINT_LITERAL | CHARACTER_LITERAL | STRING_LITERAL | TRUE | FALSE | NULL )
+			// Java.g:1887:13: (q= ( HEX_LITERAL | OCTAL_LITERAL | DECIMAL_LITERAL | FLOATING_POINT_LITERAL | CHARACTER_LITERAL | STRING_LITERAL | TRUE | FALSE | NULL ) )
+			// Java.g:1887:15: q= ( HEX_LITERAL | OCTAL_LITERAL | DECIMAL_LITERAL | FLOATING_POINT_LITERAL | CHARACTER_LITERAL | STRING_LITERAL | TRUE | FALSE | NULL )
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -22971,8 +22972,8 @@ public class JavaParser extends Parser {
 		ParserRuleReturnScope p =null;
 
 
-		// Java.g:1721:16: ( LPAREN t= type RPAREN p= unaryExpression )
-		// Java.g:1721:16: LPAREN t= type RPAREN p= unaryExpression
+		// Java.g:1722:16: ( LPAREN t= type RPAREN p= unaryExpression )
+		// Java.g:1722:16: LPAREN t= type RPAREN p= unaryExpression
 		{
 		match(input,LPAREN,FOLLOW_LPAREN_in_synpred193_Java18356); if (state.failed) return;
 
@@ -22995,10 +22996,10 @@ public class JavaParser extends Parser {
 
 	// $ANTLR start synpred221_Java
 	public final void synpred221_Java_fragment() throws RecognitionException {
-		// Java.g:1819:21: ( ( arrayDeclarator )+ ( DOT CLASS ) )
-		// Java.g:1819:21: ( arrayDeclarator )+ ( DOT CLASS )
+		// Java.g:1820:21: ( ( arrayDeclarator )+ ( DOT CLASS ) )
+		// Java.g:1820:21: ( arrayDeclarator )+ ( DOT CLASS )
 		{
-		// Java.g:1819:21: ( arrayDeclarator )+
+		// Java.g:1820:21: ( arrayDeclarator )+
 		int cnt222=0;
 		loop222:
 		while (true) {
@@ -23010,7 +23011,7 @@ public class JavaParser extends Parser {
 
 			switch (alt222) {
 			case 1 :
-				// Java.g:1819:25: arrayDeclarator
+				// Java.g:1820:25: arrayDeclarator
 				{
 				pushFollow(FOLLOW_arrayDeclarator_in_synpred221_Java21000);
 				arrayDeclarator();
@@ -23029,8 +23030,8 @@ public class JavaParser extends Parser {
 			cnt222++;
 		}
 
-		// Java.g:1822:21: ( DOT CLASS )
-		// Java.g:1822:25: DOT CLASS
+		// Java.g:1823:21: ( DOT CLASS )
+		// Java.g:1823:25: DOT CLASS
 		{
 		match(input,DOT,FOLLOW_DOT_in_synpred221_Java21109); if (state.failed) return;
 
@@ -23050,12 +23051,12 @@ public class JavaParser extends Parser {
 		Token innerDot=null;
 
 
-		// Java.g:1827:21: (outerDot= DOT ( CLASS | genericTypeArgumentListSimplified (Super= SUPER arguments | SUPER innerDot= DOT IDENT arguments | IDENT arguments ) | THIS |Super= SUPER arguments | innerNewExpression ) )
-		// Java.g:1827:21: outerDot= DOT ( CLASS | genericTypeArgumentListSimplified (Super= SUPER arguments | SUPER innerDot= DOT IDENT arguments | IDENT arguments ) | THIS |Super= SUPER arguments | innerNewExpression )
+		// Java.g:1828:21: (outerDot= DOT ( CLASS | genericTypeArgumentListSimplified (Super= SUPER arguments | SUPER innerDot= DOT IDENT arguments | IDENT arguments ) | THIS |Super= SUPER arguments | innerNewExpression ) )
+		// Java.g:1828:21: outerDot= DOT ( CLASS | genericTypeArgumentListSimplified (Super= SUPER arguments | SUPER innerDot= DOT IDENT arguments | IDENT arguments ) | THIS |Super= SUPER arguments | innerNewExpression )
 		{
 		outerDot=(Token)match(input,DOT,FOLLOW_DOT_in_synpred229_Java21276); if (state.failed) return;
 
-		// Java.g:1828:21: ( CLASS | genericTypeArgumentListSimplified (Super= SUPER arguments | SUPER innerDot= DOT IDENT arguments | IDENT arguments ) | THIS |Super= SUPER arguments | innerNewExpression )
+		// Java.g:1829:21: ( CLASS | genericTypeArgumentListSimplified (Super= SUPER arguments | SUPER innerDot= DOT IDENT arguments | IDENT arguments ) | THIS |Super= SUPER arguments | innerNewExpression )
 		int alt225=5;
 		switch ( input.LA(1) ) {
 		case CLASS:
@@ -23091,21 +23092,21 @@ public class JavaParser extends Parser {
 		}
 		switch (alt225) {
 			case 1 :
-				// Java.g:1828:25: CLASS
+				// Java.g:1829:25: CLASS
 				{
 				match(input,CLASS,FOLLOW_CLASS_in_synpred229_Java21302); if (state.failed) return;
 
 				}
 				break;
 			case 2 :
-				// Java.g:1830:25: genericTypeArgumentListSimplified (Super= SUPER arguments | SUPER innerDot= DOT IDENT arguments | IDENT arguments )
+				// Java.g:1831:25: genericTypeArgumentListSimplified (Super= SUPER arguments | SUPER innerDot= DOT IDENT arguments | IDENT arguments )
 				{
 				pushFollow(FOLLOW_genericTypeArgumentListSimplified_in_synpred229_Java21398);
 				genericTypeArgumentListSimplified();
 				state._fsp--;
 				if (state.failed) return;
 
-				// Java.g:1831:25: (Super= SUPER arguments | SUPER innerDot= DOT IDENT arguments | IDENT arguments )
+				// Java.g:1832:25: (Super= SUPER arguments | SUPER innerDot= DOT IDENT arguments | IDENT arguments )
 				int alt224=3;
 				int LA224_0 = input.LA(1);
 				if ( (LA224_0==SUPER) ) {
@@ -23144,7 +23145,7 @@ public class JavaParser extends Parser {
 
 				switch (alt224) {
 					case 1 :
-						// Java.g:1831:29: Super= SUPER arguments
+						// Java.g:1832:29: Super= SUPER arguments
 						{
 						Super=(Token)match(input,SUPER,FOLLOW_SUPER_in_synpred229_Java21431); if (state.failed) return;
 
@@ -23156,7 +23157,7 @@ public class JavaParser extends Parser {
 						}
 						break;
 					case 2 :
-						// Java.g:1833:29: SUPER innerDot= DOT IDENT arguments
+						// Java.g:1834:29: SUPER innerDot= DOT IDENT arguments
 						{
 						match(input,SUPER,FOLLOW_SUPER_in_synpred229_Java21520); if (state.failed) return;
 
@@ -23172,7 +23173,7 @@ public class JavaParser extends Parser {
 						}
 						break;
 					case 3 :
-						// Java.g:1835:29: IDENT arguments
+						// Java.g:1836:29: IDENT arguments
 						{
 						match(input,IDENT,FOLLOW_IDENT_in_synpred229_Java21614); if (state.failed) return;
 
@@ -23189,14 +23190,14 @@ public class JavaParser extends Parser {
 				}
 				break;
 			case 3 :
-				// Java.g:1838:25: THIS
+				// Java.g:1839:25: THIS
 				{
 				match(input,THIS,FOLLOW_THIS_in_synpred229_Java21716); if (state.failed) return;
 
 				}
 				break;
 			case 4 :
-				// Java.g:1840:25: Super= SUPER arguments
+				// Java.g:1841:25: Super= SUPER arguments
 				{
 				Super=(Token)match(input,SUPER,FOLLOW_SUPER_in_synpred229_Java21779); if (state.failed) return;
 
@@ -23208,7 +23209,7 @@ public class JavaParser extends Parser {
 				}
 				break;
 			case 5 :
-				// Java.g:1842:25: innerNewExpression
+				// Java.g:1843:25: innerNewExpression
 				{
 				pushFollow(FOLLOW_innerNewExpression_in_synpred229_Java21843);
 				innerNewExpression();
@@ -23227,8 +23228,8 @@ public class JavaParser extends Parser {
 
 	// $ANTLR start synpred237_Java
 	public final void synpred237_Java_fragment() throws RecognitionException {
-		// Java.g:1868:45: ( LBRACK expression RBRACK )
-		// Java.g:1868:45: LBRACK expression RBRACK
+		// Java.g:1869:45: ( LBRACK expression RBRACK )
+		// Java.g:1869:45: LBRACK expression RBRACK
 		{
 		match(input,LBRACK,FOLLOW_LBRACK_in_synpred237_Java22432); if (state.failed) return;
 
@@ -23740,10 +23741,10 @@ public class JavaParser extends Parser {
 
 
 	public static final BitSet FOLLOW_compilationUnit_in_javaSource6000 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_annotationList_in_compilationUnit6089 = new BitSet(new long[]{0x0400000800400012L,0x0500000210000010L,0x00800820A0207008L});
-	public static final BitSet FOLLOW_packageDeclaration_in_compilationUnit6108 = new BitSet(new long[]{0x0400000800400012L,0x0500000210000010L,0x00800820A0207000L});
-	public static final BitSet FOLLOW_importDeclaration_in_compilationUnit6128 = new BitSet(new long[]{0x0400000800400012L,0x0500000210000010L,0x00800820A0207000L});
-	public static final BitSet FOLLOW_typeDecls_in_compilationUnit6148 = new BitSet(new long[]{0x0400000800400012L,0x0500000200000010L,0x00800820A0207000L});
+	public static final BitSet FOLLOW_annotationList_in_compilationUnit6089 = new BitSet(new long[]{0x0400000800400012L,0x0100000210000010L,0x00800820A0207042L});
+	public static final BitSet FOLLOW_packageDeclaration_in_compilationUnit6108 = new BitSet(new long[]{0x0400000800400012L,0x0100000210000010L,0x00800820A0207040L});
+	public static final BitSet FOLLOW_importDeclaration_in_compilationUnit6128 = new BitSet(new long[]{0x0400000800400012L,0x0100000210000010L,0x00800820A0207040L});
+	public static final BitSet FOLLOW_typeDecls_in_compilationUnit6148 = new BitSet(new long[]{0x0400000800400012L,0x0100000200000010L,0x00800820A0207040L});
 	public static final BitSet FOLLOW_typeDeclaration_in_typeDecls6196 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_polyverseDeclaration_in_typeDecls6214 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_SEMI_in_typeDecls6232 = new BitSet(new long[]{0x0000000000000002L});
@@ -23755,9 +23756,9 @@ public class JavaParser extends Parser {
 	public static final BitSet FOLLOW_qualifiedIdentifier_in_importDeclaration6346 = new BitSet(new long[]{0x0040000000000000L,0x0000000000000000L,0x0000000000200000L});
 	public static final BitSet FOLLOW_DOTSTAR_in_importDeclaration6348 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000200000L});
 	public static final BitSet FOLLOW_SEMI_in_importDeclaration6351 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_MVENTER_in_polyverseDeclaration6405 = new BitSet(new long[]{0x0400000800400010L,0x0600000200000010L,0x00800820A0007000L});
-	public static final BitSet FOLLOW_typeDeclaration_in_polyverseDeclaration6427 = new BitSet(new long[]{0x0400000800400010L,0x0600000200000010L,0x00800820A0007000L});
-	public static final BitSet FOLLOW_MVEXIT_in_polyverseDeclaration6448 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_POLYVERSEENTER_in_polyverseDeclaration6405 = new BitSet(new long[]{0x0400000800400010L,0x0100000200000010L,0x00800820A0007080L});
+	public static final BitSet FOLLOW_typeDeclaration_in_polyverseDeclaration6427 = new BitSet(new long[]{0x0400000800400010L,0x0100000200000010L,0x00800820A0007080L});
+	public static final BitSet FOLLOW_POLYVERSEEXIT_in_polyverseDeclaration6448 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_modifierList_in_typeDeclaration6488 = new BitSet(new long[]{0x0400000800400000L,0x0000000200000000L});
 	public static final BitSet FOLLOW_classTypeDeclaration_in_typeDeclaration6511 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_interfaceTypeDeclaration_in_typeDeclaration6534 = new BitSet(new long[]{0x0000000000000002L});
@@ -23799,8 +23800,8 @@ public class JavaParser extends Parser {
 	public static final BitSet FOLLOW_enumConstants_in_enumScopeDeclarations7590 = new BitSet(new long[]{0x0000020000000002L,0x0000000000000000L,0x0000000000200000L});
 	public static final BitSet FOLLOW_COMMA_in_enumScopeDeclarations7593 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000200000L});
 	public static final BitSet FOLLOW_enumClassScopeDeclarations_in_enumScopeDeclarations7598 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_SEMI_in_enumClassScopeDeclarations7642 = new BitSet(new long[]{0x0480000A14400012L,0x0401050281000050L,0x00A00820A4207000L});
-	public static final BitSet FOLLOW_classScopeDeclarations_in_enumClassScopeDeclarations7644 = new BitSet(new long[]{0x0480000A14400012L,0x0401050281000050L,0x00A00820A4207000L});
+	public static final BitSet FOLLOW_SEMI_in_enumClassScopeDeclarations7642 = new BitSet(new long[]{0x0480000A14400012L,0x0101050281000050L,0x00A00820A4207000L});
+	public static final BitSet FOLLOW_classScopeDeclarations_in_enumClassScopeDeclarations7644 = new BitSet(new long[]{0x0480000A14400012L,0x0101050281000050L,0x00A00820A4207000L});
 	public static final BitSet FOLLOW_enumConstant_in_enumConstants7715 = new BitSet(new long[]{0x0000020000000002L});
 	public static final BitSet FOLLOW_COMMA_in_enumConstants7718 = new BitSet(new long[]{0x0000000000400000L,0x0000000001000000L});
 	public static final BitSet FOLLOW_enumConstant_in_enumConstants7721 = new BitSet(new long[]{0x0000020000000002L});
@@ -23816,11 +23817,11 @@ public class JavaParser extends Parser {
 	public static final BitSet FOLLOW_type_in_typeList7919 = new BitSet(new long[]{0x0000020000000002L});
 	public static final BitSet FOLLOW_COMMA_in_typeList7922 = new BitSet(new long[]{0x0080000214000000L,0x0001000081000040L,0x0000000004000000L});
 	public static final BitSet FOLLOW_type_in_typeList7925 = new BitSet(new long[]{0x0000020000000002L});
-	public static final BitSet FOLLOW_LCURLY_in_classBody7974 = new BitSet(new long[]{0x0480000A14400010L,0x0401050281000050L,0x00A00820A4247000L});
-	public static final BitSet FOLLOW_classScopeDeclarations_in_classBody7999 = new BitSet(new long[]{0x0480000A14400010L,0x0401050281000050L,0x00A00820A4247000L});
+	public static final BitSet FOLLOW_LCURLY_in_classBody7974 = new BitSet(new long[]{0x0480000A14400010L,0x0101050281000050L,0x00A00820A4247000L});
+	public static final BitSet FOLLOW_classScopeDeclarations_in_classBody7999 = new BitSet(new long[]{0x0480000A14400010L,0x0101050281000050L,0x00A00820A4247000L});
 	public static final BitSet FOLLOW_RCURLY_in_classBody8024 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_LCURLY_in_interfaceBody8098 = new BitSet(new long[]{0x0480000A14400010L,0x0401040281000050L,0x00A00820A4247000L});
-	public static final BitSet FOLLOW_interfaceScopeDeclarations_in_interfaceBody8102 = new BitSet(new long[]{0x0480000A14400010L,0x0401040281000050L,0x00A00820A4247000L});
+	public static final BitSet FOLLOW_LCURLY_in_interfaceBody8098 = new BitSet(new long[]{0x0480000A14400010L,0x0101040281000050L,0x00A00820A4247000L});
+	public static final BitSet FOLLOW_interfaceScopeDeclarations_in_interfaceBody8102 = new BitSet(new long[]{0x0480000A14400010L,0x0101040281000050L,0x00A00820A4247000L});
 	public static final BitSet FOLLOW_RCURLY_in_interfaceBody8106 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_block_in_classScopeDeclarations8176 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_STATIC_in_classScopeDeclarations8213 = new BitSet(new long[]{0x0000000000000000L,0x0000010000000000L});
@@ -23871,13 +23872,13 @@ public class JavaParser extends Parser {
 	public static final BitSet FOLLOW_COMMA_in_classFieldDeclaratorList9129 = new BitSet(new long[]{0x0000000000000000L,0x0000000001000000L});
 	public static final BitSet FOLLOW_classFieldDeclarator_in_classFieldDeclaratorList9131 = new BitSet(new long[]{0x0000020000000002L});
 	public static final BitSet FOLLOW_variableDeclaratorId_in_classFieldDeclarator9202 = new BitSet(new long[]{0x0000000000200002L});
-	public static final BitSet FOLLOW_ASSIGN_in_classFieldDeclarator9205 = new BitSet(new long[]{0x0081800614000000L,0x580B4500A18000C8L,0x0020104304000021L});
+	public static final BitSet FOLLOW_ASSIGN_in_classFieldDeclarator9205 = new BitSet(new long[]{0x0081800614000000L,0x560B4500A18000C8L,0x0020104304000008L});
 	public static final BitSet FOLLOW_variableInitializer_in_classFieldDeclarator9207 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_interfaceFieldDeclarator_in_interfaceFieldDeclaratorList9284 = new BitSet(new long[]{0x0000020000000002L});
 	public static final BitSet FOLLOW_COMMA_in_interfaceFieldDeclaratorList9287 = new BitSet(new long[]{0x0000000000000000L,0x0000000001000000L});
 	public static final BitSet FOLLOW_interfaceFieldDeclarator_in_interfaceFieldDeclaratorList9289 = new BitSet(new long[]{0x0000020000000002L});
 	public static final BitSet FOLLOW_variableDeclaratorId_in_interfaceFieldDeclarator9360 = new BitSet(new long[]{0x0000000000200000L});
-	public static final BitSet FOLLOW_ASSIGN_in_interfaceFieldDeclarator9362 = new BitSet(new long[]{0x0081800614000000L,0x580B4500A18000C8L,0x0020104304000021L});
+	public static final BitSet FOLLOW_ASSIGN_in_interfaceFieldDeclarator9362 = new BitSet(new long[]{0x0081800614000000L,0x560B4500A18000C8L,0x0020104304000008L});
 	public static final BitSet FOLLOW_variableInitializer_in_interfaceFieldDeclarator9364 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_IDENT_in_variableDeclaratorId9448 = new BitSet(new long[]{0x0000000000000002L,0x0000008000000000L});
 	public static final BitSet FOLLOW_arrayDeclaratorList_in_variableDeclaratorId9465 = new BitSet(new long[]{0x0000000000000002L});
@@ -23886,15 +23887,15 @@ public class JavaParser extends Parser {
 	public static final BitSet FOLLOW_LBRACK_in_arrayDeclarator9570 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000020000L});
 	public static final BitSet FOLLOW_RBRACK_in_arrayDeclarator9572 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_arrayDeclarator_in_arrayDeclaratorList9638 = new BitSet(new long[]{0x0000000000000002L,0x0000008000000000L});
-	public static final BitSet FOLLOW_LCURLY_in_arrayInitializer9723 = new BitSet(new long[]{0x0081800614000000L,0x580B4500A18000C8L,0x0020104304040021L});
+	public static final BitSet FOLLOW_LCURLY_in_arrayInitializer9723 = new BitSet(new long[]{0x0081800614000000L,0x560B4500A18000C8L,0x0020104304040008L});
 	public static final BitSet FOLLOW_variableInitializer_in_arrayInitializer9726 = new BitSet(new long[]{0x0000020000000000L,0x0000000000000000L,0x0000000000040000L});
-	public static final BitSet FOLLOW_COMMA_in_arrayInitializer9729 = new BitSet(new long[]{0x0081800614000000L,0x580B4500A18000C8L,0x0020104304000021L});
+	public static final BitSet FOLLOW_COMMA_in_arrayInitializer9729 = new BitSet(new long[]{0x0081800614000000L,0x560B4500A18000C8L,0x0020104304000008L});
 	public static final BitSet FOLLOW_variableInitializer_in_arrayInitializer9731 = new BitSet(new long[]{0x0000020000000000L,0x0000000000000000L,0x0000000000040000L});
 	public static final BitSet FOLLOW_COMMA_in_arrayInitializer9735 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000040000L});
 	public static final BitSet FOLLOW_RCURLY_in_arrayInitializer9740 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_THROWS_in_throwsClause9810 = new BitSet(new long[]{0x0000000000000000L,0x0000000001000000L});
 	public static final BitSet FOLLOW_qualifiedIdentList_in_throwsClause9812 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_modifier_in_modifierList9881 = new BitSet(new long[]{0x0000000000400012L,0x0400000000000010L,0x00800820A0007000L});
+	public static final BitSet FOLLOW_modifier_in_modifierList9881 = new BitSet(new long[]{0x0000000000400012L,0x0100000000000010L,0x00800820A0007000L});
 	public static final BitSet FOLLOW_PUBLIC_in_modifier9954 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_PROTECTED_in_modifier9972 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_PRIVATE_in_modifier9990 = new BitSet(new long[]{0x0000000000000002L});
@@ -23977,7 +23978,7 @@ public class JavaParser extends Parser {
 	public static final BitSet FOLLOW_AT_in_annotation12280 = new BitSet(new long[]{0x0000000000000000L,0x0000000001000000L});
 	public static final BitSet FOLLOW_qualifiedIdentifier_in_annotation12285 = new BitSet(new long[]{0x0000000000000002L,0x0002000000000000L});
 	public static final BitSet FOLLOW_annotationInit_in_annotation12287 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_LPAREN_in_annotationInit12328 = new BitSet(new long[]{0x0081800614400000L,0x580B4500A18000C8L,0x0020104304000021L});
+	public static final BitSet FOLLOW_LPAREN_in_annotationInit12328 = new BitSet(new long[]{0x0081800614400000L,0x560B4500A18000C8L,0x0020104304000008L});
 	public static final BitSet FOLLOW_annotationInitializers_in_annotationInit12330 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000100000L});
 	public static final BitSet FOLLOW_RPAREN_in_annotationInit12332 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_annotationInitializer_in_annotationInitializers12401 = new BitSet(new long[]{0x0000020000000002L});
@@ -23985,15 +23986,15 @@ public class JavaParser extends Parser {
 	public static final BitSet FOLLOW_annotationInitializer_in_annotationInitializers12406 = new BitSet(new long[]{0x0000020000000002L});
 	public static final BitSet FOLLOW_annotationElementValue_in_annotationInitializers12452 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_IDENT_in_annotationInitializer12525 = new BitSet(new long[]{0x0000000000200000L});
-	public static final BitSet FOLLOW_ASSIGN_in_annotationInitializer12528 = new BitSet(new long[]{0x0081800614400000L,0x580B4500A18000C8L,0x0020104304000021L});
+	public static final BitSet FOLLOW_ASSIGN_in_annotationInitializer12528 = new BitSet(new long[]{0x0081800614400000L,0x560B4500A18000C8L,0x0020104304000008L});
 	public static final BitSet FOLLOW_annotationElementValue_in_annotationInitializer12531 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_annotationElementValueExpression_in_annotationElementValue12578 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_annotation_in_annotationElementValue12596 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_annotationElementValueArrayInitializer_in_annotationElementValue12614 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_conditionalExpression_in_annotationElementValueExpression12661 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_LCURLY_in_annotationElementValueArrayInitializer12733 = new BitSet(new long[]{0x0081820614400000L,0x580B4500A18000C8L,0x0020104304040021L});
+	public static final BitSet FOLLOW_LCURLY_in_annotationElementValueArrayInitializer12733 = new BitSet(new long[]{0x0081820614400000L,0x560B4500A18000C8L,0x0020104304040008L});
 	public static final BitSet FOLLOW_annotationElementValue_in_annotationElementValueArrayInitializer12736 = new BitSet(new long[]{0x0000020000000000L,0x0000000000000000L,0x0000000000040000L});
-	public static final BitSet FOLLOW_COMMA_in_annotationElementValueArrayInitializer12739 = new BitSet(new long[]{0x0081800614400000L,0x580B4500A18000C8L,0x0020104304000021L});
+	public static final BitSet FOLLOW_COMMA_in_annotationElementValueArrayInitializer12739 = new BitSet(new long[]{0x0081800614400000L,0x560B4500A18000C8L,0x0020104304000008L});
 	public static final BitSet FOLLOW_annotationElementValue_in_annotationElementValueArrayInitializer12741 = new BitSet(new long[]{0x0000020000000000L,0x0000000000000000L,0x0000000000040000L});
 	public static final BitSet FOLLOW_COMMA_in_annotationElementValueArrayInitializer12748 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000040000L});
 	public static final BitSet FOLLOW_RCURLY_in_annotationElementValueArrayInitializer12752 = new BitSet(new long[]{0x0000000000000002L});
@@ -24001,8 +24002,8 @@ public class JavaParser extends Parser {
 	public static final BitSet FOLLOW_INTERFACE_in_annotationTypeDeclaration12829 = new BitSet(new long[]{0x0000000000000000L,0x0000000001000000L});
 	public static final BitSet FOLLOW_IDENT_in_annotationTypeDeclaration12831 = new BitSet(new long[]{0x0000000000000000L,0x0000010000000000L});
 	public static final BitSet FOLLOW_annotationBody_in_annotationTypeDeclaration12833 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_LCURLY_in_annotationBody12912 = new BitSet(new long[]{0x0480000A14400010L,0x0401000281000050L,0x00800820A4047000L});
-	public static final BitSet FOLLOW_annotationScopeDeclarations_in_annotationBody12914 = new BitSet(new long[]{0x0480000A14400010L,0x0401000281000050L,0x00800820A4047000L});
+	public static final BitSet FOLLOW_LCURLY_in_annotationBody12912 = new BitSet(new long[]{0x0480000A14400010L,0x0101000281000050L,0x00800820A4047000L});
+	public static final BitSet FOLLOW_annotationScopeDeclarations_in_annotationBody12914 = new BitSet(new long[]{0x0480000A14400010L,0x0101000281000050L,0x00800820A4047000L});
 	public static final BitSet FOLLOW_RCURLY_in_annotationBody12917 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_modifierList_in_annotationScopeDeclarations12991 = new BitSet(new long[]{0x0080000214000000L,0x0001000081000040L,0x0000000004000000L});
 	public static final BitSet FOLLOW_type_in_annotationScopeDeclarations12993 = new BitSet(new long[]{0x0000000000000000L,0x0000000001000000L});
@@ -24014,10 +24015,10 @@ public class JavaParser extends Parser {
 	public static final BitSet FOLLOW_classFieldDeclaratorList_in_annotationScopeDeclarations13082 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000200000L});
 	public static final BitSet FOLLOW_SEMI_in_annotationScopeDeclarations13084 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_typeDeclaration_in_annotationScopeDeclarations13153 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_DEFAULT_in_annotationDefaultValue13200 = new BitSet(new long[]{0x0081800614400000L,0x580B4500A18000C8L,0x0020104304000021L});
+	public static final BitSet FOLLOW_DEFAULT_in_annotationDefaultValue13200 = new BitSet(new long[]{0x0081800614400000L,0x560B4500A18000C8L,0x0020104304000008L});
 	public static final BitSet FOLLOW_annotationElementValue_in_annotationDefaultValue13203 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_LCURLY_in_block13256 = new BitSet(new long[]{0x0491C00E1C500010L,0x5C0B4502A38002D8L,0x01A0396BA42C7021L});
-	public static final BitSet FOLLOW_blockStatement_in_block13276 = new BitSet(new long[]{0x0491C00E1C500010L,0x5C0B4502A38002D8L,0x01A0396BA42C7021L});
+	public static final BitSet FOLLOW_LCURLY_in_block13256 = new BitSet(new long[]{0x0491C00E1C500010L,0x570B4502A38002D8L,0x01A0396BA42C7008L});
+	public static final BitSet FOLLOW_blockStatement_in_block13276 = new BitSet(new long[]{0x0491C00E1C500010L,0x570B4502A38002D8L,0x01A0396BA42C7008L});
 	public static final BitSet FOLLOW_RCURLY_in_block13281 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_localVariableDeclaration_in_blockStatement13374 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000200000L});
 	public static final BitSet FOLLOW_SEMI_in_blockStatement13376 = new BitSet(new long[]{0x0000000000000002L});
@@ -24027,39 +24028,39 @@ public class JavaParser extends Parser {
 	public static final BitSet FOLLOW_type_in_localVariableDeclaration13473 = new BitSet(new long[]{0x0000000000000000L,0x0000000001000000L});
 	public static final BitSet FOLLOW_classFieldDeclaratorList_in_localVariableDeclaration13475 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_block_in_statement13577 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_annotation_in_statement13605 = new BitSet(new long[]{0x0091C0061C500000L,0x580B4500A38002C8L,0x0120316B04280021L});
+	public static final BitSet FOLLOW_annotation_in_statement13605 = new BitSet(new long[]{0x0091C0061C500000L,0x560B4500A38002C8L,0x0120316B04280008L});
 	public static final BitSet FOLLOW_statement_in_statement13607 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_ASSERT_in_statement13627 = new BitSet(new long[]{0x0081800614000000L,0x580B4400A18000C8L,0x0020104304000021L});
+	public static final BitSet FOLLOW_ASSERT_in_statement13627 = new BitSet(new long[]{0x0081800614000000L,0x560B4400A18000C8L,0x0020104304000008L});
 	public static final BitSet FOLLOW_expression_in_statement13631 = new BitSet(new long[]{0x0000010000000000L,0x0000000000000000L,0x0000000000200000L});
-	public static final BitSet FOLLOW_COLON_in_statement13655 = new BitSet(new long[]{0x0081800614000000L,0x580B4400A18000C8L,0x0020104304000021L});
+	public static final BitSet FOLLOW_COLON_in_statement13655 = new BitSet(new long[]{0x0081800614000000L,0x560B4400A18000C8L,0x0020104304000008L});
 	public static final BitSet FOLLOW_expression_in_statement13659 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000200000L});
 	public static final BitSet FOLLOW_SEMI_in_statement13661 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_SEMI_in_statement13732 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_IF_in_statement13837 = new BitSet(new long[]{0x0000000000000000L,0x0002000000000000L});
-	public static final BitSet FOLLOW_parenthesizedExpression_in_statement13858 = new BitSet(new long[]{0x0091C0061C500000L,0x580B4500A38002C8L,0x0120316B04280021L});
+	public static final BitSet FOLLOW_parenthesizedExpression_in_statement13858 = new BitSet(new long[]{0x0091C0061C500000L,0x560B4500A38002C8L,0x0120316B04280008L});
 	public static final BitSet FOLLOW_statement_in_statement13887 = new BitSet(new long[]{0x0200000000000002L});
-	public static final BitSet FOLLOW_ELSE_in_statement13915 = new BitSet(new long[]{0x0091C0061C500000L,0x580B4500A38002C8L,0x0120316B04280021L});
+	public static final BitSet FOLLOW_ELSE_in_statement13915 = new BitSet(new long[]{0x0091C0061C500000L,0x560B4500A38002C8L,0x0120316B04280008L});
 	public static final BitSet FOLLOW_statement_in_statement13940 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_FOR_in_statement14183 = new BitSet(new long[]{0x0000000000000000L,0x0002000000000000L});
-	public static final BitSet FOLLOW_LPAREN_in_statement14212 = new BitSet(new long[]{0x0081800614400000L,0x580B4400A18000D8L,0x0020104304200021L});
+	public static final BitSet FOLLOW_LPAREN_in_statement14212 = new BitSet(new long[]{0x0081800614400000L,0x560B4400A18000D8L,0x0020104304200008L});
 	public static final BitSet FOLLOW_forInit_in_statement14234 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000200000L});
-	public static final BitSet FOLLOW_SEMI_in_statement14236 = new BitSet(new long[]{0x0081800614000000L,0x580B4400A18000C8L,0x0020104304200021L});
+	public static final BitSet FOLLOW_SEMI_in_statement14236 = new BitSet(new long[]{0x0081800614000000L,0x560B4400A18000C8L,0x0020104304200008L});
 	public static final BitSet FOLLOW_forCondition_in_statement14240 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000200000L});
-	public static final BitSet FOLLOW_SEMI_in_statement14263 = new BitSet(new long[]{0x0081800614000000L,0x580B4400A18000C8L,0x0020104304100021L});
+	public static final BitSet FOLLOW_SEMI_in_statement14263 = new BitSet(new long[]{0x0081800614000000L,0x560B4400A18000C8L,0x0020104304100008L});
 	public static final BitSet FOLLOW_forUpdater_in_statement14265 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000100000L});
-	public static final BitSet FOLLOW_RPAREN_in_statement14267 = new BitSet(new long[]{0x0091C0061C500000L,0x580B4500A38002C8L,0x0120316B04280021L});
+	public static final BitSet FOLLOW_RPAREN_in_statement14267 = new BitSet(new long[]{0x0091C0061C500000L,0x560B4500A38002C8L,0x0120316B04280008L});
 	public static final BitSet FOLLOW_statement_in_statement14269 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_localModifierList_in_statement14333 = new BitSet(new long[]{0x0080000214000000L,0x0001000081000040L,0x0000000004000000L});
 	public static final BitSet FOLLOW_type_in_statement14335 = new BitSet(new long[]{0x0000000000000000L,0x0000000001000000L});
 	public static final BitSet FOLLOW_IDENT_in_statement14337 = new BitSet(new long[]{0x0000010000000000L});
-	public static final BitSet FOLLOW_COLON_in_statement14339 = new BitSet(new long[]{0x0081800614000000L,0x580B4400A18000C8L,0x0020104304000021L});
+	public static final BitSet FOLLOW_COLON_in_statement14339 = new BitSet(new long[]{0x0081800614000000L,0x560B4400A18000C8L,0x0020104304000008L});
 	public static final BitSet FOLLOW_expression_in_statement14341 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000100000L});
-	public static final BitSet FOLLOW_RPAREN_in_statement14343 = new BitSet(new long[]{0x0091C0061C500000L,0x580B4500A38002C8L,0x0120316B04280021L});
+	public static final BitSet FOLLOW_RPAREN_in_statement14343 = new BitSet(new long[]{0x0091C0061C500000L,0x560B4500A38002C8L,0x0120316B04280008L});
 	public static final BitSet FOLLOW_statement_in_statement14345 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_WHILE_in_statement14483 = new BitSet(new long[]{0x0000000000000000L,0x0002000000000000L});
-	public static final BitSet FOLLOW_parenthesizedExpression_in_statement14512 = new BitSet(new long[]{0x0091C0061C500000L,0x580B4500A38002C8L,0x0120316B04280021L});
+	public static final BitSet FOLLOW_parenthesizedExpression_in_statement14512 = new BitSet(new long[]{0x0091C0061C500000L,0x560B4500A38002C8L,0x0120316B04280008L});
 	public static final BitSet FOLLOW_statement_in_statement14535 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_DO_in_statement14613 = new BitSet(new long[]{0x0091C0061C500000L,0x580B4500A38002C8L,0x0120316B04280021L});
+	public static final BitSet FOLLOW_DO_in_statement14613 = new BitSet(new long[]{0x0091C0061C500000L,0x560B4500A38002C8L,0x0120316B04280008L});
 	public static final BitSet FOLLOW_statement_in_statement14632 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0100000000000000L});
 	public static final BitSet FOLLOW_WHILE_in_statement14634 = new BitSet(new long[]{0x0000000000000000L,0x0002000000000000L});
 	public static final BitSet FOLLOW_parenthesizedExpression_in_statement14638 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000200000L});
@@ -24077,10 +24078,10 @@ public class JavaParser extends Parser {
 	public static final BitSet FOLLOW_SYNCHRONIZED_in_statement14953 = new BitSet(new long[]{0x0000000000000000L,0x0002000000000000L});
 	public static final BitSet FOLLOW_parenthesizedExpression_in_statement14955 = new BitSet(new long[]{0x0000000000000000L,0x0000010000000000L});
 	public static final BitSet FOLLOW_block_in_statement14957 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_RETURN_in_statement15010 = new BitSet(new long[]{0x0081800614000000L,0x580B4400A18000C8L,0x0020104304200021L});
+	public static final BitSet FOLLOW_RETURN_in_statement15010 = new BitSet(new long[]{0x0081800614000000L,0x560B4400A18000C8L,0x0020104304200008L});
 	public static final BitSet FOLLOW_expression_in_statement15032 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000200000L});
 	public static final BitSet FOLLOW_SEMI_in_statement15053 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_THROW_in_statement15095 = new BitSet(new long[]{0x0081800614000000L,0x580B4400A18000C8L,0x0020104304000021L});
+	public static final BitSet FOLLOW_THROW_in_statement15095 = new BitSet(new long[]{0x0081800614000000L,0x560B4400A18000C8L,0x0020104304000008L});
 	public static final BitSet FOLLOW_expression_in_statement15097 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000200000L});
 	public static final BitSet FOLLOW_SEMI_in_statement15099 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_BREAK_in_statement15172 = new BitSet(new long[]{0x0000000000000000L,0x0000000001000000L,0x0000000000200000L});
@@ -24090,7 +24091,7 @@ public class JavaParser extends Parser {
 	public static final BitSet FOLLOW_IDENT_in_statement15284 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000200000L});
 	public static final BitSet FOLLOW_SEMI_in_statement15287 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_IDENT_in_statement15331 = new BitSet(new long[]{0x0000010000000000L});
-	public static final BitSet FOLLOW_COLON_in_statement15333 = new BitSet(new long[]{0x0091C0061C500000L,0x580B4500A38002C8L,0x0120316B04280021L});
+	public static final BitSet FOLLOW_COLON_in_statement15333 = new BitSet(new long[]{0x0091C0061C500000L,0x560B4500A38002C8L,0x0120316B04280008L});
 	public static final BitSet FOLLOW_statement_in_statement15335 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_expression_in_statement15380 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000200000L});
 	public static final BitSet FOLLOW_SEMI_in_statement15382 = new BitSet(new long[]{0x0000000000000002L});
@@ -24107,105 +24108,105 @@ public class JavaParser extends Parser {
 	public static final BitSet FOLLOW_switchDefaultLabel_in_switchBlockLabels15660 = new BitSet(new long[]{0x0000000020000000L});
 	public static final BitSet FOLLOW_switchCaseLabels_in_switchBlockLabels15663 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_switchCaseLabel_in_switchCaseLabels15740 = new BitSet(new long[]{0x0000000020000002L});
-	public static final BitSet FOLLOW_CASE_in_switchCaseLabel15792 = new BitSet(new long[]{0x0081800614000000L,0x580B4400A18000C8L,0x0020104304000021L});
+	public static final BitSet FOLLOW_CASE_in_switchCaseLabel15792 = new BitSet(new long[]{0x0081800614000000L,0x560B4400A18000C8L,0x0020104304000008L});
 	public static final BitSet FOLLOW_expression_in_switchCaseLabel15797 = new BitSet(new long[]{0x0000010000000000L});
-	public static final BitSet FOLLOW_COLON_in_switchCaseLabel15799 = new BitSet(new long[]{0x0491C00E1C500012L,0x5C0B4502A38002D8L,0x01A0396BA4287021L});
-	public static final BitSet FOLLOW_blockStatement_in_switchCaseLabel15804 = new BitSet(new long[]{0x0491C00E1C500012L,0x5C0B4502A38002D8L,0x01A0396BA4287021L});
+	public static final BitSet FOLLOW_COLON_in_switchCaseLabel15799 = new BitSet(new long[]{0x0491C00E1C500012L,0x570B4502A38002D8L,0x01A0396BA4287008L});
+	public static final BitSet FOLLOW_blockStatement_in_switchCaseLabel15804 = new BitSet(new long[]{0x0491C00E1C500012L,0x570B4502A38002D8L,0x01A0396BA4287008L});
 	public static final BitSet FOLLOW_DEFAULT_in_switchDefaultLabel15857 = new BitSet(new long[]{0x0000010000000000L});
-	public static final BitSet FOLLOW_COLON_in_switchDefaultLabel15860 = new BitSet(new long[]{0x0491C00E1C500012L,0x5C0B4502A38002D8L,0x01A0396BA4287021L});
-	public static final BitSet FOLLOW_blockStatement_in_switchDefaultLabel15863 = new BitSet(new long[]{0x0491C00E1C500012L,0x5C0B4502A38002D8L,0x01A0396BA4287021L});
+	public static final BitSet FOLLOW_COLON_in_switchDefaultLabel15860 = new BitSet(new long[]{0x0491C00E1C500012L,0x570B4502A38002D8L,0x01A0396BA4287008L});
+	public static final BitSet FOLLOW_blockStatement_in_switchDefaultLabel15863 = new BitSet(new long[]{0x0491C00E1C500012L,0x570B4502A38002D8L,0x01A0396BA4287008L});
 	public static final BitSet FOLLOW_localVariableDeclaration_in_forInit15930 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_expressionList_in_forInit15960 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_expression_in_forCondition16108 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_expressionList_in_forUpdater16197 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_LPAREN_in_parenthesizedExpression16278 = new BitSet(new long[]{0x0081800614000000L,0x580B4400A18000C8L,0x0020104304000021L});
+	public static final BitSet FOLLOW_LPAREN_in_parenthesizedExpression16278 = new BitSet(new long[]{0x0081800614000000L,0x560B4400A18000C8L,0x0020104304000008L});
 	public static final BitSet FOLLOW_expression_in_parenthesizedExpression16281 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000100000L});
 	public static final BitSet FOLLOW_RPAREN_in_parenthesizedExpression16284 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_expression_in_expressionList16359 = new BitSet(new long[]{0x0000020000000002L});
-	public static final BitSet FOLLOW_COMMA_in_expressionList16388 = new BitSet(new long[]{0x0081800614000000L,0x580B4400A18000C8L,0x0020104304000021L});
+	public static final BitSet FOLLOW_COMMA_in_expressionList16388 = new BitSet(new long[]{0x0081800614000000L,0x560B4400A18000C8L,0x0020104304000008L});
 	public static final BitSet FOLLOW_expression_in_expressionList16391 = new BitSet(new long[]{0x0000020000000002L});
 	public static final BitSet FOLLOW_assignmentExpression_in_expression16438 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_conditionalExpression_in_assignmentExpression16515 = new BitSet(new long[]{0x0008000001200042L,0x0090000000000000L,0x0800000012800044L});
-	public static final BitSet FOLLOW_ASSIGN_in_assignmentExpression16536 = new BitSet(new long[]{0x0081800614000000L,0x580B4400A18000C8L,0x0020104304000021L});
-	public static final BitSet FOLLOW_PLUS_ASSIGN_in_assignmentExpression16555 = new BitSet(new long[]{0x0081800614000000L,0x580B4400A18000C8L,0x0020104304000021L});
-	public static final BitSet FOLLOW_MINUS_ASSIGN_in_assignmentExpression16574 = new BitSet(new long[]{0x0081800614000000L,0x580B4400A18000C8L,0x0020104304000021L});
-	public static final BitSet FOLLOW_STAR_ASSIGN_in_assignmentExpression16593 = new BitSet(new long[]{0x0081800614000000L,0x580B4400A18000C8L,0x0020104304000021L});
-	public static final BitSet FOLLOW_DIV_ASSIGN_in_assignmentExpression16612 = new BitSet(new long[]{0x0081800614000000L,0x580B4400A18000C8L,0x0020104304000021L});
-	public static final BitSet FOLLOW_AND_ASSIGN_in_assignmentExpression16631 = new BitSet(new long[]{0x0081800614000000L,0x580B4400A18000C8L,0x0020104304000021L});
-	public static final BitSet FOLLOW_OR_ASSIGN_in_assignmentExpression16650 = new BitSet(new long[]{0x0081800614000000L,0x580B4400A18000C8L,0x0020104304000021L});
-	public static final BitSet FOLLOW_XOR_ASSIGN_in_assignmentExpression16669 = new BitSet(new long[]{0x0081800614000000L,0x580B4400A18000C8L,0x0020104304000021L});
-	public static final BitSet FOLLOW_MOD_ASSIGN_in_assignmentExpression16688 = new BitSet(new long[]{0x0081800614000000L,0x580B4400A18000C8L,0x0020104304000021L});
-	public static final BitSet FOLLOW_SHIFT_LEFT_ASSIGN_in_assignmentExpression16707 = new BitSet(new long[]{0x0081800614000000L,0x580B4400A18000C8L,0x0020104304000021L});
-	public static final BitSet FOLLOW_SHIFT_RIGHT_ASSIGN_in_assignmentExpression16726 = new BitSet(new long[]{0x0081800614000000L,0x580B4400A18000C8L,0x0020104304000021L});
-	public static final BitSet FOLLOW_BIT_SHIFT_RIGHT_ASSIGN_in_assignmentExpression16745 = new BitSet(new long[]{0x0081800614000000L,0x580B4400A18000C8L,0x0020104304000021L});
+	public static final BitSet FOLLOW_conditionalExpression_in_assignmentExpression16515 = new BitSet(new long[]{0x0008000001200042L,0x0090000000000000L,0x0800000012800011L});
+	public static final BitSet FOLLOW_ASSIGN_in_assignmentExpression16536 = new BitSet(new long[]{0x0081800614000000L,0x560B4400A18000C8L,0x0020104304000008L});
+	public static final BitSet FOLLOW_PLUS_ASSIGN_in_assignmentExpression16555 = new BitSet(new long[]{0x0081800614000000L,0x560B4400A18000C8L,0x0020104304000008L});
+	public static final BitSet FOLLOW_MINUS_ASSIGN_in_assignmentExpression16574 = new BitSet(new long[]{0x0081800614000000L,0x560B4400A18000C8L,0x0020104304000008L});
+	public static final BitSet FOLLOW_STAR_ASSIGN_in_assignmentExpression16593 = new BitSet(new long[]{0x0081800614000000L,0x560B4400A18000C8L,0x0020104304000008L});
+	public static final BitSet FOLLOW_DIV_ASSIGN_in_assignmentExpression16612 = new BitSet(new long[]{0x0081800614000000L,0x560B4400A18000C8L,0x0020104304000008L});
+	public static final BitSet FOLLOW_AND_ASSIGN_in_assignmentExpression16631 = new BitSet(new long[]{0x0081800614000000L,0x560B4400A18000C8L,0x0020104304000008L});
+	public static final BitSet FOLLOW_OR_ASSIGN_in_assignmentExpression16650 = new BitSet(new long[]{0x0081800614000000L,0x560B4400A18000C8L,0x0020104304000008L});
+	public static final BitSet FOLLOW_XOR_ASSIGN_in_assignmentExpression16669 = new BitSet(new long[]{0x0081800614000000L,0x560B4400A18000C8L,0x0020104304000008L});
+	public static final BitSet FOLLOW_MOD_ASSIGN_in_assignmentExpression16688 = new BitSet(new long[]{0x0081800614000000L,0x560B4400A18000C8L,0x0020104304000008L});
+	public static final BitSet FOLLOW_SHIFT_LEFT_ASSIGN_in_assignmentExpression16707 = new BitSet(new long[]{0x0081800614000000L,0x560B4400A18000C8L,0x0020104304000008L});
+	public static final BitSet FOLLOW_SHIFT_RIGHT_ASSIGN_in_assignmentExpression16726 = new BitSet(new long[]{0x0081800614000000L,0x560B4400A18000C8L,0x0020104304000008L});
+	public static final BitSet FOLLOW_BIT_SHIFT_RIGHT_ASSIGN_in_assignmentExpression16745 = new BitSet(new long[]{0x0081800614000000L,0x560B4400A18000C8L,0x0020104304000008L});
 	public static final BitSet FOLLOW_assignmentExpression_in_assignmentExpression16773 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_logicalOrExpression_in_conditionalExpression16833 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000010000L});
-	public static final BitSet FOLLOW_QUESTION_in_conditionalExpression16852 = new BitSet(new long[]{0x0081800614000000L,0x580B4400A18000C8L,0x0020104304000021L});
+	public static final BitSet FOLLOW_QUESTION_in_conditionalExpression16852 = new BitSet(new long[]{0x0081800614000000L,0x560B4400A18000C8L,0x0020104304000008L});
 	public static final BitSet FOLLOW_assignmentExpression_in_conditionalExpression16857 = new BitSet(new long[]{0x0000010000000000L});
-	public static final BitSet FOLLOW_COLON_in_conditionalExpression16859 = new BitSet(new long[]{0x0081800614000000L,0x580B4400A18000C8L,0x0020104304000021L});
+	public static final BitSet FOLLOW_COLON_in_conditionalExpression16859 = new BitSet(new long[]{0x0081800614000000L,0x560B4400A18000C8L,0x0020104304000008L});
 	public static final BitSet FOLLOW_conditionalExpression_in_conditionalExpression16864 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_logicalAndExpression_in_logicalOrExpression16911 = new BitSet(new long[]{0x0000000000000002L,0x0000800000000000L});
-	public static final BitSet FOLLOW_LOGICAL_OR_in_logicalOrExpression16916 = new BitSet(new long[]{0x0081800614000000L,0x580B4400A18000C8L,0x0020104304000021L});
+	public static final BitSet FOLLOW_LOGICAL_OR_in_logicalOrExpression16916 = new BitSet(new long[]{0x0081800614000000L,0x560B4400A18000C8L,0x0020104304000008L});
 	public static final BitSet FOLLOW_logicalAndExpression_in_logicalOrExpression16921 = new BitSet(new long[]{0x0000000000000002L,0x0000800000000000L});
 	public static final BitSet FOLLOW_inclusiveOrExpression_in_logicalAndExpression16984 = new BitSet(new long[]{0x0000000000000002L,0x0000200000000000L});
-	public static final BitSet FOLLOW_LOGICAL_AND_in_logicalAndExpression16989 = new BitSet(new long[]{0x0081800614000000L,0x580B4400A18000C8L,0x0020104304000021L});
+	public static final BitSet FOLLOW_LOGICAL_AND_in_logicalAndExpression16989 = new BitSet(new long[]{0x0081800614000000L,0x560B4400A18000C8L,0x0020104304000008L});
 	public static final BitSet FOLLOW_inclusiveOrExpression_in_logicalAndExpression16994 = new BitSet(new long[]{0x0000000000000002L,0x0000200000000000L});
-	public static final BitSet FOLLOW_exclusiveOrExpression_in_inclusiveOrExpression17059 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000002L});
-	public static final BitSet FOLLOW_OR_in_inclusiveOrExpression17064 = new BitSet(new long[]{0x0081800614000000L,0x580B4400A18000C8L,0x0020104304000021L});
-	public static final BitSet FOLLOW_exclusiveOrExpression_in_inclusiveOrExpression17069 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000002L});
+	public static final BitSet FOLLOW_exclusiveOrExpression_in_inclusiveOrExpression17059 = new BitSet(new long[]{0x0000000000000002L,0x8000000000000000L});
+	public static final BitSet FOLLOW_OR_in_inclusiveOrExpression17064 = new BitSet(new long[]{0x0081800614000000L,0x560B4400A18000C8L,0x0020104304000008L});
+	public static final BitSet FOLLOW_exclusiveOrExpression_in_inclusiveOrExpression17069 = new BitSet(new long[]{0x0000000000000002L,0x8000000000000000L});
 	public static final BitSet FOLLOW_andExpression_in_exclusiveOrExpression17132 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0400000000000000L});
-	public static final BitSet FOLLOW_XOR_in_exclusiveOrExpression17137 = new BitSet(new long[]{0x0081800614000000L,0x580B4400A18000C8L,0x0020104304000021L});
+	public static final BitSet FOLLOW_XOR_in_exclusiveOrExpression17137 = new BitSet(new long[]{0x0081800614000000L,0x560B4400A18000C8L,0x0020104304000008L});
 	public static final BitSet FOLLOW_andExpression_in_exclusiveOrExpression17142 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0400000000000000L});
 	public static final BitSet FOLLOW_equalityExpression_in_andExpression17205 = new BitSet(new long[]{0x0000000000000022L});
-	public static final BitSet FOLLOW_AND_in_andExpression17210 = new BitSet(new long[]{0x0081800614000000L,0x580B4400A18000C8L,0x0020104304000021L});
+	public static final BitSet FOLLOW_AND_in_andExpression17210 = new BitSet(new long[]{0x0081800614000000L,0x560B4400A18000C8L,0x0020104304000008L});
 	public static final BitSet FOLLOW_equalityExpression_in_andExpression17215 = new BitSet(new long[]{0x0000000000000022L});
-	public static final BitSet FOLLOW_instanceOfExpression_in_equalityExpression17278 = new BitSet(new long[]{0x1000000000000002L,0x2000000000000000L});
-	public static final BitSet FOLLOW_EQUAL_in_equalityExpression17304 = new BitSet(new long[]{0x0081800614000000L,0x580B4400A18000C8L,0x0020104304000021L});
-	public static final BitSet FOLLOW_NOT_EQUAL_in_equalityExpression17309 = new BitSet(new long[]{0x0081800614000000L,0x580B4400A18000C8L,0x0020104304000021L});
-	public static final BitSet FOLLOW_instanceOfExpression_in_equalityExpression17336 = new BitSet(new long[]{0x1000000000000002L,0x2000000000000000L});
+	public static final BitSet FOLLOW_instanceOfExpression_in_equalityExpression17278 = new BitSet(new long[]{0x1000000000000002L,0x0800000000000000L});
+	public static final BitSet FOLLOW_EQUAL_in_equalityExpression17304 = new BitSet(new long[]{0x0081800614000000L,0x560B4400A18000C8L,0x0020104304000008L});
+	public static final BitSet FOLLOW_NOT_EQUAL_in_equalityExpression17309 = new BitSet(new long[]{0x0081800614000000L,0x560B4400A18000C8L,0x0020104304000008L});
+	public static final BitSet FOLLOW_instanceOfExpression_in_equalityExpression17336 = new BitSet(new long[]{0x1000000000000002L,0x0800000000000000L});
 	public static final BitSet FOLLOW_relationalExpression_in_instanceOfExpression17403 = new BitSet(new long[]{0x0000000000000002L,0x0000000040000000L});
 	public static final BitSet FOLLOW_INSTANCEOF_in_instanceOfExpression17408 = new BitSet(new long[]{0x0080000214000000L,0x0001000081000040L,0x0000000004000000L});
 	public static final BitSet FOLLOW_type_in_instanceOfExpression17413 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_shiftExpression_in_relationalExpression17463 = new BitSet(new long[]{0x0000000000000002L,0x0000060000300000L});
-	public static final BitSet FOLLOW_LESS_OR_EQUAL_in_relationalExpression17485 = new BitSet(new long[]{0x0081800614000000L,0x580B4400A18000C8L,0x0020104304000021L});
-	public static final BitSet FOLLOW_GREATER_OR_EQUAL_in_relationalExpression17490 = new BitSet(new long[]{0x0081800614000000L,0x580B4400A18000C8L,0x0020104304000021L});
-	public static final BitSet FOLLOW_LESS_THAN_in_relationalExpression17495 = new BitSet(new long[]{0x0081800614000000L,0x580B4400A18000C8L,0x0020104304000021L});
-	public static final BitSet FOLLOW_GREATER_THAN_in_relationalExpression17500 = new BitSet(new long[]{0x0081800614000000L,0x580B4400A18000C8L,0x0020104304000021L});
+	public static final BitSet FOLLOW_LESS_OR_EQUAL_in_relationalExpression17485 = new BitSet(new long[]{0x0081800614000000L,0x560B4400A18000C8L,0x0020104304000008L});
+	public static final BitSet FOLLOW_GREATER_OR_EQUAL_in_relationalExpression17490 = new BitSet(new long[]{0x0081800614000000L,0x560B4400A18000C8L,0x0020104304000008L});
+	public static final BitSet FOLLOW_LESS_THAN_in_relationalExpression17495 = new BitSet(new long[]{0x0081800614000000L,0x560B4400A18000C8L,0x0020104304000008L});
+	public static final BitSet FOLLOW_GREATER_THAN_in_relationalExpression17500 = new BitSet(new long[]{0x0081800614000000L,0x560B4400A18000C8L,0x0020104304000008L});
 	public static final BitSet FOLLOW_shiftExpression_in_relationalExpression17522 = new BitSet(new long[]{0x0000000000000002L,0x0000060000300000L});
 	public static final BitSet FOLLOW_additiveExpression_in_shiftExpression17595 = new BitSet(new long[]{0x0000000000800002L,0x0000000000000000L,0x0000000001400000L});
-	public static final BitSet FOLLOW_BIT_SHIFT_RIGHT_in_shiftExpression17618 = new BitSet(new long[]{0x0081800614000000L,0x580B4400A18000C8L,0x0020104304000021L});
-	public static final BitSet FOLLOW_SHIFT_RIGHT_in_shiftExpression17623 = new BitSet(new long[]{0x0081800614000000L,0x580B4400A18000C8L,0x0020104304000021L});
-	public static final BitSet FOLLOW_SHIFT_LEFT_in_shiftExpression17628 = new BitSet(new long[]{0x0081800614000000L,0x580B4400A18000C8L,0x0020104304000021L});
+	public static final BitSet FOLLOW_BIT_SHIFT_RIGHT_in_shiftExpression17618 = new BitSet(new long[]{0x0081800614000000L,0x560B4400A18000C8L,0x0020104304000008L});
+	public static final BitSet FOLLOW_SHIFT_RIGHT_in_shiftExpression17623 = new BitSet(new long[]{0x0081800614000000L,0x560B4400A18000C8L,0x0020104304000008L});
+	public static final BitSet FOLLOW_SHIFT_LEFT_in_shiftExpression17628 = new BitSet(new long[]{0x0081800614000000L,0x560B4400A18000C8L,0x0020104304000008L});
 	public static final BitSet FOLLOW_additiveExpression_in_shiftExpression17652 = new BitSet(new long[]{0x0000000000800002L,0x0000000000000000L,0x0000000001400000L});
-	public static final BitSet FOLLOW_multiplicativeExpression_in_additiveExpression17720 = new BitSet(new long[]{0x0000000000000002L,0x0008000000000000L,0x0000000000000020L});
-	public static final BitSet FOLLOW_PLUS_in_additiveExpression17746 = new BitSet(new long[]{0x0081800614000000L,0x580B4400A18000C8L,0x0020104304000021L});
-	public static final BitSet FOLLOW_MINUS_in_additiveExpression17751 = new BitSet(new long[]{0x0081800614000000L,0x580B4400A18000C8L,0x0020104304000021L});
-	public static final BitSet FOLLOW_multiplicativeExpression_in_additiveExpression17777 = new BitSet(new long[]{0x0000000000000002L,0x0008000000000000L,0x0000000000000020L});
+	public static final BitSet FOLLOW_multiplicativeExpression_in_additiveExpression17720 = new BitSet(new long[]{0x0000000000000002L,0x0008000000000000L,0x0000000000000008L});
+	public static final BitSet FOLLOW_PLUS_in_additiveExpression17746 = new BitSet(new long[]{0x0081800614000000L,0x560B4400A18000C8L,0x0020104304000008L});
+	public static final BitSet FOLLOW_MINUS_in_additiveExpression17751 = new BitSet(new long[]{0x0081800614000000L,0x560B4400A18000C8L,0x0020104304000008L});
+	public static final BitSet FOLLOW_multiplicativeExpression_in_additiveExpression17777 = new BitSet(new long[]{0x0000000000000002L,0x0008000000000000L,0x0000000000000008L});
 	public static final BitSet FOLLOW_unaryExpression_in_multiplicativeExpression17844 = new BitSet(new long[]{0x0004000000000002L,0x0020000000000000L,0x0000000008000000L});
-	public static final BitSet FOLLOW_STAR_in_multiplicativeExpression17866 = new BitSet(new long[]{0x0081800614000000L,0x580B4400A18000C8L,0x0020104304000021L});
-	public static final BitSet FOLLOW_DIV_in_multiplicativeExpression17871 = new BitSet(new long[]{0x0081800614000000L,0x580B4400A18000C8L,0x0020104304000021L});
-	public static final BitSet FOLLOW_MOD_in_multiplicativeExpression17876 = new BitSet(new long[]{0x0081800614000000L,0x580B4400A18000C8L,0x0020104304000021L});
+	public static final BitSet FOLLOW_STAR_in_multiplicativeExpression17866 = new BitSet(new long[]{0x0081800614000000L,0x560B4400A18000C8L,0x0020104304000008L});
+	public static final BitSet FOLLOW_DIV_in_multiplicativeExpression17871 = new BitSet(new long[]{0x0081800614000000L,0x560B4400A18000C8L,0x0020104304000008L});
+	public static final BitSet FOLLOW_MOD_in_multiplicativeExpression17876 = new BitSet(new long[]{0x0081800614000000L,0x560B4400A18000C8L,0x0020104304000008L});
 	public static final BitSet FOLLOW_unaryExpression_in_multiplicativeExpression17898 = new BitSet(new long[]{0x0004000000000002L,0x0020000000000000L,0x0000000008000000L});
-	public static final BitSet FOLLOW_PLUS_in_unaryExpression17969 = new BitSet(new long[]{0x0081800614000000L,0x580B4400A18000C8L,0x0020104304000021L});
+	public static final BitSet FOLLOW_PLUS_in_unaryExpression17969 = new BitSet(new long[]{0x0081800614000000L,0x560B4400A18000C8L,0x0020104304000008L});
 	public static final BitSet FOLLOW_unaryExpression_in_unaryExpression17973 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_MINUS_in_unaryExpression18024 = new BitSet(new long[]{0x0081800614000000L,0x580B4400A18000C8L,0x0020104304000021L});
+	public static final BitSet FOLLOW_MINUS_in_unaryExpression18024 = new BitSet(new long[]{0x0081800614000000L,0x560B4400A18000C8L,0x0020104304000008L});
 	public static final BitSet FOLLOW_unaryExpression_in_unaryExpression18028 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_INC_in_unaryExpression18079 = new BitSet(new long[]{0x0081000614000000L,0x48030400818000C8L,0x0020104304000001L});
+	public static final BitSet FOLLOW_INC_in_unaryExpression18079 = new BitSet(new long[]{0x0081000614000000L,0x52030400818000C8L,0x0020104304000000L});
 	public static final BitSet FOLLOW_postfixedExpression_in_unaryExpression18083 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_DEC_in_unaryExpression18135 = new BitSet(new long[]{0x0081000614000000L,0x48030400818000C8L,0x0020104304000001L});
+	public static final BitSet FOLLOW_DEC_in_unaryExpression18135 = new BitSet(new long[]{0x0081000614000000L,0x52030400818000C8L,0x0020104304000000L});
 	public static final BitSet FOLLOW_postfixedExpression_in_unaryExpression18139 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_unaryExpressionNotPlusMinus_in_unaryExpression18188 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_NOT_in_unaryExpressionNotPlusMinus18233 = new BitSet(new long[]{0x0081800614000000L,0x580B4400A18000C8L,0x0020104304000021L});
+	public static final BitSet FOLLOW_NOT_in_unaryExpressionNotPlusMinus18233 = new BitSet(new long[]{0x0081800614000000L,0x560B4400A18000C8L,0x0020104304000008L});
 	public static final BitSet FOLLOW_unaryExpression_in_unaryExpressionNotPlusMinus18237 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_LOGICAL_NOT_in_unaryExpressionNotPlusMinus18289 = new BitSet(new long[]{0x0081800614000000L,0x580B4400A18000C8L,0x0020104304000021L});
+	public static final BitSet FOLLOW_LOGICAL_NOT_in_unaryExpressionNotPlusMinus18289 = new BitSet(new long[]{0x0081800614000000L,0x560B4400A18000C8L,0x0020104304000008L});
 	public static final BitSet FOLLOW_unaryExpression_in_unaryExpressionNotPlusMinus18293 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_LPAREN_in_unaryExpressionNotPlusMinus18356 = new BitSet(new long[]{0x0080000214000000L,0x0001000081000040L,0x0000000004000000L});
 	public static final BitSet FOLLOW_type_in_unaryExpressionNotPlusMinus18360 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000100000L});
-	public static final BitSet FOLLOW_RPAREN_in_unaryExpressionNotPlusMinus18362 = new BitSet(new long[]{0x0081800614000000L,0x580B4400A18000C8L,0x0020104304000021L});
+	public static final BitSet FOLLOW_RPAREN_in_unaryExpressionNotPlusMinus18362 = new BitSet(new long[]{0x0081800614000000L,0x560B4400A18000C8L,0x0020104304000008L});
 	public static final BitSet FOLLOW_unaryExpression_in_unaryExpressionNotPlusMinus18366 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_postfixedExpression_in_unaryExpressionNotPlusMinus18415 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_primaryExpression_in_postfixedExpression18484 = new BitSet(new long[]{0x0020800000000002L,0x0000008020000000L});
-	public static final BitSet FOLLOW_DOT_in_postfixedExpression18570 = new BitSet(new long[]{0x0000000000000000L,0x0800040001000000L,0x0000004200000000L});
+	public static final BitSet FOLLOW_DOT_in_postfixedExpression18570 = new BitSet(new long[]{0x0000000000000000L,0x0200040001000000L,0x0000004200000000L});
 	public static final BitSet FOLLOW_genericTypeArgumentListSimplified_in_postfixedExpression18628 = new BitSet(new long[]{0x0000000000000000L,0x0000000001000000L});
 	public static final BitSet FOLLOW_IDENT_in_postfixedExpression18726 = new BitSet(new long[]{0x0020800000000002L,0x0002008020000000L});
 	public static final BitSet FOLLOW_arguments_in_postfixedExpression18821 = new BitSet(new long[]{0x0020800000000002L,0x0000008020000000L});
@@ -24217,7 +24218,7 @@ public class JavaParser extends Parser {
 	public static final BitSet FOLLOW_IDENT_in_postfixedExpression19076 = new BitSet(new long[]{0x0020800000000002L,0x0002008020000000L});
 	public static final BitSet FOLLOW_arguments_in_postfixedExpression19159 = new BitSet(new long[]{0x0020800000000002L,0x0000008020000000L});
 	public static final BitSet FOLLOW_innerNewExpression_in_postfixedExpression19271 = new BitSet(new long[]{0x0020800000000002L,0x0000008020000000L});
-	public static final BitSet FOLLOW_LBRACK_in_postfixedExpression19344 = new BitSet(new long[]{0x0081800614000000L,0x580B4400A18000C8L,0x0020104304000021L});
+	public static final BitSet FOLLOW_LBRACK_in_postfixedExpression19344 = new BitSet(new long[]{0x0081800614000000L,0x560B4400A18000C8L,0x0020104304000008L});
 	public static final BitSet FOLLOW_expression_in_postfixedExpression19346 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000020000L});
 	public static final BitSet FOLLOW_RBRACK_in_postfixedExpression19348 = new BitSet(new long[]{0x0020800000000002L,0x0000008020000000L});
 	public static final BitSet FOLLOW_INC_in_postfixedExpression19433 = new BitSet(new long[]{0x0000000000000002L});
@@ -24256,7 +24257,7 @@ public class JavaParser extends Parser {
 	public static final BitSet FOLLOW_DOT_in_qualifiedIdentExpression21109 = new BitSet(new long[]{0x0000000800000000L});
 	public static final BitSet FOLLOW_CLASS_in_qualifiedIdentExpression21111 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_arguments_in_qualifiedIdentExpression21220 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_DOT_in_qualifiedIdentExpression21276 = new BitSet(new long[]{0x0000000800000000L,0x0800040000000000L,0x0000004200000000L});
+	public static final BitSet FOLLOW_DOT_in_qualifiedIdentExpression21276 = new BitSet(new long[]{0x0000000800000000L,0x0200040000000000L,0x0000004200000000L});
 	public static final BitSet FOLLOW_CLASS_in_qualifiedIdentExpression21302 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_genericTypeArgumentListSimplified_in_qualifiedIdentExpression21398 = new BitSet(new long[]{0x0000000000000000L,0x0000000001000000L,0x0000000200000000L});
 	public static final BitSet FOLLOW_SUPER_in_qualifiedIdentExpression21431 = new BitSet(new long[]{0x0000000000000000L,0x0002000000000000L});
@@ -24286,14 +24287,14 @@ public class JavaParser extends Parser {
 	public static final BitSet FOLLOW_classBody_in_innerNewExpression22325 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_arrayDeclaratorList_in_newArrayConstruction22403 = new BitSet(new long[]{0x0000000000000000L,0x0000010000000000L});
 	public static final BitSet FOLLOW_arrayInitializer_in_newArrayConstruction22405 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_LBRACK_in_newArrayConstruction22423 = new BitSet(new long[]{0x0081800614000000L,0x580B4400A18000C8L,0x0020104304000021L});
+	public static final BitSet FOLLOW_LBRACK_in_newArrayConstruction22423 = new BitSet(new long[]{0x0081800614000000L,0x560B4400A18000C8L,0x0020104304000008L});
 	public static final BitSet FOLLOW_expression_in_newArrayConstruction22426 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000020000L});
 	public static final BitSet FOLLOW_RBRACK_in_newArrayConstruction22428 = new BitSet(new long[]{0x0000000000000002L,0x0000008000000000L});
-	public static final BitSet FOLLOW_LBRACK_in_newArrayConstruction22432 = new BitSet(new long[]{0x0081800614000000L,0x580B4400A18000C8L,0x0020104304000021L});
+	public static final BitSet FOLLOW_LBRACK_in_newArrayConstruction22432 = new BitSet(new long[]{0x0081800614000000L,0x560B4400A18000C8L,0x0020104304000008L});
 	public static final BitSet FOLLOW_expression_in_newArrayConstruction22435 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000020000L});
 	public static final BitSet FOLLOW_RBRACK_in_newArrayConstruction22437 = new BitSet(new long[]{0x0000000000000002L,0x0000008000000000L});
 	public static final BitSet FOLLOW_arrayDeclaratorList_in_newArrayConstruction22442 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_LPAREN_in_arguments22486 = new BitSet(new long[]{0x0081800614000000L,0x580B4400A18000C8L,0x0020104304100021L});
+	public static final BitSet FOLLOW_LPAREN_in_arguments22486 = new BitSet(new long[]{0x0081800614000000L,0x560B4400A18000C8L,0x0020104304100008L});
 	public static final BitSet FOLLOW_expressionList_in_arguments22523 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000100000L});
 	public static final BitSet FOLLOW_RPAREN_in_arguments22527 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_set_in_literal22597 = new BitSet(new long[]{0x0000000000000002L});
@@ -24405,26 +24406,26 @@ public class JavaParser extends Parser {
 	public static final BitSet FOLLOW_localVariableDeclaration_in_synpred118_Java13374 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000200000L});
 	public static final BitSet FOLLOW_SEMI_in_synpred118_Java13376 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_typeDeclaration_in_synpred119_Java13395 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_ELSE_in_synpred124_Java13915 = new BitSet(new long[]{0x0091C0061C500000L,0x580B4500A38002C8L,0x0120316B04280021L});
+	public static final BitSet FOLLOW_ELSE_in_synpred124_Java13915 = new BitSet(new long[]{0x0091C0061C500000L,0x560B4500A38002C8L,0x0120316B04280008L});
 	public static final BitSet FOLLOW_statement_in_synpred124_Java13940 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_forInit_in_synpred126_Java14234 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000200000L});
-	public static final BitSet FOLLOW_SEMI_in_synpred126_Java14236 = new BitSet(new long[]{0x0081800614000000L,0x580B4400A18000C8L,0x0020104304200021L});
+	public static final BitSet FOLLOW_SEMI_in_synpred126_Java14236 = new BitSet(new long[]{0x0081800614000000L,0x560B4400A18000C8L,0x0020104304200008L});
 	public static final BitSet FOLLOW_forCondition_in_synpred126_Java14240 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000200000L});
-	public static final BitSet FOLLOW_SEMI_in_synpred126_Java14263 = new BitSet(new long[]{0x0081800614000000L,0x580B4400A18000C8L,0x0020104304100021L});
+	public static final BitSet FOLLOW_SEMI_in_synpred126_Java14263 = new BitSet(new long[]{0x0081800614000000L,0x560B4400A18000C8L,0x0020104304100008L});
 	public static final BitSet FOLLOW_forUpdater_in_synpred126_Java14265 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000100000L});
-	public static final BitSet FOLLOW_RPAREN_in_synpred126_Java14267 = new BitSet(new long[]{0x0091C0061C500000L,0x580B4500A38002C8L,0x0120316B04280021L});
+	public static final BitSet FOLLOW_RPAREN_in_synpred126_Java14267 = new BitSet(new long[]{0x0091C0061C500000L,0x560B4500A38002C8L,0x0120316B04280008L});
 	public static final BitSet FOLLOW_statement_in_synpred126_Java14269 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_switchCaseLabel_in_synpred146_Java15740 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_localVariableDeclaration_in_synpred149_Java15930 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_expressionList_in_synpred150_Java15960 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_LPAREN_in_synpred193_Java18356 = new BitSet(new long[]{0x0080000214000000L,0x0001000081000040L,0x0000000004000000L});
 	public static final BitSet FOLLOW_type_in_synpred193_Java18360 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000100000L});
-	public static final BitSet FOLLOW_RPAREN_in_synpred193_Java18362 = new BitSet(new long[]{0x0081800614000000L,0x580B4400A18000C8L,0x0020104304000021L});
+	public static final BitSet FOLLOW_RPAREN_in_synpred193_Java18362 = new BitSet(new long[]{0x0081800614000000L,0x560B4400A18000C8L,0x0020104304000008L});
 	public static final BitSet FOLLOW_unaryExpression_in_synpred193_Java18366 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_arrayDeclarator_in_synpred221_Java21000 = new BitSet(new long[]{0x0020000000000000L,0x0000008000000000L});
 	public static final BitSet FOLLOW_DOT_in_synpred221_Java21109 = new BitSet(new long[]{0x0000000800000000L});
 	public static final BitSet FOLLOW_CLASS_in_synpred221_Java21111 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_DOT_in_synpred229_Java21276 = new BitSet(new long[]{0x0000000800000000L,0x0800040000000000L,0x0000004200000000L});
+	public static final BitSet FOLLOW_DOT_in_synpred229_Java21276 = new BitSet(new long[]{0x0000000800000000L,0x0200040000000000L,0x0000004200000000L});
 	public static final BitSet FOLLOW_CLASS_in_synpred229_Java21302 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_genericTypeArgumentListSimplified_in_synpred229_Java21398 = new BitSet(new long[]{0x0000000000000000L,0x0000000001000000L,0x0000000200000000L});
 	public static final BitSet FOLLOW_SUPER_in_synpred229_Java21431 = new BitSet(new long[]{0x0000000000000000L,0x0002000000000000L});
@@ -24439,7 +24440,7 @@ public class JavaParser extends Parser {
 	public static final BitSet FOLLOW_SUPER_in_synpred229_Java21779 = new BitSet(new long[]{0x0000000000000000L,0x0002000000000000L});
 	public static final BitSet FOLLOW_arguments_in_synpred229_Java21781 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_innerNewExpression_in_synpred229_Java21843 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_LBRACK_in_synpred237_Java22432 = new BitSet(new long[]{0x0081800614000000L,0x580B4400A18000C8L,0x0020104304000021L});
+	public static final BitSet FOLLOW_LBRACK_in_synpred237_Java22432 = new BitSet(new long[]{0x0081800614000000L,0x560B4400A18000C8L,0x0020104304000008L});
 	public static final BitSet FOLLOW_expression_in_synpred237_Java22435 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000020000L});
 	public static final BitSet FOLLOW_RBRACK_in_synpred237_Java22437 = new BitSet(new long[]{0x0000000000000002L});
 }
